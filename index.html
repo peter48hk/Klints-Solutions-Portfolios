@@ -7,18 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+        @keyframes liquidFloat {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(15px, -20px) rotate(5deg); }
+            50% { transform: translate(-15px, 15px) rotate(-5deg); }
+            75% { transform: translate(20px, -15px) rotate(3deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
         }
-        @keyframes floatLogo {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(20px, -30px); }
-            50% { transform: translate(-20px, 20px); }
-            75% { transform: translate(30px, -20px); }
-            100% { transform: translate(0, 0); }
-        }
-        .floating { animation: float 6s ease-in-out infinite; }
+        .floating { animation: liquidFloat 8s ease-in-out infinite; }
         .gradient-text {
             background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
             -webkit-background-clip: text;
@@ -79,30 +75,28 @@
             height: 100%;
             overflow: hidden;
             z-index: 0;
-            background-image: url('https://images.unsplash.com/photo-1516321310768-8340f6721307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(135deg, rgba(251, 188, 5, 0.3), rgba(52, 168, 83, 0.3));
             background-size: cover;
             background-position: center;
-            background-opacity: 0.3;
         }
         .logo {
             position: absolute;
-            width: 60px; /* Medium size for logos */
-            height: 60px;
-            opacity: 0.8;
-            animation: floatLogo 15s ease-in-out infinite;
+            width: 40px;
+            height: 40px;
+            opacity: 0.7;
+            animation: liquidFloat 8s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
-        .logo:nth-child(1) { top: 5%; left: 10%; animation-delay: 0s; }
-        .logo:nth-child(2) { top: 15%; left: 65%; animation-delay: 1.5s; }
-        .logo:nth-child(3) { top: 25%; left: 25%; animation-delay: 3s; }
-        .logo:nth-child(4) { top: 40%; left: 80%; animation-delay: 4.5s; }
-        .logo:nth-child(5) { top: 50%; left: 15%; animation-delay: 6s; }
-        .logo:nth-child(6) { top: 60%; left: 55%; animation-delay: 7.5s; }
-        .logo:nth-child(7) { top: 70%; left: 35%; animation-delay: 9s; }
-        .logo:nth-child(8) { top: 20%; left: 45%; animation-delay: 10.5s; }
-        .logo:nth-child(9) { top: 35%; left: 70%; animation-delay: 12s; }
-        .logo:nth-child(10) { top: 55%; left: 30%; animation-delay: 13.5s; }
-        .logo:nth-child(11) { top: 65%; left: 85%; animation-delay: 15s; }
+        .logo:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+        .logo:nth-child(2) { top: 20%; left: 70%; animation-delay: 0.8s; }
+        .logo:nth-child(3) { top: 30%; left: 25%; animation-delay: 1.6s; }
+        .logo:nth-child(4) { top: 45%; left: 85%; animation-delay: 2.4s; }
+        .logo:nth-child(5) { top: 55%; left: 20%; animation-delay: 3.2s; }
+        .logo:nth-child(6) { top: 65%; left: 60%; animation-delay: 4.0s; }
+        .logo:nth-child(7) { top: 75%; left: 40%; animation-delay: 4.8s; }
+        .logo:nth-child(8) { top: 25%; left: 50%; animation-delay: 5.6s; }
+        .logo:nth-child(9) { top: 40%; left: 75%; animation-delay: 6.4s; }
+        .logo:nth-child(10) { top: 60%; left: 30%; animation-delay: 7.2s; }
         .ceo-message {
             background: linear-gradient(135deg, #f9f9f9, #ffffff);
             border-radius: 12px;
@@ -111,7 +105,7 @@
         .video-placeholder {
             position: relative;
             width: 100%;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            padding-top: 56.25%;
             background: linear-gradient(135deg, #e0e7ff, #f9fafb);
             border-radius: 12px;
             overflow: hidden;
@@ -157,68 +151,24 @@
             font-size: 0.875rem;
             max-width: 80%;
         }
-        /* Mobile-specific styles */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem; /* Smaller heading on mobile */
-                line-height: 1.2;
-            }
-            h2 {
-                font-size: 1.75rem;
-            }
-            h3 {
-                font-size: 1.25rem;
-            }
-            p {
-                font-size: 0.875rem;
-            }
-            .logo {
-                width: 40px; /* Smaller logos on mobile */
-                height: 40px;
-            }
-            .logo:nth-child(n) {
-                animation: none; /* Disable logo animation on mobile for performance */
-            }
-            .max-w-7xl {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            .service-icon {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-            }
-            .video-placeholder {
-                padding-top: 75%; /* Adjust aspect ratio for mobile */
-            }
-            .video-overlay i {
-                font-size: 2rem;
-                padding: 0.5rem;
-            }
-            .video-overlay h3 {
-                font-size: 1rem;
-            }
-            .video-overlay p {
-                font-size: 0.75rem;
-            }
-            .stats-item {
-                padding: 1rem;
-            }
-            .stats-item div:first-child {
-                font-size: 1.5rem;
-            }
-            .ceo-message {
-                flex-direction: column;
-                text-align: center;
-            }
-            .ceo-message img {
-                width: 150px;
-                height: 150px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr; /* Stack footer columns on mobile */
-                text-align: center;
-            }
+            h1 { font-size: 2rem; line-height: 1.2; }
+            h2 { font-size: 1.75rem; }
+            h3 { font-size: 1.25rem; }
+            p { font-size: 0.875rem; }
+            .logo { width: 30px; height: 30px; }
+            .logo:nth-child(n) { animation: none; }
+            .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
+            .service-icon { width: 50px; height: 50px; font-size: 20px; }
+            .video-placeholder { padding-top: 75%; }
+            .video-overlay i { font-size: 2rem; padding: 0.5rem; }
+            .video-overlay h3 { font-size: 1rem; }
+            .video-overlay p { font-size: 0.75rem; }
+            .stats-item { padding: 1rem; }
+            .stats-item div:first-child { font-size: 1.5rem; }
+            .ceo-message { flex-direction: column; text-align: center; }
+            .ceo-message img { width: 150px; height: 150px; }
+            .footer-grid { grid-template-columns: 1fr; text-align: left; }
         }
     </style>
 </head>
@@ -247,7 +197,6 @@
                 <i class="fas fa-bars text-2xl"></i>
             </button>
         </div>
-        
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-16 shadow-lg py-4 px-6">
             <div class="flex flex-col space-y-4">
@@ -274,10 +223,9 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="logo" alt="PHP Logo">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="logo" alt="MySQL Logo">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="logo" alt="WordPress Logo">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/squarespace/squarespace-original.svg" class="logo" alt="Squarespace Logo">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-original.svg" class="logo" alt="Drupal Logo">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/joomla/joomla-original.svg" class="logo" alt="Joomla Logo">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg" class="logo" alt="Shopify Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="logo" alt="React Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="logo" alt="Node.js Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="logo" alt="Git Logo">
         </div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 mb-10 md:mb-0">
@@ -399,9 +347,7 @@
                     Comprehensive solutions tailored to your business needs, from website development to digital marketing.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Service 1 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-blue-100 text-blue-500 mb-4">
                         <i class="fab fa-wordpress"></i>
@@ -430,8 +376,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20WordPress%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                
-                <!-- Service 2 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-red-100 text-red-500 mb-4">
                         <i class="fab fa-google"></i>
@@ -460,8 +404,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                
-                <!-- Service 3 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-green-100 text-green-500 mb-4">
                         <i class="fas fa-shopping-cart"></i>
@@ -490,8 +432,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Merchant%20Center%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                
-                <!-- Service 4 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-yellow-100 text-yellow-500 mb-4">
                         <i class="fab fa-python"></i>
@@ -520,8 +460,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Python%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                
-                <!-- Service 5 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-purple-100 text-purple-500 mb-4">
                         <i class="fab fa-meta"></i>
@@ -550,8 +488,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Meta%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-
-                <!-- Service 6 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-orange-100 text-orange-500 mb-4">
                         <i class="fas fa-palette"></i>
@@ -580,8 +516,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Branding%20&%20Graphics%20Works%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-
-                <!-- Service 7 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-teal-100 text-teal-500 mb-4">
                         <i class="fas fa-laptop"></i>
@@ -610,8 +544,6 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Laptop%20Troubleshooting%20and%20Maintenance%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-
-                <!-- Service 8 -->
                 <div class="bg-white p-6 rounded-xl card-hover">
                     <div class="service-icon bg-indigo-100 text-indigo-500 mb-4">
                         <i class="fas fa-shopping-basket"></i>
@@ -653,9 +585,7 @@
                     Here are some of our recent WordPress, Google Ads, and hardware projects that delivered exceptional results.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Project 1 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
                         <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-48 md:h-64 object-cover">
@@ -676,8 +606,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 2 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
                         <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-48 md:h-64 object-cover">
@@ -698,8 +626,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 3 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
                         <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-48 md:h-64 object-cover">
@@ -720,8 +646,6 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Project 4 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
                         <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-48 md:h-64 object-cover">
@@ -743,7 +667,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="text-center mt-10">
                 <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium text-sm md:text-base">
                     View All Projects <i class="fas fa-arrow-right ml-2"></i>
@@ -761,7 +684,6 @@
                     A personal note from our leader to our valued clients and partners.
                 </p>
             </div>
-            
             <div class="ceo-message p-6 md:p-12 flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-6 md:mb-0">
                     <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500">
@@ -816,9 +738,7 @@
                     Don't just take our word for it. Here's what our clients have to say about working with us.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Testimonial 1 -->
                 <div class="testimonial-card p-6 rounded-lg">
                     <div class="flex items-center mb-4">
                         <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-4">
@@ -842,8 +762,6 @@
                         <span>Project completed: June 2023</span>
                     </div>
                 </div>
-                
-                <!-- Testimonial 2 -->
                 <div class="testimonial-card p-6 rounded-lg">
                     <div class="flex items-center mb-4">
                         <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-4">
@@ -880,7 +798,6 @@
                     Ready to take your online presence to the next level? Get in touch today for a free consultation.
                 </p>
             </div>
-            
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
                     <div class="space-y-4">
@@ -908,11 +825,9 @@
                         </button>
                     </div>
                 </div>
-                
                 <div>
                     <div class="bg-gray-50 p-6 rounded-xl h-full">
                         <h3 class="text-lg md:text-xl font-bold mb-4">Contact Information</h3>
-                        
                         <div class="space-y-4">
                             <div class="flex items-start">
                                 <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
@@ -923,7 +838,6 @@
                                     <a href="mailto:klintstech@gmail.com" class="text-blue-500 hover:text-blue-700 text-sm md:text-base">klintstech@gmail.com</a>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4">
                                     <i class="fas fa-phone-alt"></i>
@@ -933,7 +847,6 @@
                                     <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800 text-sm md:text-base">+254727624353</a>
                                 </div>
                             </div>
-                            
                             <div class="flex items-start">
                                 <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mr-4">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -944,7 +857,6 @@
                                 </div>
                             </div>
                         </div>
-                        
                         <div class="mt-6">
                             <h4 class="font-medium text-gray-700 mb-4 text-sm md:text-base">Follow Us</h4>
                             <div class="flex space-x-4 justify-center lg:justify-start">
@@ -973,7 +885,7 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 footer-grid">
                 <div>
-                    <div class="flex items-center space-x-2 mb-4 justify-center md:justify-start">
+                    <div class="flex items-center space-x-2 mb-4">
                         <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white">
                             KS
                         </div>
@@ -983,7 +895,6 @@
                         WordPress development and Google Ads expertise to grow your business online.
                     </p>
                 </div>
-                
                 <div>
                     <h4 class="font-bold text-base md:text-lg mb-4">Services</h4>
                     <ul class="space-y-2">
@@ -994,7 +905,6 @@
                         <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="font-bold text-base md:text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
@@ -1005,7 +915,6 @@
                         <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h4 class="font-bold text-base md:text-lg mb-4">Newsletter</h4>
                     <p class="text-gray-400 mb-4 text-sm md:text-base">
@@ -1019,7 +928,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
                 <p class="text-sm md:text-base">© 2025 Klints Solutions. All rights reserved.</p>
             </div>
@@ -1031,7 +939,6 @@
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const mobileMenu = document.getElementById('mobileMenu');
-        
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
@@ -1040,10 +947,7 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
-                // Close mobile menu if open
                 mobileMenu.classList.add('hidden');
-                
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
@@ -1056,11 +960,9 @@
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-
-            // Simple validation
             if (name && email && subject && message) {
                 const whatsappMessage = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
-                window.open(`https://wa.me/254727624353?text=${whatsappMessage}`, '_blank');
+                window.open(`https://wa.me/254727624353?text=${whatsappMessage}`, 'blank');
                 document.getElementById('name').value = '';
                 document.getElementById('email').value = '';
                 document.getElementById('subject').value = '';
@@ -1073,7 +975,6 @@
         // Newsletter submission
         function submitNewsletter() {
             const email = document.querySelector('input[type="email"]').value;
-            
             if (email) {
                 alert(`Thanks for subscribing, ${email}! You'll receive our latest updates soon.`);
                 document.querySelector('input[type="email"]').value = '';
