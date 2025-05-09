@@ -128,70 +128,24 @@
         .ceo-message:hover {
             transform: translateY(-5px);
         }
-        .video-placeholder {
+        .video-container {
             position: relative;
             width: 100%;
             padding-top: 56.25%;
-            background: linear-gradient(135deg, #e0e7ff, #f9fafb);
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
-        .video-placeholder:hover {
+        .video-container:hover {
             transform: scale(1.02);
         }
-        .video-placeholder img {
+        .video-container iframe {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            opacity: 0.8;
-            transition: opacity 0.3s ease;
-        }
-        .video-placeholder:hover img {
-            opacity: 1;
-        }
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
-            text-align: center;
-            transition: background 0.3s ease;
-        }
-        .video-placeholder:hover .video-overlay {
-            background: rgba(0, 0, 0, 0.2);
-        }
-        .video-overlay i {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #4285F4;
-            background: white;
-            border-radius: 50%;
-            padding: 0.75rem;
-            transition: transform 0.3s ease;
-        }
-        .video-placeholder:hover .video-overlay i {
-            transform: scale(1.1);
-        }
-        .video-overlay h3 {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 0.5rem;
-        }
-        .video-overlay p {
-            font-size: 0.875rem;
-            max-width: 80%;
         }
         .nav-link {
             position: relative;
@@ -237,10 +191,7 @@
             .logo:nth-child(n) { animation: none; }
             .max-w-7xl { padding-left: 1rem; padding-right: 1rem; }
             .service-icon { width: 50px; height: 50px; font-size: 20px; }
-            .video-placeholder { padding-top: 75%; }
-            .video-overlay i { font-size: 2rem; padding: 0.5rem; }
-            .video-overlay h3 { font-size: 1rem; }
-            .video-overlay p { font-size: 0.75rem; }
+            .video-container { padding-top: 75%; }
             .stats-item { padding: 1rem; }
             .stats-item div:first-child { font-size: 1.5rem; }
             .ceo-message { flex-direction: column; text-align: center; }
@@ -787,13 +738,8 @@
             </div>
             <div class="flex justify-center">
                 <div class="w-full md:w-3/4">
-                    <div class="video-placeholder">
-                        <img src="https://img.youtube.com/vi/giZwzUVk-GA/maxresdefault.jpg" alt="Digital Marketing Story Placeholder">
-                        <div class="video-overlay">
-                            <i class="fas fa-play-circle"></i>
-                            <h3>Our Digital Marketing Journey</h3>
-                            <p>Learn how we empower businesses with WordPress, Google Ads, and more.</p>
-                        </div>
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/giZwzUVk-GA" title="Our Digital Marketing Journey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="text-center mt-6">
                         <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
