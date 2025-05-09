@@ -14,7 +14,13 @@
             75% { transform: translate(20px, -15px) rotate(3deg); }
             100% { transform: translate(0, 0) rotate(0deg); }
         }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
         .floating { animation: liquidFloat 8s ease-in-out infinite; }
+        .pulse { animation: pulse 2s ease-in-out infinite; }
         .gradient-text {
             background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
             -webkit-background-clip: text;
@@ -54,14 +60,26 @@
             justify-content: center;
             border-radius: 12px;
             font-size: 24px;
+            transition: transform 0.3s ease;
+        }
+        .service-card:hover .service-icon {
+            transform: rotate(360deg);
         }
         .testimonial-card {
             background: linear-gradient(135deg, #f9f9f9, #ffffff);
             border-left: 4px solid #4285F4;
+            transition: transform 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.02);
         }
         .stats-item {
             background: linear-gradient(135deg, #f8f9fa, #ffffff);
             border-radius: 12px;
+            transition: transform 0.3s ease;
+        }
+        .stats-item:hover {
+            transform: scale(1.05);
         }
         .google-blue { background-color: #4285F4; }
         .google-red { background-color: #EA4335; }
@@ -86,6 +104,10 @@
             opacity: 0.7;
             animation: liquidFloat 8s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.2);
         }
         .logo:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
         .logo:nth-child(2) { top: 20%; left: 70%; animation-delay: 0.8s; }
@@ -101,6 +123,10 @@
             background: linear-gradient(135deg, #f9f9f9, #ffffff);
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .ceo-message:hover {
+            transform: translateY(-5px);
         }
         .video-placeholder {
             position: relative;
@@ -110,6 +136,10 @@
             border-radius: 12px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        .video-placeholder:hover {
+            transform: scale(1.02);
         }
         .video-placeholder img {
             position: absolute;
@@ -119,6 +149,10 @@
             height: 100%;
             object-fit: cover;
             opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+        .video-placeholder:hover img {
+            opacity: 1;
         }
         .video-overlay {
             position: absolute;
@@ -133,6 +167,10 @@
             background: rgba(0, 0, 0, 0.3);
             color: white;
             text-align: center;
+            transition: background 0.3s ease;
+        }
+        .video-placeholder:hover .video-overlay {
+            background: rgba(0, 0, 0, 0.2);
         }
         .video-overlay i {
             font-size: 2.5rem;
@@ -141,6 +179,10 @@
             background: white;
             border-radius: 50%;
             padding: 0.75rem;
+            transition: transform 0.3s ease;
+        }
+        .video-placeholder:hover .video-overlay i {
+            transform: scale(1.1);
         }
         .video-overlay h3 {
             font-size: 1.25rem;
@@ -150,6 +192,41 @@
         .video-overlay p {
             font-size: 0.875rem;
             max-width: 80%;
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4285F4, #34A853);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.3s ease;
+        }
+        .btn-primary:hover::before {
+            left: 100%;
         }
         @media (max-width: 768px) {
             h1 { font-size: 2rem; line-height: 1.2; }
@@ -177,21 +254,21 @@
     <nav class="py-4 px-6 lg:px-12 bg-white shadow-sm sticky top-0 z-50">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
             <a href="#home" class="flex items-center space-x-2">
-                <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">
+                <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold pulse">
                     KS
                 </div>
                 <span class="text-xl font-bold">Klints <span class="gradient-text">Solutions</span></span>
             </a>
             <div class="hidden md:flex items-center space-x-6">
-                <a href="#home" class="text-gray-600 hover:text-blue-500 transition font-medium">Home</a>
-                <a href="#services" class="text-gray-600 hover:text-blue-500 transition font-medium">Services</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-blue-500 transition font-medium">Portfolio</a>
-                <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition font-medium">Testimonials</a>
-                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition font-medium">Contact</a>
+                <a href="#home" class="text-gray-600 hover:text-blue-500 transition font-medium nav-link">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-500 transition font-medium nav-link">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-500 transition font-medium nav-link">Portfolio</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition font-medium nav-link">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition font-medium nav-link">Contact</a>
                 <a href="#shop" class="rainbow-shop font-medium">Shop</a>
-                <a href="#search" class="google-red text-white p-2 rounded-full"><i class="fas fa-search"></i></a>
-                <a href="#register" class="google-yellow text-white p-2 rounded-full"><i class="fas fa-user-plus"></i></a>
-                <a href="#login" class="google-green text-white p-2 rounded-full"><i class="fas fa-sign-in-alt"></i></a>
+                <a href="#search" class="google-red text-white p-2 rounded-full hover:scale-110 transition"><i class="fas fa-search"></i></a>
+                <a href="#register" class="google-yellow text-white p-2 rounded-full hover:scale-110 transition"><i class="fas fa-user-plus"></i></a>
+                <a href="#login" class="google-green text-white p-2 rounded-full hover:scale-110 transition"><i class="fas fa-sign-in-alt"></i></a>
             </div>
             <button class="md:hidden text-gray-600" id="mobileMenuButton">
                 <i class="fas fa-bars text-2xl"></i>
@@ -237,7 +314,7 @@
                     Klints Solutions helps businesses grow their online presence with custom WordPress solutions and data-driven Google Ads strategies. Specializing in eCommerce setups with Google Merchant Center integration.
                 </p>
                 <div class="flex flex-wrap gap-3">
-                    <a href="https://wa.me/254727624353" class="px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">
+                    <a href="https://wa.me/254727624353" class="px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
                         Get In Touch <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                     <a href="#portfolio" class="px-5 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium text-sm md:text-base">
@@ -246,9 +323,9 @@
                 </div>
                 <div class="mt-6 flex items-center space-x-4">
                     <div class="flex -space-x-2">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white hover:scale-110 transition">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white hover:scale-110 transition">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white hover:scale-110 transition">
                     </div>
                     <div>
                         <div class="flex items-center">
@@ -262,7 +339,7 @@
             </div>
             <div class="md:w-1/2 flex justify-center">
                 <div class="relative floating">
-                    <div class="w-full max-w-sm md:max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="w-full max-w-sm md:max-w-md bg-white rounded-xl shadow-lg overflow-hidden card-hover">
                         <div class="p-4 bg-gray-100 flex items-center">
                             <div class="flex space-x-2 mr-4">
                                 <div class="w-3 h-3 rounded-full bg-red-500"></div>
@@ -286,8 +363,8 @@
                                     <span class="text-sm font-medium">Shopping Campaign</span>
                                     <span class="text-sm text-green-500 font-medium">+32% ROAS</span>
                                 </div>
-                                <div class="h-2 bg-gray-200 rounded-full">
-                                    <div class="h-2 bg-blue-500 rounded-full" style="width: 75%"></div>
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-2 bg-blue-500 rounded-full transition-all duration-1000" style="width: 0%" id="progress1"></div>
                                 </div>
                                 <div class="flex justify-between mt-1">
                                     <span class="text-xs text-gray-500">$1,250 spent</span>
@@ -299,8 +376,8 @@
                                     <span class="text-sm font-medium">Merchant Center Products</span>
                                     <span class="text-sm text-blue-500 font-medium">1,245 items</span>
                                 </div>
-                                <div class="h-2 bg-gray-200 rounded-full">
-                                    <div class="h-2 bg-green-500 rounded-full" style="width: 90%"></div>
+                                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                                    <div class="h-2 bg-green-500 rounded-full transition-all duration-1000" style="width: 0%" id="progress2"></div>
                                 </div>
                                 <div class="flex justify-between mt-1">
                                     <span class="text-xs text-gray-500">Approval rate: 98%</span>
@@ -319,15 +396,15 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold text-blue-500 mb-2">150+</div>
+                    <div class="text-2xl md:text-3xl font-bold text-blue-500 mb-2" data-count="150">0+</div>
                     <div class="text-gray-600 text-sm md:text-base">WordPress Websites</div>
                 </div>
                 <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold text-green-500 mb-2">$5M+</div>
+                    <div class="text-2xl md:text-3xl font-bold text-green-500 mb-2" data-count="5">$0M+</div>
                     <div class="text-gray-600 text-sm md:text-base">Ad Spend Managed</div>
                 </div>
                 <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold text-yellow-500 mb-2">300%</div>
+                    <div class="text-2xl md:text-3xl font-bold text-yellow-500 mb-2" data-count="300">0%</div>
                     <div class="text-gray-600 text-sm md:text-base">Avg. ROAS Increase</div>
                 </div>
                 <div class="stats-item p-4 md:p-6 text-center">
@@ -348,7 +425,7 @@
                 </p>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-blue-100 text-blue-500 mb-4">
                         <i class="fab fa-wordpress"></i>
                     </div>
@@ -374,9 +451,9 @@
                             Ongoing Maintenance
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20WordPress%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20WordPress%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-red-100 text-red-500 mb-4">
                         <i class="fab fa-google"></i>
                     </div>
@@ -402,9 +479,9 @@
                             Monthly Performance Reports
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-green-100 text-green-500 mb-4">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
@@ -430,9 +507,9 @@
                             Dynamic Remarketing Setup
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Merchant%20Center%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Merchant%20Center%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-yellow-100 text-yellow-500 mb-4">
                         <i class="fab fa-python"></i>
                     </div>
@@ -458,9 +535,9 @@
                             API Integration
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Python%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Python%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-purple-100 text-purple-500 mb-4">
                         <i class="fab fa-meta"></i>
                     </div>
@@ -486,9 +563,9 @@
                             Performance Analytics
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Meta%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Meta%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-orange-100 text-orange-500 mb-4">
                         <i class="fas fa-palette"></i>
                     </div>
@@ -514,9 +591,9 @@
                             Print Design (Flyers, Business Cards)
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Branding%20&%20Graphics%20Works%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Branding%20&%20Graphics%20Works%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-teal-100 text-teal-500 mb-4">
                         <i class="fas fa-laptop"></i>
                     </div>
@@ -542,9 +619,9 @@
                             Preventive Maintenance
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Laptop%20Troubleshooting%20and%20Maintenance%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Laptop%20Troubleshooting%20and%20Maintenance%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
-                <div class="bg-white p-6 rounded-xl card-hover">
+                <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon bg-indigo-100 text-indigo-500 mb-4">
                         <i class="fas fa-shopping-basket"></i>
                     </div>
@@ -570,7 +647,7 @@
                             Peripherals
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20ICT%20Products%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">Visit Shop</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20ICT%20Products%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">Visit Shop</a>
                 </div>
             </div>
         </div>
@@ -588,7 +665,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-48 md:h-64 object-cover">
+                        <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
@@ -602,13 +679,13 @@
                             <div>
                                 <a href="https://www.outlineventures.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.outlineventures.ke</a>
                             </div>
-                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-48 md:h-64 object-cover">
+                        <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
@@ -622,13 +699,13 @@
                             <div>
                                 <a href="https://www.lunartech.co.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.lunartech.co.ke</a>
                             </div>
-                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-48 md:h-64 object-cover">
+                        <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
@@ -642,13 +719,13 @@
                             <div>
                                 <a href="https://www.skypeaksolutions.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.skypeaksolutions.ke</a>
                             </div>
-                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 MD:py-2 bg-blue-500 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-48 md:h-64 object-cover">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">Arduino</span>
@@ -662,13 +739,13 @@
                             <div>
                                 <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">solarcam.project</a>
                             </div>
-                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="text-center mt-10">
-                <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium text-sm md:text-base">
+                <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg btn-primary font-medium text-sm md:text-base">
                     View All Projects <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -686,7 +763,7 @@
             </div>
             <div class="ceo-message p-6 md:p-12 flex flex-col md:flex-row items-center">
                 <div class="md:w-1/3 mb-6 md:mb-0">
-                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500">
+                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500 hover:scale-105 transition">
                 </div>
                 <div class="md:w-2/3 md:pl-8">
                     <h3 class="text-xl md:text-2xl font-bold mb-4">Software Developer Hillary Kamwaro Korir</h3>
@@ -694,7 +771,7 @@
                         At Klints Solutions, our mission is to empower businesses to thrive in the digital age. We are dedicated to building robust online presences through innovative WordPress solutions, strategic Google Ads campaigns, and cutting-edge hardware projects like our solar-powered surveillance systems. Our team provides unwavering technical support to ensure your success, from custom software development to seamless eCommerce integrations. We partner with you to transform your vision into reality, delivering measurable results and exceptional value. Thank you for trusting us to be your partner in growth.
                     </p>
                     <p class="text-gray-600 font-medium text-sm md:text-base">— Software Developer Hillary Kamwaro Korir, CEO</p>
-                    <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">Learn About the Developer</a>
+                    <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">Learn About the Developer</a>
                 </div>
             </div>
         </div>
@@ -720,7 +797,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-6">
-                        <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">
+                        <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
                             Inquire <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -741,7 +818,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="testimonial-card p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-4 hover:scale-110 transition">
                         <div>
                             <h4 class="font-bold text-sm md:text-base">Sarah Johnson</h4>
                             <p class="text-gray-500 text-xs md:text-sm">CEO, Fashion Boutique</p>
@@ -764,7 +841,7 @@
                 </div>
                 <div class="testimonial-card p-6 rounded-lg">
                     <div class="flex items-center mb-4">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-4 hover:scale-110 transition">
                         <div>
                             <h4 class="font-bold text-sm md:text-base">Michael Chen</h4>
                             <p class="text-gray-500 text-xs md:text-sm">Marketing Director, TechStart</p>
@@ -805,22 +882,22 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
                                 <label for="name" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="John Smith">
+                                <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="John Smith">
                             </div>
                             <div>
                                 <label for="email" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="john@example.com">
+                                <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="john@example.com">
                             </div>
                         </div>
                         <div>
                             <label for="subject" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="How can we help you?">
+                            <input type="text" id="subject" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="How can we help you?">
                         </div>
                         <div>
                             <label for="message" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Message</label>
-                            <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="Tell us about your project..."></textarea>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="Tell us about your project..."></textarea>
                         </div>
-                        <button onclick="submitForm()" class="w-full px-5 py-3 md:px-6 md:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">
+                        <button onclick="submitForm()" class="w-full px-5 py-3 md:px-6 md:py-4 bg-blue-500 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
                             Send Message <i class="fas fa-paper-plane ml-2"></i>
                         </button>
                     </div>
@@ -830,7 +907,7 @@
                         <h3 class="text-lg md:text-xl font-bold mb-4">Contact Information</h3>
                         <div class="space-y-4">
                             <div class="flex items-start">
-                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4 hover:scale-110 transition">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
@@ -839,7 +916,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4 hover:scale-110 transition">
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
@@ -847,8 +924,8 @@
                                     <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800 text-sm md:text-base">+254727624353</a>
                                 </div>
                             </div>
-                            <div class="flex items-start">
-                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mr-4">
+                            <div class="flex IXitems-start">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mr-4 hover:scale-110 transition">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
@@ -886,7 +963,7 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-6 footer-grid">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white">
+                        <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white pulse">
                             KS
                         </div>
                         <span class="text-lg md:text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
@@ -921,8 +998,8 @@
                         Subscribe to our newsletter for the latest tips and insights.
                     </p>
                     <div class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full text-sm md:text-base">
-                        <button onclick="submitNewsletter()" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition">
+                        <input type="email" id="newsletterEmail" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full text-sm md:text-base transition-all duration-300">
+                        <button onclick="submitNewsletter()" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg btn-primary">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
@@ -954,6 +1031,39 @@
             });
         });
 
+        // Progress bar animation
+        window.addEventListener('load', () => {
+            document.getElementById('progress1').style.width = '75%';
+            document.getElementById('progress2').style.width = '90%';
+        });
+
+        // Stats counter animation
+        const counters = document.querySelectorAll('[data-count]');
+        const animateCounter = (element, end, suffix) => {
+            let start = 0;
+            const step = end / 100;
+            const interval = setInterval(() => {
+                start += step;
+                if (start >= end) {
+                    start = end;
+                    clearInterval(interval);
+                }
+                element.textContent = Math.floor(start) + suffix;
+            }, 20);
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const element = entry.target;
+                    const end = parseInt(element.getAttribute('data-count'));
+                    const suffix = element.textContent.match(/[+%M$]/) || '';
+                    animateCounter(element, end, suffix);
+                    observer.unobserve(element);
+                }
+            });
+        }, { threshold: 0.5 });
+        counters.forEach(counter => observer.observe(counter));
+
         // Form submission to WhatsApp
         function submitForm() {
             const name = document.getElementById('name').value;
@@ -962,7 +1072,7 @@
             const message = document.getElementById('message').value;
             if (name && email && subject && message) {
                 const whatsappMessage = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
-                window.open(`https://wa.me/254727624353?text=${whatsappMessage}`, 'blank');
+                window.open(`https://wa.me/254727624353?text=${whatsappMessage}`, '_blank');
                 document.getElementById('name').value = '';
                 document.getElementById('email').value = '';
                 document.getElementById('subject').value = '';
@@ -974,10 +1084,10 @@
 
         // Newsletter submission
         function submitNewsletter() {
-            const email = document.querySelector('input[type="email"]').value;
+            const email = document.getElementById('newsletterEmail').value;
             if (email) {
                 alert(`Thanks for subscribing, ${email}! You'll receive our latest updates soon.`);
-                document.querySelector('input[type="email"]').value = '';
+                document.getElementById('newsletterEmail').value = '';
             } else {
                 alert('Please enter a valid email address.');
             }
