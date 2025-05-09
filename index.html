@@ -104,6 +104,55 @@
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
         }
+        .video-placeholder {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: linear-gradient(135deg, #e0e7ff, #f9fafb);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .video-placeholder img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+            text-align: center;
+        }
+        .video-overlay i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #4285F4;
+            background: white;
+            border-radius: 50%;
+            padding: 1rem;
+        }
+        .video-overlay h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .video-overlay p {
+            font-size: 1rem;
+            max-width: 80%;
+        }
     </style>
 </head>
 <body class="bg-gray-50 font-sans">
@@ -460,6 +509,66 @@
                     </ul>
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Branding%20&%20Graphics%20Works%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
                 </div>
+
+                <!-- Service 7 -->
+                <div class="bg-white p-8 rounded-xl card-hover">
+                    <div class="service-icon bg-teal-100 text-teal-500 mb-6">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Laptop Troubleshooting and Maintenance</h3>
+                    <p class="text-gray-600 mb-4">
+                        Expert repair and maintenance services for laptops to ensure optimal performance and longevity.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Hardware Diagnostics
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Software Repairs
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Performance Optimization
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Preventive Maintenance
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Laptop%20Troubleshooting%20and%20Maintenance%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="bg-white p-8 rounded-xl card-hover">
+                    <div class="service-icon bg-indigo-100 text-indigo-500 mb-6">
+                        <i class="fas fa-shopping-basket"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">ICT Products</h3>
+                    <p class="text-gray-600 mb-4">
+                        High-quality ICT products to enhance your business and personal computing needs.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Laptops & Accessories
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Networking Equipment
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Software Solutions
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Peripherals
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20ICT%20Products%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">Visit Shop</a>
+                </div>
             </div>
         </div>
     </section>
@@ -492,7 +601,7 @@
                             <div>
                                 <a href="https://www.outlineventures.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.outlineventures.ke</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">View Case Study</a>
+                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -514,7 +623,7 @@
                             <div>
                                 <a href="https://www.lunartech.co.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.lunartech.co.ke</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">View Case Study</a>
+                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -536,7 +645,7 @@
                             <div>
                                 <a href="https://www.skypeaksolutions.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.skypeaksolutions.ke</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">View Case Study</a>
+                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -558,7 +667,7 @@
                             <div>
                                 <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">solarcam.project</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">View Case Study</a>
+                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -593,6 +702,35 @@
                     </p>
                     <p class="text-gray-600 font-medium">— Software Developer Hillary Kamwaro Korir, CEO</p>
                     <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">Learn About the Developer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch Our Story Video Section -->
+    <section id="watch-story" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Watch Our <span class="gradient-text">Story</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Discover how Klints Solutions helps businesses grow with innovative digital marketing and technology solutions.
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-full md:w-3/4">
+                    <div class="video-placeholder">
+                        <img src="https://images.unsplash.com/photo-1551288049-b4f3a6429099?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Digital Marketing Story Placeholder">
+                        <div class="video-overlay">
+                            <i class="fas fa-play-circle"></i>
+                            <h3>Our Digital Marketing Journey</h3>
+                            <p>Learn how we empower businesses with WordPress, Google Ads, and more.</p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-6">
+                        <a href="#contact" class="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">
+                            Inquire <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
