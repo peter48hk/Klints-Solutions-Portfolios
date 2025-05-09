@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klints Solutions | WordPress & Google Ads Expert</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        @keyframes floatLogo {
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(20px, -30px); }
+            50% { transform: translate(-20px, 20px); }
+            75% { transform: translate(30px, -20px); }
+            100% { transform: translate(0, 0); }
+        }
+        .floating { animation: float 6s ease-in-out infinite; }
+        .gradient-text {
+            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .rainbow-shop {
+            background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        .rainbow-shop::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            font-size: 24px;
+        }
+        .testimonial-card {
+            background: linear-gradient(135deg, #f9f9f9, #ffffff);
+            border-left: 4px solid #4285F4;
+        }
+        .stats-item {
+            background: linear-gradient(135deg, #f8f9fa, #ffffff);
+            border-radius: 12px;
+        }
+        .google-blue { background-color: #4285F4; }
+        .google-red { background-color: #EA4335; }
+        .google-yellow { background-color: #FBBC05; }
+        .google-green { background-color: #34A853; }
+        .logo-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            background-image: url('https://images.unsplash.com/photo-1516321310768-8340f6721307?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-opacity: 0.3;
+        }
+        .logo {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.8;
+            animation: floatLogo 15s ease-in-out infinite;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+        }
+        .logo:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+        .logo:nth-child(2) { top: 20%; left: 70%; animation-delay: 2s; }
+        .logo:nth-child(3) { top: 30%; left: 30%; animation-delay: 4s; }
+        .logo:nth-child(4) { top: 50%; left: 85%; animation-delay: 6s; }
+        .logo:nth-child(5) { top: 60%; left: 20%; animation-delay: 8s; }
+        .logo:nth-child(6) { top: 70%; left: 60%; animation-delay: 10s; }
+        .logo:nth-child(7) { top: 80%; left: 40%; animation-delay: 12s; }
+        .ceo-message {
+            background: linear-gradient(135deg, #f9f9f9, #ffffff);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+    <!-- Navigation -->
+    <nav class="py-4 px-6 lg:px-12 bg-white shadow-sm sticky top-0 z-50">
+        <div class="flex justify-between items-center max-w-7xl mx-auto">
+            <div class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-lg bg-blue-500 flex items-center justify-center text-white font-bold">
+                    KS
+                </div>
+                <span class="text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-gray-600 hover:text-blue-500 transition font-medium">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-500 transition font-medium">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-500 transition font-medium">Portfolio</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition font-medium">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition font-medium">Contact</a>
+                <a href="#shop" class="rainbow-shop font-medium">Shop</a>
+                <a href="#search" class="google-red text-white p-2 rounded-full"><i class="fas fa-search"></i></a>
+                <a href="#register" class="google-yellow text-white p-2 rounded-full"><i class="fas fa-user-plus"></i></a>
+                <a href="#login" class="google-green text-white p-2 rounded-full"><i class="fas fa-sign-in-alt"></i></a>
+            </div>
+            <button class="md:hidden text-gray-600" id="mobileMenuButton">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-16 shadow-lg py-4 px-6">
+            <div class="flex flex-col space-y-4">
+                <a href="#home" class="text-gray-600 hover:text-blue-500 transition font-medium">Home</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-500 transition font-medium">Services</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-blue-500 transition font-medium">Portfolio</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-500 transition font-medium">Testimonials</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-500 transition font-medium">Contact</a>
+                <a href="#shop" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
+                <a href="#search" class="text-gray-600 hover:text-blue-500 transition font-medium"><i class="fas fa-search mr-2"></i>Search</a>
+                <a href="#register" class="text-gray-600 hover:text-blue-500 transition font-medium"><i class="fas fa-user-plus mr-2"></i>Register</a>
+                <a href="#login" class="text-gray-600 hover:text-blue-500 transition font-medium"><i class="fas fa-sign-in-alt mr-2"></i>Login</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="py-16 md:py-24 px-6 bg-gradient-to-r from-blue-50 to-purple-50 relative">
+        <div class="logo-container">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo" alt="Python Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="logo" alt="JavaScript Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="logo" alt="HTML5 Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="logo" alt="CSS3 Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="logo" alt="PHP Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="logo" alt="MySQL Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="logo" alt="WordPress Logo">
+        </div>
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                    <span class="gradient-text">WordPress</span> & <br>
+                    <span class="gradient-text">Google Ads</span> Expert
+                </h1>
+                <p class="text-gray-600 text-lg mb-8 max-w-lg">
+                    Klints Solutions helps businesses grow their online presence with custom WordPress solutions and data-driven Google Ads strategies. Specializing in eCommerce setups with Google Merchant Center integration.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#contact" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">
+                        Get In Touch <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#portfolio" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium">
+                        View Our Work
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center space-x-4">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                    </div>
+                    <div>
+                        <div class="flex items-center">
+                            <i class="fas fa-star text-yellow-400 mr-1"></i>
+                            <span class="font-medium">5.0</span>
+                            <span class="text-gray-500 ml-1">(128 reviews)</span>
+                        </div>
+                        <p class="text-sm text-gray-500">Trusted by 50+ clients worldwide</p>
+                    </div>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative floating">
+                    <div class="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+                        <div class="p-4 bg-gray-100 flex items-center">
+                            <div class="flex space-x-2 mr-4">
+                                <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                            </div>
+                            <div class="text-sm text-gray-600">www.clientwebsite.com/wp-admin</div>
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center mb-6">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
+                                    <i class="fab fa-google"></i>
+                                </div>
+                                <div>
+                                    <h3 class="font-bold">Google Ads Dashboard</h3>
+                                    <p class="text-sm text-gray-500">Campaign Performance</p>
+                                </div>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-4 mb-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium">Shopping Campaign</span>
+                                    <span class="text-sm text-green-500 font-medium">+32% ROAS</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-blue-500 rounded-full" style="width: 75%"></div>
+                                </div>
+                                <div class="flex justify-between mt-1">
+                                    <span class="text-xs text-gray-500">$1,250 spent</span>
+                                    <span class="text-xs text-gray-500">$4,000 revenue</span>
+                                </div>
+                            </div>
+                            <div class="bg-gray-100 rounded-lg p-4">
+                                <div class="flex justify-between items-center mb-2">
+                                    <span class="text-sm font-medium">Merchant Center Products</span>
+                                    <span class="text-sm text-blue-500 font-medium">1,245 items</span>
+                                </div>
+                                <div class="h-2 bg-gray-200 rounded-full">
+                                    <div class="h-2 bg-green-500 rounded-full" style="width: 90%"></div>
+                                </div>
+                                <div class="flex justify-between mt-1">
+                                    <span class="text-xs text-gray-500">Approval rate: 98%</span>
+                                    <span class="text-xs text-gray-500">Last sync: 5 min ago</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="stats-item p-6 text-center">
+                    <div class="text-3xl font-bold text-blue-500 mb-2">150+</div>
+                    <div class="text-gray-600">WordPress Websites</div>
+                </div>
+                <div class="stats-item p-6 text-center">
+                    <div class="text-3xl font-bold text-green-500 mb-2">$5M+</div>
+                    <div class="text-gray-600">Ad Spend Managed</div>
+                </div>
+                <div class="stats-item p-6 text-center">
+                    <div class="text-3xl font-bold text-yellow-500 mb-2">300%</div>
+                    <div class="text-gray-600">Avg. ROAS Increase</div>
+                </div>
+                <div class="stats-item p-6 text-center">
+                    <div class="text-3xl font-bold text-red-500 mb-2">24/7</div>
+                    <div class="text-gray-600">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Comprehensive solutions tailored to your business needs, from website development to digital marketing.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-xl card-hover">
+                    <div class="service-icon bg-blue-100 text-blue-500 mb-6">
+                        <i class="fab fa-wordpress"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">WordPress Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Custom WordPress websites built for performance, security, and scalability. From simple blogs to complex eCommerce solutions.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Custom Theme Development
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            WooCommerce Integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Performance Optimization
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Ongoing Maintenance
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-xl card-hover">
+                    <div class="service-icon bg-red-100 text-red-500 mb-6">
+                        <i class="fab fa-google"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Google Ads Management</h3>
+                    <p class="text-gray-600 mb-4">
+                        Data-driven Google Ads campaigns that maximize your ROI. Specializing in Shopping, Search, and Display campaigns.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Campaign Strategy & Setup
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Conversion Tracking
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            A/B Testing & Optimization
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Monthly Performance Reports
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-xl card-hover">
+                    <div class="service-icon bg-green-100 text-green-500 mb-6">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Google Merchant Center</h3>
+                    <p class="text-gray-600 mb-4">
+                        Complete setup and optimization of your Google Merchant Center account for maximum product visibility.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Product Feed Creation
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            WooCommerce Integration
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Troubleshooting & Fixes
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Dynamic Remarketing Setup
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-xl card-hover">
+                    <div class="service-icon bg-yellow-100 text-yellow-500 mb-6">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Python Development</h3>
+                    <p class="text-gray-600 mb-4">
+                        Expert Python programming for custom applications, automation, and data analysis solutions.
+                    </p>
+                    <ul class="space-y-2 text-gray-600">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Custom Application Development
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Automation Scripts
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            Data Analysis & Visualization
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            API Integration
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Recent <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Here are some of our recent WordPress, Google Ads, and hardware projects that delivered exceptional results.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Project 1 -->
+                <div class="rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Outline Ventures" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
+                                <h3 class="text-white text-xl font-bold mt-2">Outline Ventures</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50">
+                        <p class="text-gray-600 mb-4">A dynamic business website built with WordPress for enhanced user engagement.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="https://www.outlineventures.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.outlineventures.ke</a>
+                            </div>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Lunar Tech" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
+                                <h3 class="text-white text-xl font-bold mt-2">Lunar Tech</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50">
+                        <p class="text-gray-600 mb-4">A tech-focused website with custom WordPress development for seamless performance.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="https://www.lunartech.co.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.lunartech.co.ke</a>
+                            </div>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8b9c40?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" alt="Skypeak Solutions" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
+                                <h3 class="text-white text-xl font-bold mt-2">Skypeak Solutions</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50">
+                        <p class="text-gray-600 mb-4">A professional website for IT solutions with optimized WordPress performance.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="https://www.skypeaksolutions.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.skypeaksolutions.ke</a>
+                            </div>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="rounded-xl overflow-hidden card-hover">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">Arduino</span>
+                                <h3 class="text-white text-xl font-bold mt-2">Solar Control Camera</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-gray-50">
+                        <p class="text-gray-600 mb-4">A standalone solar-powered surveillance camera system developed using Arduino for remote monitoring.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">solarcam.project</a>
+                            </div>
+                            <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">View Case Study <i class="fas fa-arrow-right ml-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CEO Message Section -->
+    <section id="ceo-message" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Message from Our <span class="gradient-text">CEO</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    A personal note from our leader to our valued clients and partners.
+                </p>
+            </div>
+            
+            <div class="ceo-message p-8 md:p-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <img src="https://via.placeholder.com/256x256.png?text=CEO+Photo" alt="Engineer Hillary Kamwaro Korir" class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500">
+                    <!-- Replace the src URL above with the actual hosted URL of the uploaded image -->
+                </div>
+                <div class="md:w-2/3 md:pl-8">
+                    <h3 class="text-2xl font-bold mb-4">Engineer Hillary Kamwaro Korir</h3>
+                    <p class="text-gray-600 mb-4">
+                        At Klints Solutions, our mission is to empower businesses to thrive in the digital age. We are dedicated to building robust online presences through innovative WordPress solutions, strategic Google Ads campaigns, and cutting-edge hardware projects like our solar-powered surveillance systems. Our team provides unwavering technical support to ensure your success, from custom software development to seamless eCommerce integrations. We partner with you to transform your vision into reality, delivering measurable results and exceptional value. Thank you for trusting us to be your partner in growth.
+                    </p>
+                    <p class="text-gray-600 font-medium">— Engineer Hillary Kamwaro Korir, CEO</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Don't just take our word for it. Here's what our clients have to say about working with us.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">CEO, Fashion Boutique</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Klints Solutions transformed our online store. Their WooCommerce setup with Google Shopping integration increased our revenue by 150% in just 3 months. Their attention to detail is incredible."
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Project completed: June 2023</span>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-8 rounded-lg">
+                    <div class="flex items-center mb-6">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">Marketing Director, TechStart</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "We were struggling with our Google Ads account until Klints Solutions took over. They restructured our campaigns and implemented proper tracking. Our cost per lead dropped by 60% while lead quality improved significantly."
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Project completed: March 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Work Together</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">
+                    Ready to take your online presence to the next level? Get in touch today for a free consultation.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="How can we help you?">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button onclick="submitForm()" class="w-full px-6 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Email</h4>
+                                    <a href="mailto:klintstech@gmail.com" class="text-blue-500 hover:text-blue-700">klintstech@gmail.com</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Phone</h4>
+                                    <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800">+254727624353</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 mr-4">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700">Location</h4>
+                                    <p class="text-gray-600">Nairobi CBD, Kimathi Street, Old Mutual Building</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-700 mb-4">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-blue-400 hover:text-white transition">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-gray-800 hover:text-white transition">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-red-500 hover:text-white transition">
+                                    <i class="fab fa-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white">
+                            KS
+                        </div>
+                        <span class="text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
+                    </div>
+                    <p class="text-gray-400">
+                        WordPress development and Google Ads expertise to grow your business online.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">WordPress Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Google Ads Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Merchant Center Setup</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">eCommerce Solutions</a></li>
+                        <li><a href="#shop" class="rainbow-shop">Shop</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
+                        <li><a href="#shop" class="rainbow-shop">Shop</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest tips and insights.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <button onclick="submitNewsletter()" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>© 2025 Klints Solutions. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                // Close mobile menu if open
+                mobileMenu.classList.add('hidden');
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // Simple validation
+            if (name && email) {
+                alert(`Thanks for your message, ${name}! We'll get back to you at ${email} soon.`);
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('subject').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+
+        // Newsletter submission
+        function submitNewsletter() {
+            const email = document.querySelector('input[type="email"]').value;
+            
+            if (email) {
+                alert(`Thanks for subscribing, ${email}! You'll receive our latest updates soon.`);
+                document.querySelector('input[type="email"]').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+</html>
