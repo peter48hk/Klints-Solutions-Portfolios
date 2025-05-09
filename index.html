@@ -86,19 +86,23 @@
         }
         .logo {
             position: absolute;
-            width: 80px;
-            height: 80px;
+            width: 60px; /* Medium size for logos */
+            height: 60px;
             opacity: 0.8;
             animation: floatLogo 15s ease-in-out infinite;
             filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
         }
-        .logo:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
-        .logo:nth-child(2) { top: 20%; left: 70%; animation-delay: 2s; }
-        .logo:nth-child(3) { top: 30%; left: 30%; animation-delay: 4s; }
-        .logo:nth-child(4) { top: 50%; left: 85%; animation-delay: 6s; }
-        .logo:nth-child(5) { top: 60%; left: 20%; animation-delay: 8s; }
-        .logo:nth-child(6) { top: 70%; left: 60%; animation-delay: 10s; }
-        .logo:nth-child(7) { top: 80%; left: 40%; animation-delay: 12s; }
+        .logo:nth-child(1) { top: 5%; left: 10%; animation-delay: 0s; }
+        .logo:nth-child(2) { top: 15%; left: 65%; animation-delay: 1.5s; }
+        .logo:nth-child(3) { top: 25%; left: 25%; animation-delay: 3s; }
+        .logo:nth-child(4) { top: 40%; left: 80%; animation-delay: 4.5s; }
+        .logo:nth-child(5) { top: 50%; left: 15%; animation-delay: 6s; }
+        .logo:nth-child(6) { top: 60%; left: 55%; animation-delay: 7.5s; }
+        .logo:nth-child(7) { top: 70%; left: 35%; animation-delay: 9s; }
+        .logo:nth-child(8) { top: 20%; left: 45%; animation-delay: 10.5s; }
+        .logo:nth-child(9) { top: 35%; left: 70%; animation-delay: 12s; }
+        .logo:nth-child(10) { top: 55%; left: 30%; animation-delay: 13.5s; }
+        .logo:nth-child(11) { top: 65%; left: 85%; animation-delay: 15s; }
         .ceo-message {
             background: linear-gradient(135deg, #f9f9f9, #ffffff);
             border-radius: 12px;
@@ -137,21 +141,84 @@
             text-align: center;
         }
         .video-overlay i {
-            font-size: 3rem;
+            font-size: 2.5rem;
             margin-bottom: 1rem;
             color: #4285F4;
             background: white;
             border-radius: 50%;
-            padding: 1rem;
+            padding: 0.75rem;
         }
         .video-overlay h3 {
-            font-size: 1.5rem;
+            font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 0.5rem;
         }
         .video-overlay p {
-            font-size: 1rem;
+            font-size: 0.875rem;
             max-width: 80%;
+        }
+        /* Mobile-specific styles */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem; /* Smaller heading on mobile */
+                line-height: 1.2;
+            }
+            h2 {
+                font-size: 1.75rem;
+            }
+            h3 {
+                font-size: 1.25rem;
+            }
+            p {
+                font-size: 0.875rem;
+            }
+            .logo {
+                width: 40px; /* Smaller logos on mobile */
+                height: 40px;
+            }
+            .logo:nth-child(n) {
+                animation: none; /* Disable logo animation on mobile for performance */
+            }
+            .max-w-7xl {
+                padding-left: 1rem;
+                padding-right: 1rem;
+            }
+            .service-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            .video-placeholder {
+                padding-top: 75%; /* Adjust aspect ratio for mobile */
+            }
+            .video-overlay i {
+                font-size: 2rem;
+                padding: 0.5rem;
+            }
+            .video-overlay h3 {
+                font-size: 1rem;
+            }
+            .video-overlay p {
+                font-size: 0.75rem;
+            }
+            .stats-item {
+                padding: 1rem;
+            }
+            .stats-item div:first-child {
+                font-size: 1.5rem;
+            }
+            .ceo-message {
+                flex-direction: column;
+                text-align: center;
+            }
+            .ceo-message img {
+                width: 150px;
+                height: 150px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr; /* Stack footer columns on mobile */
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -165,7 +232,7 @@
                 </div>
                 <span class="text-xl font-bold">Klints <span class="gradient-text">Solutions</span></span>
             </a>
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="#home" class="text-gray-600 hover:text-blue-500 transition font-medium">Home</a>
                 <a href="#services" class="text-gray-600 hover:text-blue-500 transition font-medium">Services</a>
                 <a href="#portfolio" class="text-gray-600 hover:text-blue-500 transition font-medium">Portfolio</a>
@@ -198,7 +265,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="py-16 md:py-24 px-6 bg-gradient-to-r from-blue-50 to-purple-50 relative">
+    <section id="home" class="py-12 md:py-20 px-6 bg-gradient-to-r from-blue-50 to-purple-50 relative">
         <div class="logo-container">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo" alt="Python Logo">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="logo" alt="JavaScript Logo">
@@ -207,59 +274,63 @@
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" class="logo" alt="PHP Logo">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" class="logo" alt="MySQL Logo">
             <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" class="logo" alt="WordPress Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/squarespace/squarespace-original.svg" class="logo" alt="Squarespace Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/drupal/drupal-original.svg" class="logo" alt="Drupal Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/joomla/joomla-original.svg" class="logo" alt="Joomla Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/shopify/shopify-original.svg" class="logo" alt="Shopify Logo">
         </div>
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
-            <div class="md:w-1/2 mb-12 md:mb-0">
-                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
                     <span class="gradient-text">WordPress</span> & <br>
                     <span class="gradient-text">Google Ads</span> Expert
                 </h1>
-                <p class="text-gray-600 text-lg mb-8 max-w-lg">
+                <p class="text-gray-600 text-base md:text-lg mb-6 max-w-lg">
                     Klints Solutions helps businesses grow their online presence with custom WordPress solutions and data-driven Google Ads strategies. Specializing in eCommerce setups with Google Merchant Center integration.
                 </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/254727624353" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">
+                <div class="flex flex-wrap gap-3">
+                    <a href="https://wa.me/254727624353" class="px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">
                         Get In Touch <i class="fas fa-arrow-right ml-2"></i>
                     </a>
-                    <a href="#portfolio" class="px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium">
+                    <a href="#portfolio" class="px-5 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium text-sm md:text-base">
                         View Our Work
                     </a>
                 </div>
-                <div class="mt-8 flex items-center space-x-4">
+                <div class="mt-6 flex items-center space-x-4">
                     <div class="flex -space-x-2">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-white">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-10 h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 md:w-10 md:h-10 rounded-full border-2 border-white">
                     </div>
                     <div>
                         <div class="flex items-center">
                             <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <span class="font-medium">5.0</span>
-                            <span class="text-gray-500 ml-1">(128 reviews)</span>
+                            <span class="font-medium text-sm md:text-base">5.0</span>
+                            <span class="text-gray-500 ml-1 text-sm md:text-base">(128 reviews)</span>
                         </div>
-                        <p class="text-sm text-gray-500">Trusted by 50+ clients worldwide</p>
+                        <p class="text-xs md:text-sm text-gray-500">Trusted by 50+ clients worldwide</p>
                     </div>
                 </div>
             </div>
             <div class="md:w-1/2 flex justify-center">
                 <div class="relative floating">
-                    <div class="w-full max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="w-full max-w-sm md:max-w-md bg-white rounded-xl shadow-lg overflow-hidden">
                         <div class="p-4 bg-gray-100 flex items-center">
                             <div class="flex space-x-2 mr-4">
                                 <div class="w-3 h-3 rounded-full bg-red-500"></div>
                                 <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
                                 <div class="w-3 h-3 rounded-full bg-green-500"></div>
                             </div>
-                            <div class="text-sm text-gray-600">www.clientwebsite.com/wp-admin</div>
+                            <div class="text-xs md:text-sm text-gray-600">www.clientwebsite.com/wp-admin</div>
                         </div>
-                        <div class="p-6">
+                        <div class="p-4 md:p-6">
                             <div class="flex items-center mb-6">
                                 <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
                                     <i class="fab fa-google"></i>
                                 </div>
                                 <div>
-                                    <h3 class="font-bold">Google Ads Dashboard</h3>
-                                    <p class="text-sm text-gray-500">Campaign Performance</p>
+                                    <h3 class="font-bold text-sm md:text-base">Google Ads Dashboard</h3>
+                                    <p class="text-xs md:text-sm text-gray-500">Campaign Performance</p>
                                 </div>
                             </div>
                             <div class="bg-gray-100 rounded-lg p-4 mb-4">
@@ -296,50 +367,50 @@
     </section>
 
     <!-- Stats Section -->
-    <section class="py-12 bg-white">
+    <section class="py-10 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stats-item p-6 text-center">
-                    <div class="text-3xl font-bold text-blue-500 mb-2">150+</div>
-                    <div class="text-gray-600">WordPress Websites</div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-blue-500 mb-2">150+</div>
+                    <div class="text-gray-600 text-sm md:text-base">WordPress Websites</div>
                 </div>
-                <div class="stats-item p-6 text-center">
-                    <div class="text-3xl font-bold text-green-500 mb-2">$5M+</div>
-                    <div class="text-gray-600">Ad Spend Managed</div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-green-500 mb-2">$5M+</div>
+                    <div class="text-gray-600 text-sm md:text-base">Ad Spend Managed</div>
                 </div>
-                <div class="stats-item p-6 text-center">
-                    <div class="text-3xl font-bold text-yellow-500 mb-2">300%</div>
-                    <div class="text-gray-600">Avg. ROAS Increase</div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-yellow-500 mb-2">300%</div>
+                    <div class="text-gray-600 text-sm md:text-base">Avg. ROAS Increase</div>
                 </div>
-                <div class="stats-item p-6 text-center">
-                    <div class="text-3xl font-bold text-red-500 mb-2">24/7</div>
-                    <div class="text-gray-600">Support Available</div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold text-red-500 mb-2">24/7</div>
+                    <div class="text-gray-600 text-sm md:text-base">Support Available</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-16 bg-gray-50">
+    <section id="services" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Our <span class="gradient-text">Services</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                     Comprehensive solutions tailored to your business needs, from website development to digital marketing.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Service 1 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-blue-100 text-blue-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-blue-100 text-blue-500 mb-4">
                         <i class="fab fa-wordpress"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">WordPress Development</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">WordPress Development</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Custom WordPress websites built for performance, security, and scalability. From simple blogs to complex eCommerce solutions.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Custom Theme Development
@@ -357,19 +428,19 @@
                             Ongoing Maintenance
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20WordPress%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20WordPress%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
                 
                 <!-- Service 2 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-red-100 text-red-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-red-100 text-red-500 mb-4">
                         <i class="fab fa-google"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Google Ads Management</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Google Ads Management</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Data-driven Google Ads campaigns that maximize your ROI. Specializing in Shopping, Search, and Display campaigns.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Campaign Strategy & Setup
@@ -387,19 +458,19 @@
                             Monthly Performance Reports
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
                 
                 <!-- Service 3 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-green-100 text-green-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-green-100 text-green-500 mb-4">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Google Merchant Center</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Google Merchant Center</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Complete setup and optimization of your Google Merchant Center account for maximum product visibility.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Product Feed Creation
@@ -417,19 +488,19 @@
                             Dynamic Remarketing Setup
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Merchant%20Center%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Merchant%20Center%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
                 
                 <!-- Service 4 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-yellow-100 text-yellow-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-yellow-100 text-yellow-500 mb-4">
                         <i class="fab fa-python"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Python Development</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Python Development</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Expert Python programming for custom applications, automation, and data analysis solutions.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Custom Application Development
@@ -447,19 +518,19 @@
                             API Integration
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Python%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Python%20Development%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
                 
                 <!-- Service 5 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-purple-100 text-purple-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-purple-100 text-purple-500 mb-4">
                         <i class="fab fa-meta"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Meta Ads Management (Instagram & Facebook)</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Meta Ads Management (Instagram & Facebook)</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Targeted advertising solutions for Instagram and Facebook to boost your brand and drive conversions.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Campaign Strategy & Setup
@@ -477,19 +548,19 @@
                             Performance Analytics
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Meta%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Meta%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
 
                 <!-- Service 6 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-orange-100 text-orange-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-orange-100 text-orange-500 mb-4">
                         <i class="fas fa-palette"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Branding & Graphics Works</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Branding & Graphics Works</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Professional branding and graphics services to elevate your business identity across digital and print media.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Logo Design & Branding
@@ -507,19 +578,19 @@
                             Print Design (Flyers, Business Cards)
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Branding%20&%20Graphics%20Works%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Branding%20&%20Graphics%20Works%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
 
                 <!-- Service 7 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-teal-100 text-teal-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-teal-100 text-teal-500 mb-4">
                         <i class="fas fa-laptop"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">Laptop Troubleshooting and Maintenance</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Laptop Troubleshooting and Maintenance</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         Expert repair and maintenance services for laptops to ensure optimal performance and longevity.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Hardware Diagnostics
@@ -537,19 +608,19 @@
                             Preventive Maintenance
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Laptop%20Troubleshooting%20and%20Maintenance%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Laptop%20Troubleshooting%20and%20Maintenance%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
 
                 <!-- Service 8 -->
-                <div class="bg-white p-8 rounded-xl card-hover">
-                    <div class="service-icon bg-indigo-100 text-indigo-500 mb-6">
+                <div class="bg-white p-6 rounded-xl card-hover">
+                    <div class="service-icon bg-indigo-100 text-indigo-500 mb-4">
                         <i class="fas fa-shopping-basket"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3">ICT Products</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-lg md:text-xl font-bold mb-3">ICT Products</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         High-quality ICT products to enhance your business and personal computing needs.
                     </p>
-                    <ul class="space-y-2 text-gray-600">
+                    <ul class="space-y-2 text-gray-600 text-sm md:text-base">
                         <li class="flex items-center">
                             <i class="fas fa-check-circle text-green-500 mr-2"></i>
                             Laptops & Accessories
@@ -567,41 +638,41 @@
                             Peripherals
                         </li>
                     </ul>
-                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20ICT%20Products%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium">Visit Shop</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20ICT%20Products%20service" class="mt-4 inline-block px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-green-600 transition font-medium text-sm md:text-base">Visit Shop</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Portfolio Section -->
-    <section id="portfolio" class="py-16 bg-white">
+    <section id="portfolio" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Recent <span class="gradient-text">Projects</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Recent <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                     Here are some of our recent WordPress, Google Ads, and hardware projects that delivered exceptional results.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Project 1 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-64 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-48 md:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
-                                <h3 class="text-white text-xl font-bold mt-2">Outline Ventures</h3>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Outline Ventures</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 bg-gray-50">
-                        <p class="text-gray-600 mb-4">A dynamic business website built with WordPress for enhanced user engagement.</p>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A dynamic business website built with WordPress for enhanced user engagement.</p>
                         <div class="flex justify-between items-center">
                             <div>
                                 <a href="https://www.outlineventures.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.outlineventures.ke</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -609,21 +680,21 @@
                 <!-- Project 2 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-64 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-48 md:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-purple-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
-                                <h3 class="text-white text-xl font-bold mt-2">Lunar Tech</h3>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Lunar Tech</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 bg-gray-50">
-                        <p class="text-gray-600 mb-4">A tech-focused website with custom WordPress development for seamless performance.</p>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A tech-focused website with custom WordPress development for seamless performance.</p>
                         <div class="flex justify-between items-center">
                             <div>
                                 <a href="https://www.lunartech.co.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.lunartech.co.ke</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -631,21 +702,21 @@
                 <!-- Project 3 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-64 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-48 md:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-green-500 text-white text-xs px-2 py-1 rounded">WordPress</span>
-                                <h3 class="text-white text-xl font-bold mt-2">Skypeak Solutions</h3>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Skypeak Solutions</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 bg-gray-50">
-                        <p class="text-gray-600 mb-4">A professional website for IT solutions with optimized WordPress performance.</p>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A professional website for IT solutions with optimized WordPress performance.</p>
                         <div class="flex justify-between items-center">
                             <div>
                                 <a href="https://www.skypeaksolutions.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.skypeaksolutions.ke</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
@@ -653,28 +724,28 @@
                 <!-- Project 4 -->
                 <div class="rounded-xl overflow-hidden card-hover">
                     <div class="relative">
-                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-64 object-cover">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-48 md:h-64 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
                                 <span class="bg-orange-500 text-white text-xs px-2 py-1 rounded">Arduino</span>
-                                <h3 class="text-white text-xl font-bold mt-2">Solar Control Camera</h3>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Solar Control Camera</h3>
                             </div>
                         </div>
                     </div>
-                    <div class="p-6 bg-gray-50">
-                        <p class="text-gray-600 mb-4">A standalone solar-powered surveillance camera system developed using Arduino for remote monitoring.</p>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A standalone solar-powered surveillance camera system developed using Arduino for remote monitoring.</p>
                         <div class="flex justify-between items-center">
                             <div>
                                 <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">solarcam.project</a>
                             </div>
-                            <a href="#" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto">(Case Study)</a>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
             </div>
             
-            <div class="text-center mt-12">
-                <a href="#" class="inline-flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium">
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition font-medium text-sm md:text-base">
                     View All Projects <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -682,37 +753,37 @@
     </section>
 
     <!-- CEO Message Section -->
-    <section id="ceo-message" class="py-16 bg-gray-50">
+    <section id="ceo-message" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Message from Our <span class="gradient-text">CEO</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Message from Our <span class="gradient-text">CEO</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                     A personal note from our leader to our valued clients and partners.
                 </p>
             </div>
             
-            <div class="ceo-message p-8 md:p-12 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-8 md:mb-0">
-                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-48 h-48 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500">
+            <div class="ceo-message p-6 md:p-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500">
                 </div>
                 <div class="md:w-2/3 md:pl-8">
-                    <h3 class="text-2xl font-bold mb-4">Software Developer Hillary Kamwaro Korir</h3>
-                    <p class="text-gray-600 mb-4">
+                    <h3 class="text-xl md:text-2xl font-bold mb-4">Software Developer Hillary Kamwaro Korir</h3>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         At Klints Solutions, our mission is to empower businesses to thrive in the digital age. We are dedicated to building robust online presences through innovative WordPress solutions, strategic Google Ads campaigns, and cutting-edge hardware projects like our solar-powered surveillance systems. Our team provides unwavering technical support to ensure your success, from custom software development to seamless eCommerce integrations. We partner with you to transform your vision into reality, delivering measurable results and exceptional value. Thank you for trusting us to be your partner in growth.
                     </p>
-                    <p class="text-gray-600 font-medium">— Software Developer Hillary Kamwaro Korir, CEO</p>
-                    <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">Learn About the Developer</a>
+                    <p class="text-gray-600 font-medium text-sm md:text-base">— Software Developer Hillary Kamwaro Korir, CEO</p>
+                    <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">Learn About the Developer</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Watch Our Story Video Section -->
-    <section id="watch-story" class="py-16 bg-gray-50">
+    <section id="watch-story" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Watch Our <span class="gradient-text">Story</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Watch Our <span class="gradient-text">Story</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                     Discover how Klints Solutions helps businesses grow with innovative digital marketing and technology solutions.
                 </p>
             </div>
@@ -727,7 +798,7 @@
                         </div>
                     </div>
                     <div class="text-center mt-6">
-                        <a href="#contact" class="inline-block px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">
+                        <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">
                             Inquire <i class="fas fa-arrow-right ml-2"></i>
                         </a>
                     </div>
@@ -737,23 +808,23 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section id="testimonials" class="py-16 bg-gray-50">
+    <section id="testimonials" class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                     Don't just take our word for it. Here's what our clients have to say about working with us.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Testimonial 1 -->
-                <div class="testimonial-card p-8 rounded-lg">
-                    <div class="flex items-center mb-6">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full mr-4">
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold">Sarah Johnson</h4>
-                            <p class="text-gray-500 text-sm">CEO, Fashion Boutique</p>
+                            <h4 class="font-bold text-sm md:text-base">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-xs md:text-sm">CEO, Fashion Boutique</p>
                         </div>
                     </div>
                     <div class="flex mb-4">
@@ -763,22 +834,22 @@
                         <i class="fas fa-star text-yellow-400 mr-1"></i>
                         <i class="fas fa-star text-yellow-400"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         "Klints Solutions transformed our online store. Their WooCommerce setup with Google Shopping integration increased our revenue by 150% in just 3 months. Their attention to detail is incredible."
                     </p>
-                    <div class="flex items-center text-sm text-gray-500">
+                    <div class="flex items-center text-xs md:text-sm text-gray-500">
                         <i class="fas fa-calendar-alt mr-2"></i>
                         <span>Project completed: June 2023</span>
                     </div>
                 </div>
                 
                 <!-- Testimonial 2 -->
-                <div class="testimonial-card p-8 rounded-lg">
-                    <div class="flex items-center mb-6">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full mr-4">
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-4">
                         <div>
-                            <h4 class="font-bold">Michael Chen</h4>
-                            <p class="text-gray-500 text-sm">Marketing Director, TechStart</p>
+                            <h4 class="font-bold text-sm md:text-base">Michael Chen</h4>
+                            <p class="text-gray-500 text-xs md:text-sm">Marketing Director, TechStart</p>
                         </div>
                     </div>
                     <div class="flex mb-4">
@@ -788,10 +859,10 @@
                         <i class="fas fa-star text-yellow-400 mr-1"></i>
                         <i class="fas fa-star text-yellow-400"></i>
                     </div>
-                    <p class="text-gray-600 mb-4">
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
                         "We were struggling with our Google Ads account until Klints Solutions took over. They restructured our campaigns and implemented proper tracking. Our cost per lead dropped by 60% while lead quality improved significantly."
                     </p>
-                    <div class="flex items-center text-sm text-gray-500">
+                    <div class="flex items-center text-xs md:text-sm text-gray-500">
                         <i class="fas fa-calendar-alt mr-2"></i>
                         <span>Project completed: March 2023</span>
                     </div>
@@ -801,55 +872,55 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 bg-white">
+    <section id="contact" class="py-12 bg-white">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Work Together</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Work Together</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
                     Ready to take your online presence to the next level? Get in touch today for a free consultation.
                 </p>
             </div>
             
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div>
-                    <div class="space-y-6">
-                        <h3 class="text-2xl font-bold mb-4">Request Quotations</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-4">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Request Quotations</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div>
-                                <label for="name" class="block text-gray-700 font-medium mb-2">Your Name</label>
-                                <input type="text" id="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Smith">
+                                <label for="name" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="John Smith">
                             </div>
                             <div>
-                                <label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
-                                <input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@example.com">
+                                <label for="email" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="john@example.com">
                             </div>
                         </div>
                         <div>
-                            <label for="subject" class="block text-gray-700 font-medium mb-2">Subject</label>
-                            <input type="text" id="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="How can we help you?">
+                            <label for="subject" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="How can we help you?">
                         </div>
                         <div>
-                            <label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
-                            <textarea id="message" rows="5" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us about your project..."></textarea>
+                            <label for="message" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base" placeholder="Tell us about your project..."></textarea>
                         </div>
-                        <button onclick="submitForm()" class="w-full px-6 py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium">
+                        <button onclick="submitForm()" class="w-full px-5 py-3 md:px-6 md:py-4 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition font-medium text-sm md:text-base">
                             Send Message <i class="fas fa-paper-plane ml-2"></i>
                         </button>
                     </div>
                 </div>
                 
                 <div>
-                    <div class="bg-gray-50 p-8 rounded-xl h-full">
-                        <h3 class="text-xl font-bold mb-6">Contact Information</h3>
+                    <div class="bg-gray-50 p-6 rounded-xl h-full">
+                        <h3 class="text-lg md:text-xl font-bold mb-4">Contact Information</h3>
                         
-                        <div class="space-y-6">
+                        <div class="space-y-4">
                             <div class="flex items-start">
                                 <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4">
                                     <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-700">Email</h4>
-                                    <a href="mailto:klintstech@gmail.com" class="text-blue-500 hover:text-blue-700">klintstech@gmail.com</a>
+                                    <h4 class="font-medium text-gray-700 text-sm md:text-base">Email</h4>
+                                    <a href="mailto:klintstech@gmail.com" class="text-blue-500 hover:text-blue-700 text-sm md:text-base">klintstech@gmail.com</a>
                                 </div>
                             </div>
                             
@@ -858,8 +929,8 @@
                                     <i class="fas fa-phone-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-700">Phone</h4>
-                                    <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800">+254727624353</a>
+                                    <h4 class="font-medium text-gray-700 text-sm md:text-base">Phone</h4>
+                                    <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800 text-sm md:text-base">+254727624353</a>
                                 </div>
                             </div>
                             
@@ -868,15 +939,15 @@
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
-                                    <h4 class="font-medium text-gray-700">Location</h4>
-                                    <p class="text-gray-600">Nairobi CBD, Kimathi Street, Old Mutual Building</p>
+                                    <h4 class="font-medium text-gray-700 text-sm md:text-base">Location</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">Nairobi CBD, Kimathi Street, Old Mutual Building</p>
                                 </div>
                             </div>
                         </div>
                         
-                        <div class="mt-8">
-                            <h4 class="font-medium text-gray-700 mb-4">Follow Us</h4>
-                            <div class="flex space-x-4">
+                        <div class="mt-6">
+                            <h4 class="font-medium text-gray-700 mb-4 text-sm md:text-base">Follow Us</h4>
+                            <div class="flex space-x-4 justify-center lg:justify-start">
                                 <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-blue-500 hover:text-white transition">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
@@ -898,50 +969,50 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
+    <footer class="bg-gray-900 text-white py-10">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 footer-grid">
                 <div>
-                    <div class="flex items-center space-x-2 mb-4">
+                    <div class="flex items-center space-x-2 mb-4 justify-center md:justify-start">
                         <div class="w-8 h-8 rounded-lg bg-blue-500 flex items-center justify-center text-white">
                             KS
                         </div>
-                        <span class="text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
+                        <span class="text-lg md:text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
                     </div>
-                    <p class="text-gray-400">
+                    <p class="text-gray-400 text-sm md:text-base">
                         WordPress development and Google Ads expertise to grow your business online.
                     </p>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Services</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">WordPress Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Google Ads Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">Merchant Center Setup</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition">eCommerce Solutions</a></li>
-                        <li><a href="#shop" class="rainbow-shop">Shop</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">WordPress Development</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Google Ads Management</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Merchant Center Setup</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">eCommerce Solutions</a></li>
+                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Quick Links</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Services</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfolio</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact</a></li>
-                        <li><a href="#shop" class="rainbow-shop">Shop</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm md:text-base">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm md:text-base">Services</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition text-sm md:text-base">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm md:text-base">Contact</a></li>
+                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-bold text-lg mb-4">Newsletter</h4>
-                    <p class="text-gray-400 mb-4">
+                    <h4 class="font-bold text-base md:text-lg mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4 text-sm md:text-base">
                         Subscribe to our newsletter for the latest tips and insights.
                     </p>
                     <div class="flex">
-                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full text-sm md:text-base">
                         <button onclick="submitNewsletter()" class="bg-blue-500 text-white px-4 py-2 rounded-r-lg hover:bg-blue-600 transition">
                             <i class="fas fa-paper-plane"></i>
                         </button>
@@ -949,8 +1020,8 @@
                 </div>
             </div>
             
-            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-                <p>© 2025 Klints Solutions. All rights reserved.</p>
+            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
+                <p class="text-sm md:text-base">© 2025 Klints Solutions. All rights reserved.</p>
             </div>
         </div>
     </footer>
