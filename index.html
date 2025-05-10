@@ -116,10 +116,10 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
-        .google-blue { background-color: #4285F4; }
-        .google-green { background-color: #34A853; }
-        .google-red { background-color: #EA4335; }
-        .google-yellow { background-color: #FBBC05; }
+        .google-blue { background-color: #4285F4; border-radius: 8px; }
+        .google-green { background-color: #34A853; border-radius: 8px; }
+        .google-red { background-color: #EA4335; border-radius: 8px; }
+        .google-yellow { background-color: #FBBC05; border-radius: 8px; }
 
         .logo-container {
             position: absolute;
@@ -158,7 +158,7 @@
         .logo:nth-child(9) { top: 40%; left: 75%; animation-delay: 6.4s; }
         .logo:nth-child(10) { top: 60%; left: 30%; animation-delay: 7.2s; }
 
-        .ceo-message {
+        .ceo Constantine {
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -218,7 +218,7 @@
             overflow: hidden;
             background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
             transition: all 0.3s ease;
-            border-radius: 10px; /* Added border-radius to buttons */
+            border-radius: 10px;
         }
 
         .btn-primary::before {
@@ -237,7 +237,7 @@
         }
 
         .btn-secondary {
-            border-radius: 10px; /* Added border-radius to secondary buttons */
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
 
@@ -256,7 +256,7 @@
         .logo-slider {
             overflow: hidden;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
         }
 
         .slider-track {
@@ -281,7 +281,6 @@
             margin: 0 20px;
         }
 
-        /* Footer-specific styles */
         .footer-link {
             position: relative;
             transition: color 0.3s ease;
@@ -309,7 +308,6 @@
             ring: 2px solid #4285F4;
         }
 
-        /* Container depth for sections */
         section {
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             border-radius: 12px;
@@ -335,7 +333,7 @@
         }
     </style>
 </head>
-<body photographing="bg-gray-100">
+<body class="bg-gray-100">
     <!-- Navigation -->
     <nav class="py-4 px-6 lg:px-12 bg-white shadow-sm sticky top-0 z-50">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
