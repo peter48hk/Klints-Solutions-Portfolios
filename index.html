@@ -36,16 +36,10 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-
         .floating { animation: liquidFloat 10s ease-in-out infinite; }
         .pulse { animation: pulse 2s ease-in-out infinite; }
         .fade-in { opacity: 0; }
         .fade-in.visible { animation: fadeIn 0.6s ease-out forwards; }
-        .bounce { animation: bounce 2s ease-in-out infinite; }
 
         .gradient-text {
             background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
@@ -164,81 +158,16 @@
         .logo:nth-child(9) { top: 40%; left: 75%; animation-delay: 6.4s; }
         .logo:nth-child(10) { top: 60%; left: 30%; animation-delay: 7.2s; }
 
-        .ceo-message {
+        .ceo Constantine {
             background: #ffffff;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            position: relative;
-            overflow: hidden;
+            transition: transform 0.3s ease;
         }
 
         .ceo-message:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
-
-        .ceo-message::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(66, 133, 244, 0.05), rgba(234, 67, 53, 0.05));
-            z-index: 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .ceo-message:hover::before {
-            opacity: 0.8;
-        }
-
-        .ceo-image-container {
-            position: relative;
-            transition: transform 0.3s ease;
-        }
-
-        .ceo-image-container:hover {
-            transform: scale(1.05);
-        }
-
-        .ceo-image-container::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform 0.3s ease;
-        }
-
-        .ceo-image-container:hover::after {
-            transform: scaleX(1);
-        }
-
-        .ceo-content {
-            position: relative;
-            z-index: 1;
-            transition: transform 0.3s ease;
-        }
-
-        .ceo-content:hover {
-            transform: translateY(-2px);
-        }
-
-        .ceo-signature {
-            font-family: 'Dancing Script', cursive;
-            font-size: 1.25rem;
-            color: #4285F4;
-            transition: color 0.3s ease;
-        }
-
-        .ceo-signature:hover {
-            color: #34A853;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .video-container {
@@ -659,9 +588,7 @@
                             Monthly Performance Reports
                         </li>
                     </ul>
-                    <a href="https://
-
-wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
+                    <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20service" class="mt-4 inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base">WhatsApp Service</a>
                 </div>
                 <div class="bg-white p-6 rounded-xl card-hover service-card">
                     <div class="service-icon google-green text-white mb-4">
@@ -832,469 +759,504 @@ wa.me/254727624353?text=I'm%20interested%20in%20Google%20Ads%20Management%20serv
                     <a href="https://wa.me/254727624353?text=I'm%20interested%20in%20ICT%20Products%20service" class="mt-4 inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base">Visit Shop</a>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Portfolio Section -->
-        <section id="portfolio" class="py-12 bg-white" data-animate>
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">Recent <span class="gradient-text">Projects</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                        Here are some of our recent WordPress, Google Ads, and hardware projects that delivered exceptional results.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="rounded-xl overflow-hidden card-hover fade-in">
-                        <div class="relative">
-                            <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                <div>
-                                    <span class="google-blue text-white text-xs px-2 py-1 rounded">WordPress</span>
-                                    <h3 class="text-white text-lg md:text-xl font-bold mt-2">Outline Ventures</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-gray-50">
-                            <p class="text-gray-600 mb-4 text-sm md:text-base">A dynamic business website built with WordPress for enhanced user engagement.</p>
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <a href="https://www.outlineventures.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.outlineventures.ke</a>
-                                </div>
-                                <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-xl overflow-hidden card-hover fade-in">
-                        <div class="relative">
-                            <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                <div>
-                                    <span class="google-yellow text-white text-xs px-2 py-1 rounded">WordPress</span>
-                                    <h3 class="text-white text-lg md:text-xl font-bold mt-2">Lunar Tech</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-gray-50">
-                            <p class="text-gray-600 mb-4 text-sm md:text-base">A tech-focused website with custom WordPress development for seamless performance.</p>
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <a href="https://www.lunartech.co.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.lunartech.co.ke</a>
-                                </div>
-                                <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-xl overflow-hidden card-hover fade-in">
-                        <div class="relative">
-                            <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                <div>
-                                    <span class="google-green text-white text-xs px-2 py-1 rounded">WordPress</span>
-                                    <h3 class="text-white text-lg md:text-xl font-bold mt-2">Skypeak Solutions</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-gray-50">
-                            <p class="text-gray-600 mb-4 text-sm md:text-base">A professional website for IT solutions with optimized WordPress performance.</p>
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <a href="https://www.skypeaksolutions.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.skypeaksolutions.ke</a>
-                                </div>
-                                <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="rounded-xl overflow-hidden card-hover fade-in">
-                        <div class="relative">
-                            <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
-                                <div>
-                                    <span class="google-red text-white text-xs px-2 py-1 rounded">Arduino</span>
-                                    <h3 class="text-white text-lg md:text-xl font-bold mt-2">Solar Control Camera</h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="p-4 bg-gray-50">
-                            <p class="text-gray-600 mb-4 text-sm md:text-base">A standalone solar-powered surveillance camera system developed using Arduino.</p>
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">solarcam.project</a>
-                                </div>
-                                <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-10">
-                    <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium btn-secondary text-sm md:text-base">
-                        View All Projects <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-12 bg-white" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Recent <span class="gradient-text">Projects</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                    Here are some of our recent WordPress, Google Ads, and hardware projects that delivered exceptional results.
+                </p>
             </div>
-        </section>
-
-        <!-- CEO Message Section -->
-        <section id="ceo-message" class="py-12 bg-gradient-to-r from-green-50 to-yellow-50" data-animate>
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">Message from Our <span class="gradient-text">CEO</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                        A personal note from our leader to our valued clients and partners.
-                    </p>
-                </div>
-                <div class="ceo-message p-6 md:p-12 flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/3 mb-6 md:mb-0 ceo-image-container">
-                        <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500">
-                    </div>
-                    <div class="md:w-2/3 md:pl-8 ceo-content">
-                        <p class="text-gray-600 mb-4 text-sm md:text-base">
-                            At Klints Solutions, our mission is to empower businesses to thrive in the digital age. We are dedicated to building robust online presences through innovative WordPress solutions, strategic Google Ads campaigns, and cutting-edge hardware projects like our solar-powered surveillance systems. Our team provides unwavering technical support to ensure your success. Thank you for trusting us to be your partner in growth.
-                        </p>
-                        <p class="ceo-signature text-sm md:text-base">— Hillary Kamwaro Korir, CEO</p>
-                        <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base bounce">Learn About the Developer</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Watch Our Story Video Section -->
-        <section id="watch-story" class="py-12 bg-gradient-to-r from-blue-50 to-red-50" data-animate>
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-10">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">Watch Our <span class="gradient-text">Story</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                        Discover how Klints Solutions helps businesses grow with innovative digital marketing and technology solutions.
-                    </p>
-                </div>
-                <div class="flex justify-center">
-                    <div class="w-full md:w-3/4">
-                        <div class="video-container">
-                            <iframe src="https://www.youtube.com/embed/giZwzUVk-GA" title="Our Digital Marketing Journey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="text-center mt-6">
-                            <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
-                                Inquire <i class="fas fa-arrow-right ml-2"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials" class="py-12 bg-gradient-to-r from-yellow-50 to-green-50" data-animate>
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                        Don't just take our word for it. Here's what our clients have to say about working with us.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="testimonial-card p-6 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-4 hover:scale-110 transition" alt="Sarah Johnson">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="rounded-xl overflow-hidden card-hover fade-in">
+                    <div class="relative">
+                        <img src="https://outlineventures.ke/wp-content/uploads/2025/05/outline-ventures-1.png" alt="Outline Ventures" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
                             <div>
-                                <h4 class="font-bold text-sm md:text-base">Sarah Johnson</h4>
-                                <p class="text-gray-500 text-xs md:text-sm">CEO, Fashion Boutique</p>
+                                <span class="google-blue text-white text-xs px-2 py-1 rounded">WordPress</span>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Outline Ventures</h3>
                             </div>
-                        </div>
-                        <div class="flex mb-4">
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
-                        </div>
-                        <p class="text-gray-600 mb-4 text-sm md:text-base">
-                            "Klints Solutions transformed our online store. Their WooCommerce setup with Google Shopping integration increased our revenue by 150% in just 3 months."
-                        </p>
-                        <div class="flex items-center text-xs md:text-sm text-gray-500">
-                            <i class="fas fa-calendar-alt mr-2"></i>
-                            <span>Project completed: June 2023</span>
                         </div>
                     </div>
-                    <div class="testimonial-card p-6 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-4 hover:scale-110 transition" alt="Michael Chen">
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A dynamic business website built with WordPress for enhanced user engagement.</p>
+                        <div class="flex justify-between items-center">
                             <div>
-                                <h4 class="font-bold text-sm md:text-base">Michael Chen</h4>
-                                <p class="text-gray-500 text-xs md:text-sm">Marketing Director, TechStart</p>
+                                <a href="https://www.outlineventures.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.outlineventures.ke</a>
+                            </div>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden card-hover fade-in">
+                    <div class="relative">
+                        <img src="https://lunartech.co.ke/wp-content/uploads/2025/05/lunar-technologies.png" alt="Lunar Tech" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <div>
+                                <span class="google-yellow text-white text-xs px-2 py-1 rounded">WordPress</span>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Lunar Tech</h3>
                             </div>
                         </div>
-                        <div class="flex mb-4">
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A tech-focused website with custom WordPress development for seamless performance.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="https://www.lunartech.co.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.lunartech.co.ke</a>
+                            </div>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
-                        <p class="text-gray-600 mb-4 text-sm md:text-base">
-                            "Klints Solutions restructured our Google Ads campaigns and implemented proper tracking. Our cost per lead dropped by 60% while lead quality improved."
-                        </p>
-                        <div class="flex items-center text-xs md:text-sm text-gray-500">
-                            <i class="fas fa-calendar-alt mr-2"></i>
-                            <span>Project completed: March 2023</span>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden card-hover fade-in">
+                    <div class="relative">
+                        <img src="https://skypeaktechnologies.ke/wp-content/uploads/2025/05/skypeak-technologies.png" alt="Skypeak Solutions" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <div>
+                                <span class="google-green text-white text-xs px-2 py-1 rounded">WordPress</span>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Skypeak Solutions</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A professional website for IT solutions with optimized WordPress performance.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="https://www.skypeaksolutions.ke" class="text-blue-500 hover:text-blue-700 text-sm font-medium">www.skypeaksolutions.ke</a>
+                            </div>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="rounded-xl overflow-hidden card-hover fade-in">
+                    <div class="relative">
+                        <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Solar Control Camera" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 hover:scale-105" loading="lazy">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-4">
+                            <div>
+                                <span class="google-red text-white text-xs px-2 py-1 rounded">Arduino</span>
+                                <h3 class="text-white text-lg md:text-xl font-bold mt-2">Solar Control Camera</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-4 bg-gray-50">
+                        <p class="text-gray-600 mb-4 text-sm md:text-base">A standalone solar-powered surveillance camera system developed using Arduino.</p>
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <a href="#" class="text-blue-500 hover:text-blue-700 text-sm font-medium">solarcam.project</a>
+                            </div>
+                            <a href="#" class="px-3 py-1 md:px-4 md:py-2 text-white rounded-lg btn-primary font-medium inline-block w-auto text-sm md:text-base">(Case Study)</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="text-center mt-10">
+                <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium btn-secondary text-sm md:text-base">
+                    View All Projects <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <!-- Contact Section -->
-        <section id="contact" class="py-12 bg-white" data-animate>
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-2xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Work Together</span></h2>
-                    <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                        Ready to take your online presence to the next level? Get in touch today for a free consultation.
-                    </p>
+    <!-- CEO Message Section -->
+    <section id="ceo-message" class="py-12 bg-gradient-to-r from-green-50 to-yellow-50" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Message from Our <span class="gradient-text">CEO</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                    A personal note from our leader to our valued clients and partners.
+                </p>
+            </div>
+            <div class="ceo-message p-6 md:p-12 flex flex-col md:flex-row items-center">
+                <div class="md:w-1/3 mb-6 md:mb-0">
+                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500 hover:scale-105 transition">
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div>
+                <div class="md:w-2/3 md:pl-8">
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
+                        At Klints Solutions, our mission is to empower businesses to thrive in the digital age. We are dedicated to building robust online presences through innovative WordPress solutions, strategic Google Ads campaigns, and cutting-edge hardware projects like our solar-powered surveillance systems. Our team provides unwavering technical support to ensure your success. Thank you for trusting us to be your partner in growth.
+                    </p>
+                    <p class="text-gray-600 font-medium text-sm md:text-base">— Software Developer Hillary Kamwaro Korir, CEO</p>
+                    <a href="#developer-profile" class="mt-4 inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base">Learn About the Developer</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Watch Our Story Video Section -->
+    <section id="watch-story" class="py-12 bg-gradient-to-r from-blue-50 to-red-50" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Watch Our <span class="gradient-text">Story</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                    Discover how Klints Solutions helps businesses grow with innovative digital marketing and technology solutions.
+                </p>
+            </div>
+            <div class="flex justify-center">
+                <div class="w-full md:w-3/4">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/giZwzUVk-GA" title="Our Digital Marketing Journey" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div class="text-center mt-6">
+                        <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
+                            Inquire <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-12 bg-gradient-to-r from-yellow-50 to-green-50" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Client <span class="gradient-text">Testimonials</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                    Don't just take our word for it. Here's what our clients have to say about working with us.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-10 h-10 rounded-full mr-4 hover:scale-110 transition" alt="Sarah Johnson">
+                        <div>
+                            <h4 class="font-bold text-sm md:text-base">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-xs md:text-sm">CEO, Fashion Boutique</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
+                        "Klints Solutions transformed our online store. Their WooCommerce setup with Google Shopping integration increased our revenue by 150% in just 3 months."
+                    </p>
+                    <div class="flex items-center text-xs md:text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Project completed: June 2023</span>
+                    </div>
+                </div>
+                <div class="testimonial-card p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full mr-4 hover:scale-110 transition" alt="Michael Chen">
+                        <div>
+                            <h4 class="font-bold text-sm md:text-base">Michael Chen</h4>
+                            <p class="text-gray-500 text-xs md:text-sm">Marketing Director, TechStart</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-4">
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400 mr-1"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4 text-sm md:text-base">
+                        "Klints Solutions restructured our Google Ads campaigns and implemented proper tracking. Our cost per lead dropped by 60% while lead quality improved."
+                    </p>
+                    <div class="flex items-center text-xs md:text-sm text-gray-500">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Project completed: March 2023</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-12 bg-white" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Let's <span class="gradient-text">Work Together</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                    Ready to take your online presence to the next level? Get in touch today for a free consultation.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                    <div class="space-y-4">
+                        <h3 class="text-xl md:text-2xl font-bold mb-4">Request Quotations</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Your Name</label>
+                                <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="John Smith">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Email Address</label>
+                                <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Subject</label>
+                            <input type="text" id="subject" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="How can we help you?">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="Tell us about your project..."></textarea>
+                        </div>
+                        <button onclick="submitForm()" class="w-full px-5 py-3 md:px-6 md:py-4 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
+                            Send Message <i class="fas fa-paper-plane ml-2"></i>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-xl h-full">
+                        <h3 class="text-lg md:text-xl font-bold mb-4">Contact Information</h3>
                         <div class="space-y-4">
-                            <h3 class="text-xl md:text-2xl font-bold mb-4">Request Quotations</h3>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="name" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Your Name</label>
-                                    <input type="text" id="name" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="John Smith">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4 hover:scale-110 transition">
+                                    <i class="fas fa-envelope"></i>
                                 </div>
                                 <div>
-                                    <label for="email" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Email Address</label>
-                                    <input type="email" id="email" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="john@example.com">
+                                    <h4 class="font-medium text-gray-700 text-sm md:text-base">Email</h4>
+                                    <a href="mailto:klintstech@gmail.com" class="text-blue-500 hover:text-blue-700 text-sm md:text-base">klintstech@gmail.com</a>
                                 </div>
                             </div>
-                            <div>
-                                <label for="subject" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Subject</label>
-                                <input type="text" id="subject" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="How can we help you?">
-                            </div>
-                            <div>
-                                <label for="message" class="block text-gray-700 font-medium mb-2 text-sm md:text-base">Message</label>
-                                <textarea id="message" rows="4" class="w-full px-4 py-2 md:py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm md:text-base transition-all duration-300" placeholder="Tell us about your project..."></textarea>
-                            </div>
-                            <button onclick="submitForm()" class="w-full px-5 py-3 md:px-6 md:py-4 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
-                                Send Message <i class="fas fa-paper-plane ml-2"></i>
-                            </button>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="bg-gray-50 p-6 rounded-xl h-full">
-                            <h3 class="text-lg md:text-xl font-bold mb-4">Contact Information</h3>
-                            <div class="space-y-4">
-                                <div class="flex items-start">
-                                    <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 mr-4 hover:scale-110 transition">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-gray-700 text-sm md:text-base">Email</h4>
-                                        <a href="mailto:klintstech@gmail.com" class="text-blue-500 hover:text-blue-700 text-sm md:text-base">klintstech@gmail.com</a>
-                                    </div>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4 hover:scale-110 transition">
+                                    <i class="fas fa-phone-alt"></i>
                                 </div>
-                                <div class="flex items-start">
-                                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-500 mr-4 hover:scale-110 transition">
-                                        <i class="fas fa-phone-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-gray-700 text-sm md:text-base">Phone</h4>
-                                        <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800 text-sm md:text-base">+254727624353</a>
-                                    </div>
-                                </div>
-                                <div class="flex items-start">
-                                    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-400 mr-4 hover:scale-110 transition">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h4 class="font-medium text-gray-700 text-sm md:text-base">Location</h4>
-                                        <p class="text-gray-600 text-sm md:text-base">Nairobi CBD, Kimathi Street, Old Mutual Building</p>
-                                    </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700 text-sm md:text-base">Phone</h4>
+                                    <a href="tel:+254727624353" class="text-gray-600 hover:text-gray-800 text-sm md:text-base">+254727624353</a>
                                 </div>
                             </div>
-                            <div class="mt-6">
-                                <h4 class="font-medium text-gray-700 mb-4 text-sm md:text-base">Follow Us</h4>
-                                <div class="flex space-x-4 justify-center lg:justify-start">
-                                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-blue hover:text-white transition">
-                                        <i class="fab fa-linkedin-in"></i>
-                                    </a>
-                                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-green hover:text-white transition">
-                                        <i class="fab fa-twitter"></i>
-                                    </a>
-                                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-yellow hover:text-white transition">
-                                        <i class="fab fa-github"></i>
-                                    </a>
-                                    <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-red hover:text-white transition">
-                                        <i class="fab fa-youtube"></i>
-                                    </a>
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-400 mr-4 hover:scale-110 transition">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-700 text-sm md:text-base">Location</h4>
+                                    <p class="text-gray-600 text-sm md:text-base">Nairobi CBD, Kimathi Street, Old Mutual Building</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-gray-900 text-white py-12" data-animate>
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-8 footer-grid">
-                    <!-- Newsletter & Contact Section -->
-                    <div class="order-1 md:order-4">
-                        <h4 class="font-bold text-base md:text-lg mb-4">Stay Connected</h4>
-                        <p class="text-gray-400 mb-4 text-sm md:text-base">
-                            Subscribe for the latest tips, updates, and offers.
-                        </p>
-                        <div class="flex mb-6">
-                            <input type="email" id="newsletterEmail" placeholder="Your email" class="footer-newsletter px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 w-full text-sm md:text-base transition-all duration-300" aria-label="Newsletter email">
-                            <button onclick="submitNewsletter()" class="px-4 py-2 rounded-r-lg btn-primary text-white text-sm md:text-base" aria-label="Subscribe to newsletter">
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </div>
-                        <div class="space-y-2">
-                            <div class="flex items-center">
-                                <i class="fas fa-envelope text-blue-400 mr-2"></i>
-                                <a href="mailto:klintstech@gmail.com" class="text-gray-400 hover:text-white text-sm md:text-base">klintstech@gmail.com</a>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-phone-alt text-green-400 mr-2"></i>
-                                <a href="tel:+254727624353" class="text-gray-400 hover:text-white text-sm md:text-base">+254727624353</a>
-                            </div>
-                            <div class="flex items-center">
-                                <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
-                                <p class="text-gray-400 text-sm md:text-base">Nairobi CBD, Kimathi Street</p>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Quick Links Section -->
-                    <div class="order-2 md:order-3">
-                        <h4 class="font-bold text-base md:text-lg mb-4">Quick Links</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#home" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Home</a></li>
-                            <li><a href="#portfolio" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Portfolio</a></li>
-                            <li><a href="#testimonials" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Testimonials</a></li>
-                            <li><a href="#contact" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Contact Us</a></li>
-                            <li><a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a></li>
-                        </ul>
-                    </div>
-                    <!-- Services Section -->
-                    <div class="order-3 md:order-2">
-                        <h4 class="font-bold text-base md:text-lg mb-4">Our Services</h4>
-                        <ul class="space-y-2">
-                            <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">WordPress Development</a></li>
-                            <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Ads Management</a></li>
-                            <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Merchant Center</a></li>
-                            <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Python Development</a></li>
-                            <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Meta Ads Management</a></li>
-                            <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop ICT Products</a></li>
-                        </ul>
-                    </div>
-                    <!-- Brand Section -->
-                    <div class="order-4 md:order-1">
-                        <div class="space-y-4">
-                            <div class="flex items-center space-x-2">
-                                <div class="w-8 h-8 rounded-lg google-blue flex items-center justify-center text-white pulse">
-                                    KS
-                                </div>
-                                <span class="text-lg md:text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
-                            </div>
-                            <p class="text-gray-400 text-sm md:text-base">
-                                Empowering businesses with innovative WordPress, Google Ads, and ICT solutions.
-                            </p>
-                            <div class="flex space-x-4">
-                                <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-blue" aria-label="LinkedIn">
+                        <div class="mt-6">
+                            <h4 class="font-medium text-gray-700 mb-4 text-sm md:text-base">Follow Us</h4>
+                            <div class="flex space-x-4 justify-center lg:justify-start">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-blue hover:text-white transition">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
-                                <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-green" aria-label="Twitter">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-green hover:text-white transition">
                                     <i class="fab fa-twitter"></i>
                                 </a>
-                                <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-yellow" aria-label="GitHub">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-yellow hover:text-white transition">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-red" aria-label="YouTube">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:google-red hover:text-white transition">
                                     <i class="fab fa-youtube"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- Bottom Bar -->
-                <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row-reverse justify-between items-center text-gray-400">
-                    <div class="flex space-x-4 mb-4 md:mb-0">
-                        <a href="#sitemap" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Sitemap</a>
-                        <a href="#terms" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Terms of Service</a>
-                        <a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 footer-grid">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 rounded-lg google-blue flex items-center justify-center text-white pulse">
+                            KS
+                        </div>
+                        <span class="text-lg md:text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
                     </div>
-                    <p class="text-sm md:text-base">
-                        © 2025 Klints Solutions. All rights reserved.
+                    <p class="text-gray-400 text-sm md:text-base">
+                        Empowering businesses with innovative WordPress, Google Ads, and ICT solutions.
                     </p>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-blue" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-green" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-yellow" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-red" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Services Section -->
+                <div>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">WordPress Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Ads Management</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Merchant Center</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Python Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Meta Ads Management</a></li>
+                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop ICT Products</a></li>
+                    </ul>
+                </div>
+                <!-- Quick Links Section -->
+                <div>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Home</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Portfolio</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Contact Us</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter & Contact Section -->
+                <div>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Stay Connected</h4>
+                    <p class="text-gray-400 mb-4 text-sm md:text-base">
+                        Subscribe for the latest tips, updates, and offers.
+                    </p>
+                    <div class="flex mb-6">
+                        <input type="email" id="newsletterEmail" placeholder="Your email" class="footer-newsletter px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 w-full text-sm md:text-base transition-all duration-300" aria-label="Newsletter email">
+                        <button onclick="submitNewsletter()" class="px-4 py-2 rounded-r-lg btn-primary text-white text-sm md:text-base" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-2"></i>
+                            <a href="mailto:klintstech@gmail.com" class="text-gray-400 hover:text-white text-sm md:text-base">klintstech@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-400 mr-2"></i>
+                            <a href="tel:+254727624353" class="text-gray-400 hover:text-white text-sm md:text-base">+254727624353</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                            <p class="text-gray-400 text-sm md:text-base">Nairobi CBD, Kimathi Street</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </footer>
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400">
+                <p class="text-sm md:text-base mb-4 md:mb-0">
+                    © 2025 Klints Solutions. All rights reserved.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a>
+                    <a href="#terms" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Terms of Service</a>
+                    <a href="#sitemap" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-        <!-- JavaScript -->
-        <script>
-            // Mobile Menu Toggle
-            const mobileMenuButton = document.getElementById('mobileMenuButton');
-            const closeMenuButton = document.getElementById('closeMenuButton');
-            const mobileMenu = document.getElementById('mobileMenu');
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const closeMenuButton = document.getElementById('closeMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
 
-            mobileMenuButton.addEventListener('click', () => {
-                mobileMenu.classList.remove('hidden');
-                mobileMenu.classList.add('open');
-            });
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('open');
+        });
 
-            closeMenuButton.addEventListener('click', () => {
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            setTimeout(() => mobileMenu.classList.add('hidden'), 300);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
                 mobileMenu.classList.remove('open');
                 setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-            });
-
-            // Smooth scrolling for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    mobileMenu.classList.remove('open');
-                    setTimeout(() => mobileMenu.classList.add('hidden'), 300);
-                    document.querySelector(this.getAttribute('href')).scrollIntoView({
-                        behavior: 'smooth'
-                    });
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
+        });
 
-            // Progress bar animation
-            window.addEventListener('load', () => {
-                document.getElementById('progress1').style.width = '75%';
-                document.getElementById('progress2').style.width = '90%';
+        // Progress bar animation
+        window.addEventListener('load', () => {
+            document.getElementById('progress1').style.width = '75%';
+            document.getElementById('progress2').style.width = '90%';
+        });
+
+        // Stats counter animation
+        const counters = document.querySelectorAll('[data-count]');
+        const animateCounter = (element, end, suffix) => {
+            let start = 0;
+            const step = end / 100;
+            const interval = setInterval(() => {
+                start += step;
+                if (start >= end) {
+                    start = end;
+                    clearInterval(interval);
+                }
+                element.textContent = Math.floor(start) + suffix;
+            }, 20);
+        };
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.hasAttribute('data-count')) {
+                        const element = entry.target;
+                        const end = parseInt(element.getAttribute('data-count'));
+                        const suffix = element.textContent.match(/[+%K$]/) || '';
+                        animateCounter(element, end, suffix);
+                    } else {
+                        entry.target.classList.add('visible');
+                        entry.target.querySelectorAll('.fade-in').forEach(child => {
+                            child.classList.add('visible');
+                        });
+                    }
+                    observer.unobserve(entry.target);
+                }
             });
+        }, { threshold: 0.2 });
 
-            // Stats counter animation
-            const counters = document.querySelectorAll('[data-count]');
-            const animateCounter = (element, end, suffix) => {
-                let start = 0;
-                const step = end / 100;
-                const interval = setInterval(() => {
-                    start += step;
-                    if (start >= end) {
-                        start = end;
-                        clearInterval(interval);
-                    }
-                    element.textContent = Math.floor(start) + suffix;
-                }, 20);
-            };
+        counters.forEach(counter => observer.observe(counter));
+        document.querySelectorAll('[data-animate]').forEach(section => observer.observe(section));
 
-            // Intersection Observer for animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        if (entry.target.hasAttribute('data-count')) {
-                            const element = entry.target;
-                            const end = parseInt(element.getAttribute('data-count'));
-                            const suffix = element.textContent.match(/[+%K$]/) || '';
-                            animateCounter(element, end, suffix);
-                        } else {
-                            entry.target.classList.add('visible');
-                            entry.target.querySelectorAll('.fade-in').forEach(child => {
-                                child.classList.add('visible');
-                            });
-                        }
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.
+        // Form submission to WhatsApp
+        function submitForm() {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            if (name && email && subject && message) {
+                const whatsappMessage = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nSubject: ${subject}\nMessage: ${message}`);
+                window.open(`https://wa.me/254727624353?text=${whatsappMessage}`, '_blank');
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('subject').value = '';
+                document.getElementById('message').value = '';
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        }
+
+        // Newsletter submission
+        function submitNewsletter() {
+            const email = document.getElementById('newsletterEmail').value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && emailRegex.test(email)) {
+                alert(`Thanks for subscribing, ${email}! You'll receive our latest updates soon.`);
+                document.getElementById('newsletterEmail').value = '';
+            } else {
+                alert('Please enter a valid email address.');
+            }
+        }
+    </script>
+</body>
+</html>
