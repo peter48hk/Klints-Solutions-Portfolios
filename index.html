@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klints Solutions | WordPress & Google Ads Expert</title>
+    <title>Klints Solutions | Creating Digital Brands Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -69,12 +69,12 @@
 
         .card-hover {
             transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .card-hover:hover {
             transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .service-icon {
@@ -96,20 +96,24 @@
             background: #ffffff;
             border-left: 4px solid #4285F4;
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .testimonial-card:hover {
             transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .stats-item {
             background: #ffffff;
             border-radius: 12px;
             transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .stats-item:hover {
             transform: scale(1.03);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .google-blue { background-color: #4285F4; }
@@ -126,6 +130,7 @@
             overflow: hidden;
             z-index: 0;
             background: linear-gradient(135deg, rgba(66, 133, 244, 0.1), rgba(234, 67, 53, 0.1));
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .logo {
@@ -156,12 +161,13 @@
         .ceo-message {
             background: #ffffff;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
         .ceo-message:hover {
             transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .video-container {
@@ -170,12 +176,13 @@
             padding-top: 56.25%;
             border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
         }
 
         .video-container:hover {
             transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .video-container iframe {
@@ -211,6 +218,7 @@
             overflow: hidden;
             background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
             transition: all 0.3s ease;
+            border-radius: 10px; /* Added border-radius to buttons */
         }
 
         .btn-primary::before {
@@ -228,10 +236,16 @@
             left: 100%;
         }
 
+        .btn-secondary {
+            border-radius: 10px; /* Added border-radius to secondary buttons */
+            transition: all 0.3s ease;
+        }
+
         .mobile-menu {
             transition: transform 0.3s ease, opacity 0.3s ease;
             transform: translateY(-100%);
             opacity: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .mobile-menu.open {
@@ -242,6 +256,7 @@
         .logo-slider {
             overflow: hidden;
             position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         .slider-track {
@@ -266,6 +281,41 @@
             margin: 0 20px;
         }
 
+        /* Footer-specific styles */
+        .footer-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+        }
+
+        .footer-social {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .footer-social:hover {
+            transform: scale(1.1);
+        }
+
+        .footer-newsletter input:focus {
+            ring: 2px solid #4285F4;
+        }
+
+        /* Container depth for sections */
+        section {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+
         @media (max-width: 768px) {
             h1 { font-size: 1.875rem; line-height: 1.3; }
             h2 { font-size: 1.5rem; }
@@ -281,10 +331,11 @@
             .ceo-message img { width: 120px; height: 120px; }
             .footer-grid { grid-template-columns: 1fr; text-align: center; }
             .slider-logo { width: 80px; height: 40px; margin: 0 10px; }
+            section { margin: 0.5rem 0; }
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body photographing="bg-gray-100">
     <!-- Navigation -->
     <nav class="py-4 px-6 lg:px-12 bg-white shadow-sm sticky top-0 z-50">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
@@ -341,17 +392,16 @@
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
             <div class="md:w-1/2 mb-12 md:mb-0">
                 <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-                    <span class="gradient-text">WordPress</span> & <br>
-                    <span class="gradient-text">Google Ads</span> Expert
+                    Creating <span class="gradient-text">Digital Brands</span> Online
                 </h1>
                 <p class="text-gray-600 text-base md:text-lg mb-8 max-w-lg">
-                    Klints Solutions helps businesses grow their online presence with custom WordPress solutions and data-driven Google Ads strategies.
+                    Klints Solutions transforms businesses with custom WordPress websites, high-ROI Google and Meta Ads, Google Merchant Center optimization, Python development, branding, laptop troubleshooting, and premium ICT products.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="https://wa.me/254727624353" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-red-500 text-white rounded-lg btn-primary font-medium">
                         Get In Touch <i class="fas fa-arrow-right ml-2"></i>
                     </a>
-                    <a href="#portfolio" class="px-6 py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium">
+                    <a href="#portfolio" class="px-6 py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium btn-secondary">
                         View Our Work
                     </a>
                 </div>
@@ -806,7 +856,7 @@
                 </div>
             </div>
             <div class="text-center mt-10">
-                <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium text-sm md:text-base">
+                <a href="#" class="inline-flex items-center px-5 py-2 md:px-6 md:py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium btn-secondary text-sm md:text-base">
                     View All Projects <i class="fas fa-arrow-right ml-2"></i>
                 </a>
             </div>
@@ -980,7 +1030,7 @@
                                 </div>
                             </div>
                             <div class="flex items-start">
-                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-500 mr-4 hover:scale-110 transition">
+                                <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center text-yellow-400 mr-4 hover:scale-110 transition">
                                     <i class="fas fa-map-marker-alt"></i>
                                 </div>
                                 <div>
@@ -1013,55 +1063,96 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-10">
+    <footer class="bg-gray-900 text-white py-12" data-animate>
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 footer-grid">
-                <div>
-                    <div class="flex items-center space-x-2 mb-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 footer-grid">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
                         <div class="w-8 h-8 rounded-lg google-blue flex items-center justify-center text-white pulse">
                             KS
                         </div>
                         <span class="text-lg md:text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
                     </div>
                     <p class="text-gray-400 text-sm md:text-base">
-                        WordPress development and Google Ads expertise to grow your business online.
+                        Empowering businesses with innovative WordPress, Google Ads, and ICT solutions.
                     </p>
+                    <div class="flex space-x-4">
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-blue" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-green" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-yellow" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-red" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
                 </div>
+                <!-- Services Section -->
                 <div>
-                    <h4 class="font-bold text-base md:text-lg mb-4">Services</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Our Services</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">WordPress Development</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Google Ads Management</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">Merchant Center Setup</a></li>
-                        <li><a href="#" class="text-gray-400 hover:text-white transition text-sm md:text-base">eCommerce Solutions</a></li>
-                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">WordPress Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Ads Management</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Merchant Center</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Python Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Meta Ads Management</a></li>
+                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop ICT Products</a></li>
                     </ul>
                 </div>
+                <!-- Quick Links Section -->
                 <div>
                     <h4 class="font-bold text-base md:text-lg mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-400 hover:text-white transition text-sm md:text-base">Home</a></li>
-                        <li><a href="#services" class="text-gray-400 hover:text-white transition text-sm md:text-base">Services</a></li>
-                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition text-sm md:text-base">Portfolio</a></li>
-                        <li><a href="#contact" class="text-gray-400 hover:text-white transition text-sm md:text-base">Contact</a></li>
-                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop</a></li>
+                        <li><a href="#home" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Home</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Portfolio</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Contact Us</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a></li>
                     </ul>
                 </div>
+                <!-- Newsletter & Contact Section -->
                 <div>
-                    <h4 class="font-bold text-base md:text-lg mb-4">Newsletter</h4>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Stay Connected</h4>
                     <p class="text-gray-400 mb-4 text-sm md:text-base">
-                        Subscribe to our newsletter for the latest tips and insights.
+                        Subscribe for the latest tips, updates, and offers.
                     </p>
-                    <div class="flex">
-                        <input type="email" id="newsletterEmail" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-900 w-full text-sm md:text-base transition-all duration-300">
-                        <button onclick="submitNewsletter()" class="google-red text-white px-4 py-2 rounded-r-lg btn-primary">
+                    <div class="flex mb-6">
+                        <input type="email" id="newsletterEmail" placeholder="Your email" class="footer-newsletter px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 w-full text-sm md:text-base transition-all duration-300" aria-label="Newsletter email">
+                        <button onclick="submitNewsletter()" class="px-4 py-2 rounded-r-lg btn-primary text-white text-sm md:text-base" aria-label="Subscribe to newsletter">
                             <i class="fas fa-paper-plane"></i>
                         </button>
                     </div>
+                    <div class="space-y-2">
+                        <div class="flex items-center">
+                            <i class="fas fa-envelope text-blue-400 mr-2"></i>
+                            <a href="mailto:klintstech@gmail.com" class="text-gray-400 hover:text-white text-sm md:text-base">klintstech@gmail.com</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-phone-alt text-green-400 mr-2"></i>
+                            <a href="tel:+254727624353" class="text-gray-400 hover:text-white text-sm md:text-base">+254727624353</a>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-map-marker-alt text-yellow-400 mr-2"></i>
+                            <p class="text-gray-400 text-sm md:text-base">Nairobi CBD, Kimathi Street</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="border-t border-gray-800 mt-8 pt-6 text-center text-gray-400">
-                <p class="text-sm md:text-base">© 2025 Klints Solutions. All rights reserved.</p>
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center text-gray-400">
+                <p class="text-sm md:text-base mb-4 md:mb-0">
+                    © 2025 Klints Solutions. All rights reserved.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a>
+                    <a href="#terms" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Terms of Service</a>
+                    <a href="#sitemap" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Sitemap</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -1160,7 +1251,8 @@
         // Newsletter submission
         function submitNewsletter() {
             const email = document.getElementById('newsletterEmail').value;
-            if (email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && emailRegex.test(email)) {
                 alert(`Thanks for subscribing, ${email}! You'll receive our latest updates soon.`);
                 document.getElementById('newsletterEmail').value = '';
             } else {
