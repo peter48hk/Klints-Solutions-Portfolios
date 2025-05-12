@@ -307,7 +307,33 @@
         .footer-newsletter input:focus {
             outline: none;
             ring: 2px solid #4285F4;
-        }
+		}
+
+		/* Toggle Switch Styling */
+		.toggle-switch {
+			position: relative;
+			display: inline-block;
+			width: 40px;
+			height: 20px;
+		}
+
+		.toggle-switch input {
+			opacity: 0;
+			width: 0;
+			height: 0;
+		}
+
+		.slider {
+			position: absolute;
+			cursor: pointer;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: #ccc;
+			transition: .4s;
+			border-radius: 20px; /* Half of height for rounded shape */
+		}
 
         /* Left-to-right alignment for footer on mobile */
         .footer-grid {
@@ -317,6 +343,36 @@
         .footer-grid > div {
             text-align: left;
         }
+
+		.slider:before {
+			position: absolute;
+			content: "";
+			height: 16px; /* Slightly smaller than height */
+			width: 16px; /* Same as height */
+			left: 2px;
+			bottom: 2px;
+			background-color: white;
+			transition: .4s;
+			border-radius: 50%;
+		}
+
+		input:checked + .slider {
+			background-color: #2196F3;
+		}
+
+		input:focus + .slider {
+			box-shadow: 0 0 1px #2196F3;
+		}
+
+		input:checked + .slider:before {
+			transform: translateX(20px); /* Move to the right (width - button width) */
+		}
+
+		/* Optional: Styling for dark mode */
+		body.dark .slider {
+			background-color: #555; /* Darker background for the switch */
+		}
+
 
         @media (max-width: 768px) {
             h1 { font-size: 1.875rem; line-height: 1.3; }
@@ -342,38 +398,58 @@
     <!-- Navigation -->
     <nav class="py-4 px-6 lg:px-12 bg-white shadow-sm sticky top-0 z-50">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
-            <a href="#home" class="flex items-center space-x-2">
-                <div class="w-10 h-10 rounded-lg google-blue flex items-center justify-center text-white font-bold pulse">
-                    KS
+ <div class="flex items-center space-x-4">
+ <button class="md:hidden text-gray-700" id="mobileMenuButton" aria-label="Toggle mobile menu">
+ <i class="fas fa-bars text-2xl"></i>
+ </button>
+                <a href="#home" class="flex items-center space-x-2">
+ <div class="w-10 h-10 rounded-lg google-blue flex items-center justify-center text-white font-bold pulse">
+ KS
+ </div>
+ <span class="text-xl font-semibold">Klints <span class="gradient-text">Solutions</span></span>
+ </a>
+ </div>
+ <div class="hidden md:flex items-center space-x-8">
+ <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Home</a>
+ <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Services</a>
+ <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Portfolio</a>
+ <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Testimonials</a>
+ <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Contact</a>
+ <a href="#shop" class="rainbow-shop font-medium">Shop</a>
+ </div>
+ <div class="hidden md:flex items-center space-x-4">
+ <a href="#search" class="text-gray-700 hover:text-blue-600" aria-label="Search"><i class="fas fa-search"></i></a>
+ <a href="#login" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" aria-label="Login/Register">
+ <i class="fas fa-user-circle"></i>
+ <span class="text-sm">Login/Register</span>
+ </a>
                 </div>
-                <span class="text-xl font-semibold">Klints <span class="gradient-text">Solutions</span></span>
-            </a>
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Home</a>
-                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Services</a>
-                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Portfolio</a>
-                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Testimonials</a>
-                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium nav-link">Contact</a>
-                <a href="#shop" class="rainbow-shop font-medium">Shop</a>
-                <a href="#search" class="text-gray-700 hover:text-blue-600"><i class="fas fa-search"></i></a>
-            </div>
-            <button class="md:hidden text-gray-700" id="mobileMenuButton" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
+ <div class="md:hidden text-gray-700 hover:text-blue-600 flex items-center space-x-1" aria-label="Login/Register">
+ <a href="#search" class="text-gray-700 hover:text-blue-600 mr-2" aria-label="Search"><i class="fas fa-search text-xl"></i></a>
+ <a href="#login" class="mx-2"><i class="fas fa-user-circle text-xl"></i></a>
+                <button id="darkModeToggle" class="focus:outline-none ml-2" aria-label="Toggle dark mode">
+					<label class="toggle-switch">
+						<input type="checkbox">
+						<span class="slider"></span>
+					</label>
+ </button>
+ </div>
         </div>
+
         <!-- Mobile Menu -->
         <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-16 shadow-lg py-4 px-6 mobile-menu">
             <div class="flex justify-end mb-2">
                 <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-xl"></i></button>
             </div>
             <div class="flex flex-col space-y-4">
-                <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
                 <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
                 <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
                 <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
                 <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
                 <a href="#shop" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
                 <a href="#search" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-search mr-2"></i>Search</a>
+ <a href="#login" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-user-circle mr-2"></i>Login/Register</a>
+
             </div>
         </div>
     </nav>
@@ -1269,6 +1345,26 @@
                 alert('Please enter a valid email address.');
             }
         }
+    </script>
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+		const toggleInput = darkModeToggle.querySelector('input[type="checkbox"]');
+
+        // Check local storage for theme preference
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark');
+			toggleInput.checked = true; // Set the toggle switch position
+        }
+
+        darkModeToggle.addEventListener('click', () => {
+			toggleInput.checked = !toggleInput.checked; // Toggle the checkbox state visually
+            body.classList.toggle('dark');
+            localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light');
+        });
     </script>
 </body>
 </html>
