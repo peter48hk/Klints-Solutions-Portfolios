@@ -900,6 +900,34 @@
         </div>
     </div>
 </section>
+	<section id="consultation" class="py-8 bg-gradient-to-r from-blue-600 to-green-500 text-white shadow-lg relative overflow-hidden" data-animate>
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+        <div class="text-center md:text-left mb-6 md:mb-0">
+            <h2 class="text-3xl font-extrabold mb-2 leading-tight">
+                Ready to Elevate Your Digital Presence?
+            </h2>
+            <p class="text-lg opacity-90">
+                Book a <span class="font-semibold text-yellow-300">Free Consultation</span> via Zoom or WhatsApp Video.
+            </p>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 items-center">
+            <a href="https://zoom.us/schedule" target="_blank" class="flex items-center space-x-3 px-6 py-3 bg-white text-blue-600 rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <i class="fas fa-video text-xl"></i>
+                <span class="font-bold text-lg">Book on Zoom</span>
+            </a>
+            <a href="https://wa.me/254727624353?text=I'd%20like%20to%20schedule%20a%20video%20consultation%20via%20WhatsApp." target="_blank" class="flex items-center space-x-3 px-6 py-3 bg-green-500 text-white rounded-full shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span class="font-bold text-lg">WhatsApp Video</span>
+            </a>
+        </div>
+    </div>
+
+    <div class="absolute inset-0 pointer-events-none">
+        <span class="absolute w-24 h-24 bg-blue-500 opacity-20 rounded-full -bottom-10 -left-10 floating-element-1"></span>
+        <span class="absolute w-32 h-32 bg-green-400 opacity-20 rounded-full -top-12 -right-12 floating-element-2"></span>
+        <span class="absolute w-16 h-16 bg-red-500 opacity-20 rounded-full bottom-10 right-20 floating-element-3"></span>
+    </div>
+</section>
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-12 bg-white" data-animate>
         <div class="max-w-7xl mx-auto px-6">
@@ -1297,6 +1325,33 @@
 
     <!-- JavaScript -->
     <script>
+		@keyframes floatingElement1 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(15px, -15px) rotate(5deg); }
+    66% { transform: translate(-10px, 10px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes floatingElement2 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(-20px, 20px) rotate(-7deg); }
+    66% { transform: translate(10px, -10px) rotate(7deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@keyframes floatingElement3 {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    33% { transform: translate(10px, 5px) rotate(3deg); }
+    66% { transform: translate(-5px, -10px) rotate(-3deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.floating-element-1 { animation: floatingElement1 15s ease-in-out infinite; }
+.floating-element-2 { animation: floatingElement2 18s ease-in-out infinite; }
+.floating-element-3 { animation: floatingElement3 12s ease-in-out infinite; }
+
+/* Existing .gradient-text is fine */
+/* Existing .card-hover and .pulse for buttons and other elements are fine */
         // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
         const closeMenuButton = document.getElementById('closeMenuButton');
