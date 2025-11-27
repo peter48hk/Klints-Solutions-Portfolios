@@ -402,6 +402,60 @@
             .slider-logo { width: 80px; height: 40px; margin: 0 10px; }
             section { margin: 0.5rem 0; }
         }
+		/* Custom Hero Gradient Text (Using Google Colors) */
+.gradient-text-hero {
+    background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* 1. Floating Image Animation */
+@keyframes floating-lg {
+    0% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+    50% { transform: translateY(-15px) rotate(1deg); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); }
+    100% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
+}
+
+.floating-lg {
+    animation: floating-lg 8s ease-in-out infinite;
+}
+
+/* 2. Seamless Horizontal Logo Scroll */
+@keyframes scroll-rtl {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Adjust this value based on how many times you duplicated the logo list */
+        transform: translateX(-50%); 
+    }
+}
+
+.logo-track {
+    animation: scroll-rtl 40s linear infinite; 
+    padding-top: 1rem; /* Adjust padding to separate from top edge */
+}
+
+/* 3. Background Blob Animation */
+@keyframes blob-slow {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob-slow {
+    animation: blob-slow 15s infinite alternate;
+}
+
+/* Animation delay utility for Tailwind */
+.animation-delay-2000 {
+    animation-delay: 2s;
+}
+.animation-delay-4000 {
+    animation-delay: 4s;
+}
     </style>
 </head>
 <body class="bg-gray-100">
@@ -458,59 +512,76 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="py-16 md:py-24 px-6 bg-gradient-to-r from-blue-50 to-red-50 relative overflow-hidden" data-animate>
-        <div class="logo-container">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo" alt="Python Logo">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="logo" alt="JavaScript Logo">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="logo" alt="HTML5 Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="logo" alt="CSS3 Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" class="logo" alt="Java Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="logo" alt="C++ Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="logo" alt="C# Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/ruby/ruby-original.svg" class="logo" alt="Ruby Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="logo" alt="Swift Logo">
- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" class="logo" alt="Go Logo">
-        </div>
+    <section id="home" class="py-20 md:py-32 px-4 bg-gray-50 relative overflow-hidden" data-animate>
+    <div class="absolute inset-0 pointer-events-none">
+        <span class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-400 opacity-10 rounded-full mix-blend-multiply filter blur-3xl animate-blob-slow"></span>
+        <span class="absolute top-1/2 right-1/4 w-96 h-96 bg-red-400 opacity-10 rounded-full mix-blend-multiply filter blur-3xl animate-blob-slow animation-delay-4000"></span>
+        <span class="absolute bottom-1/4 left-1/2 w-96 h-96 bg-green-400 opacity-10 rounded-full mix-blend-multiply filter blur-3xl animate-blob-slow animation-delay-2000"></span>
+    </div>
 
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10">
-            <div class="md:w-1/2 mb-12 md:mb-0">
-                <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
- Creating <span class="gradient-text">Digital Presence</span>
-                </h1>
-                <p class="text-gray-600 text-base md:text-lg mb-8 max-w-lg">
-                    Klints Solutions transforms businesses with custom WordPress websites, high-ROI Google and Meta Ads, Google Merchant Center optimization, Python development, branding, laptop troubleshooting, and premium ICT products.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="https://wa.me/254727624353" class="px-6 py-3 bg-gradient-to-r from-blue-600 to-red-500 text-white rounded-lg btn-primary font-medium">
-                        Get In Touch <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#portfolio" class="px-6 py-3 border border-blue-300 text-gray-700 rounded-lg hover:bg-blue-50 font-medium btn-secondary">
-                        View Our Work
-                    </a>
-                </div>
-                <div class="mt-8 flex items-center space-x-4">
+    <div class="logo-container absolute top-0 left-0 w-full opacity-70 z-0 h-16 overflow-hidden">
+        <div class="logo-track flex whitespace-nowrap space-x-12 animate-scroll-rtl">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo w-8 h-8" alt="Python Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="logo w-8 h-8" alt="Google Ads Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="logo w-8 h-8" alt="WordPress Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="logo w-8 h-8" alt="WooCommerce Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="logo w-8 h-8" alt="JavaScript Logo">
+            <img src="https://cdn.jsdelivr.gh/devicons/devicon/icons/html5/html5-original.svg" class="logo w-8 h-8" alt="HTML5 Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="logo w-8 h-8" alt="CSS3 Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" class="logo w-8 h-8" alt="C++ Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" class="logo w-8 h-8" alt="C# Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg" class="logo w-8 h-8" alt="Swift Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original.svg" class="logo w-8 h-8" alt="Go Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="logo w-8 h-8" alt="Python Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="logo w-8 h-8" alt="Google Ads Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="logo w-8 h-8" alt="WordPress Logo">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="logo w-8 h-8" alt="WooCommerce Logo">
+            </div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 pt-16">
+        <div class="md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12">
+            <h1 class="text-4xl lg:text-6xl font-extrabold mb-6 leading-tight text-gray-900">
+                Building Your <span class="gradient-text-hero">Digital Foundation</span>
+            </h1>
+            <p class="text-gray-600 text-lg mb-8 max-w-lg">
+                Klints Solutions drives growth with **Custom WordPress**, high-ROI **Google & Meta Ads**, **E-commerce Optimization**, and specialized **Python Automation**.
+            </p>
+            
+            <div class="flex flex-wrap gap-4 mb-10">
+                <a href="https://wa.me/254727624353" class="px-8 py-4 text-lg bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-xl shadow-lg hover:shadow-xl transform hover:scale-[1.02] transition duration-300 font-bold">
+                    Start Consultation <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#portfolio" class="px-8 py-4 text-lg border-2 border-red-500 text-red-600 rounded-xl hover:bg-red-50 transition duration-300 font-semibold">
+                    View Case Studies
+                </a>
+            </div>
+
+            <div class="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-8 p-4 bg-white rounded-xl shadow-md border-t-2 border-yellow-500">
+                <div class="flex items-center space-x-2">
                     <div class="flex -space-x-2">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-white hover:scale-110 transition" alt="Client 1">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white hover:scale-110 transition" alt="Client 2">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-10 h-10 rounded-full border-2 border-white hover:scale-110 transition" alt="Client 3">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Client 1">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Client 2">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-10 h-10 rounded-full border-2 border-white" alt="Client 3">
                     </div>
-                    <div>
-                        <div class="flex items-center">
-                            <i class="fas fa-star text-yellow-400 mr-1"></i>
-                            <span class="font-medium">5.0</span>
-                            <span class="text-gray-500 ml-1">(128 reviews)</span>
-                        </div>
-                        <p class="text-sm text-gray-500">Trusted by 50+ clients worldwide</p>
+                    <span class="text-sm font-medium text-gray-700 ml-2">+50 Clients</span>
+                </div>
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-500 mr-1 text-lg"></i>
+                        <span class="font-extrabold text-gray-900 text-xl">5.0</span>
+                        <span class="text-gray-500 ml-2">(128 Reviews)</span>
                     </div>
+                    <p class="text-sm text-gray-500">Verified success on all major platforms</p>
                 </div>
             </div>
-            <div class="md:w-1/2 flex justify-center">
- <img src="https://tannbit.com/wp-content/uploads/2024/03/Untitled-design-2024-03-13T121048.371-1.png.webp" alt="Hero Image" class="w-full max-w-lg h-auto rounded-xl shadow-xl floating">
-            </div>
-
         </div>
-    </section>
-
+        
+        <div class="md:w-1/2 flex justify-center mt-10 md:mt-0">
+            <img src="https://tannbit.com/wp-content/uploads/2024/03/Untitled-design-2024-03-13T121048.371-1.png.webp" alt="Digital Marketing Dashboard" class="w-full max-w-lg h-auto rounded-3xl shadow-2xl floating-lg border-4 border-white transition duration-500 hover:shadow-3xl">
+        </div>
+    </div>
+</section>
     <!-- Stats Section -->
     <section class="py-10 bg-white" data-animate>
 
