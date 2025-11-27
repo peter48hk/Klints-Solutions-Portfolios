@@ -469,6 +469,60 @@
     50% { transform: translate(-8px, -10px) scale(0.95); }
     100% { transform: translate(0, 0) scale(1); }
 }
+		<style>
+  .gradient-text-hero {
+    background: linear-gradient(90deg, #3b82f6, #10b981, #ef4444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .sparkle {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s;
+  }
+
+  .gradient-text-hero:hover .sparkle {
+    opacity: 1;
+    animation: sparkleMove 4s infinite;
+  }
+
+  @keyframes sparkleMove {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    100% { transform: translate(100px, 100px) rotate(360deg); }
+  }
+
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(60px);
+    opacity: 0.08;
+    mix-blend-mode: multiply;
+    transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .blob-1 { width: 500px; height: 500px; background: #3b82f6; top: 20%; left: 20%; }
+  .blob-2 { width: 600px; height: 600px; background: #ef4444; bottom: 10%; right: 10%; }
+  .blob-3 { width: 400px; height: 400px; background: #10b981; top: 50%; left: 50%; }
+
+  .floating-icon {
+    position: absolute;
+    opacity: 0.25;
+    animation: float 20s infinite linear;
+    transition: transform 0.3s ease;
+  }
+
+  @keyframes float {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(180deg); }
+    100% { transform: translateY(0) rotate(360deg); }
+  }
 /* You can add more keyframes for floating-logo-animation-5, 6, etc. for more variety */
 /* Or reuse existing ones with different delays */
 
@@ -540,68 +594,95 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-  <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
-    <div class="absolute inset-0 pointer-events-none">
-        <span class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow"></span>
-        <span class="absolute top-1/2 right-1/4 w-64 h-64 bg-red-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-4000"></span>
-        <span class="absolute bottom-1/4 left-1/2 w-64 h-64 bg-green-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-2000"></span>
-    </div>
+   <!-- Hero Section - Interactive Version -->
+<section id="home" class="py-16 md:py-24 px-4 bg-gray-50 relative overflow-hidden" data-animate>
+  <!-- Interactive Mouse-Following Blobs -->
+  <div class="absolute inset-0 pointer-events-none" id="interactive-blobs">
+    <span class="blob blob-1"></span>
+    <span class="blob blob-2"></span>
+    <span class="blob blob-3"></span>
+  </div>
 
-    <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-1" style="top: 10%; left: 5%;" alt="Python Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-2" style="top: 25%; right: 10%;" alt="Google Ads Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-3" style="bottom: 15%; left: 15%;" alt="WordPress Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-4" style="top: 40%; left: 30%;" alt="WooCommerce Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-5" style="bottom: 30%; right: 5%;" alt="JavaScript Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-6" style="top: 5%; right: 40%;" alt="HTML5 Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-7" style="bottom: 5%; left: 45%;" alt="CSS3 Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-8" style="top: 18%; left: 45%;" alt="React Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-9" style="bottom: 25%; right: 25%;" alt="Vue.js Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-10" style="top: 60%; left: 5%;" alt="Figma Logo">
-    </div>
+  <!-- Floating Tech Icons with Parallax -->
+  <div class="absolute inset-0 pointer-events-none floating-icons">
+    <!-- Same icons as before but with data attributes for JS parallax -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" 
+         class="floating-icon" data-speed="0.05" style="top: 10%; left: 5%;" alt="Python">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" 
+         class="floating-icon" data-speed="-0.03" style="top: 25%; right: 10%;" alt="Google Ads">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" 
+         class="floating-icon" data-speed="0.04" style="bottom: 15%; left: 15%;" alt="WordPress">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" 
+         class="floating-icon" data-speed="-0.06" style="top: 40%; left: 30%;" alt="WooCommerce">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" 
+         class="floating-icon" data-speed="0.07" style="bottom: 30%; right: 5%;" alt="JavaScript">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" 
+         class="floating-icon" data-speed="-0.04" style="top: 18%; left: 45%;" alt="React">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" 
+         class="floating-icon" data-speed="0.05" style="bottom: 25%; right: 25%;" alt="Vue.js">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" 
+         class="floating-icon" data-speed="-0.05" style="top: 60%; left: 5%;" alt="Figma">
+  </div>
 
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 pt-10 md:pt-16">
-        <div class="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-10">
-            <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
-                Building Your <span class="gradient-text-hero">Digital Foundation</span>
-            </h1>
-            <p class="text-gray-600 text-base mb-6 max-w-md">
-                Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
-            </p>
-            
-            <div class="flex flex-wrap gap-3 mb-6">
-                <a href="https://wa.me/254727624353" class="px-6 py-3 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
-                    Start Consultation <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-                <a href="#portfolio" class="px-6 py-3 text-base border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-50 transition duration-300 font-semibold">
-                    View Case Studies
-                </a>
-            </div>
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 pt-10 md:pt-16">
+    <!-- Left Content -->
+    <div class="md:w-1/2 mb-12 md:mb-0 pr-0 md:pr-12 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 leading-tight">
+        Building Your 
+        <span class="gradient-text-hero inline-block relative">
+          Digital Foundation
+          <span class="sparkle"></span>
+        </span>
+      </h1>
 
-            <div class="flex items-center space-x-6 p-3 bg-white rounded-lg shadow-sm border-t-2 border-yellow-500 max-w-md">
-                <div class="flex items-center space-x-1">
-                    <div class="flex -space-x-2">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 1">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 2">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 3">
-                    </div>
-                    <span class="text-xs font-medium text-gray-700 ml-1">+50 Clients</span>
-                </div>
-                <div>
-                    <div class="flex items-center">
-                        <i class="fas fa-star text-yellow-500 text-sm mr-1"></i>
-                        <span class="font-extrabold text-gray-900 text-lg">5.0</span>
-                        <span class="text-gray-500 ml-1 text-sm">(128 Reviews)</span>
-                    </div>
-                </div>
-            </div>
+      <p class="text-gray-600 text-lg md:text-xl mb-8 max-w-xl mx-auto md:mx-0">
+        Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
+      </p>
+
+      <!-- Interactive CTAs -->
+      <div class="flex flex-col sm:flex-row gap-4 mb-10 justify-center md:justify-start">
+        <a href="https://wa.me/254727624353" 
+           class="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-green-500 text-white font-bold rounded-xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
+          <span class="relative z-10 flex items-center justify-center">
+            Start Consultation 
+            <i class="fas fa-arrow-right ml-3 group-hover:translate-x-2 transition-transform"></i>
+          </span>
+          <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity"></div>
+        </a>
+
+        <a href="#portfolio" 
+           class="px-8 py-4 border-2 border-red-500 text-red-600 font-bold rounded-xl hover:bg-red-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+          View Case Studies →
+        </a>
+      </div>
+
+      <!-- Animated Stats -->
+      <div class="flex flex-wrap justify-center md:justify-start gap-8 text-center md:text-left">
+        <div>
+          <div class="text-4xl font-black text-gray-900" data-count="50">0</div>
+          <p class="text-gray-600 font-medium">Happy Clients</p>
         </div>
-        
-        <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-            <img src="https://outlineventures.ke/wp-content/uploads/2025/11/unnamed-1.jpg" alt="Digital Marketing Dashboard" class="w-full max-w-sm h-auto rounded-xl shadow-xl floating-lg border-2 border-white">
+        <div>
+          <div class="text-4xl font-black text-gray-900 flex items-center justify-center md:justify-start">
+            <i class="fas fa-star text-yellow-500 mr-1"></i>
+            <span data-count="5.0">4.0</span>
+          </div>
+          <p class="text-gray-600 font-medium">Average Rating (128 Reviews)</p>
         </div>
+      </div>
     </div>
+
+    <!-- Right Image with Tilt Effect -->
+    <div class="md:w-1/2 flex justify-center">
+      <div class="relative group">
+        <img src="https://outlineventures.ke/wp-content/uploads/2025/11/unnamed-1.jpg" 
+             alt="Digital Marketing Dashboard" 
+             class="w-full max-w-lg rounded-2xl shadow-2xl border-4 border-white transform transition-all duration-500 group-hover:shadow-3xl"
+             id="hero-tilt-image">
+        <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-2xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity -z-10"></div>
+      </div>
+    </div>
+  </div>
 </section>
     <!-- Stats Section -->
     <section class="py-10 bg-white" data-animate>
@@ -1565,6 +1646,65 @@
                 alert('Please enter a valid email address.');
             }
         }
+		// Mouse-following blobs
+  const blobs = document.querySelectorAll('.blob');
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX / window.innerWidth;
+    const y = e.clientY / window.innerHeight;
+
+    blobs.forEach((blob, i) => {
+      const speed = (i + 1) * 15;
+      blob.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+    });
+  });
+
+  // Parallax floating icons
+  document.addEventListener('mousemove', (e) => {
+    document.querySelectorAll('.floating-icon').forEach(icon => {
+      const speed = icon.dataset.speed;
+      const x = (window.innerWidth - e.pageX * speed) / 100;
+      const y = (window.innerHeight - e.pageY * speed) / 100;
+      icon.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  });
+
+  // Tilt effect on hero image (Vanilla Tilt.js alternative)
+  const tiltImage = document.getElementById('hero-tilt-image');
+  tiltImage.addEventListener('mousemove', (e) => {
+    const { offsetX, offsetY, target } = e;
+    const { clientWidth, clientHeight } = target;
+    const rotateX = (offsetY / clientHeight - 0.5) * 20;
+    const rotateY = (0.5 - offsetX / clientWidth) * 20;
+    tiltImage.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+  });
+  tiltImage.addEventListener('mouseleave', () => {
+    tiltImage.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+  });
+
+  // Counter animation
+  const counters = document.querySelectorAll('[data-count]');
+  const countUp = (el) => {
+    const target = +el.getAttribute('data-count');
+    const count = +el.innerText;
+    const increment = target / 80;
+    if (count < target) {
+      el.innerText = Math.ceil(count + increment);
+      setTimeout(() => countUp(el), 30);
+    } else {
+      el.innerText = target === 5.0 ? '5.0' : target;
+    }
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        counters.forEach(counter => countUp(counter));
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelector('#home').forEach(section => observer.observe(section));
     </script>
     <script>
        // JavaScript for dark mode functionality removed as per instructions.
