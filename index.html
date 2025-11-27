@@ -411,51 +411,76 @@
 }
 
 /* 1. Floating Image Animation */
+/* Custom Hero Gradient Text (Using Google Colors) - keep existing */
+.gradient-text-hero {
+    background: linear-gradient(90deg, #4285F4, #34A853, #FBBC05, #EA4335);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* Existing Floating Image Animation - keep this */
 @keyframes floating-lg {
     0% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
     50% { transform: translateY(-15px) rotate(1deg); box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2); }
     100% { transform: translateY(0) rotate(0deg); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); }
 }
-
 .floating-lg {
     animation: floating-lg 8s ease-in-out infinite;
 }
 
-/* 2. Seamless Horizontal Logo Scroll */
-@keyframes scroll-rtl {
-    from {
-        transform: translateX(0);
-    }
-    to {
-        /* Adjust this value based on how many times you duplicated the logo list */
-        transform: translateX(-50%); 
-    }
-}
-
-.logo-track {
-    animation: scroll-rtl 40s linear infinite; 
-    padding-top: 1rem; /* Adjust padding to separate from top edge */
-}
-
-/* 3. Background Blob Animation */
+/* Existing Background Blob Animation - keep this */
 @keyframes blob-slow {
     0% { transform: translate(0px, 0px) scale(1); }
     33% { transform: translate(30px, -50px) scale(1.1); }
     66% { transform: translate(-20px, 20px) scale(0.9); }
     100% { transform: translate(0px, 0px) scale(1); }
 }
-
 .animate-blob-slow {
     animation: blob-slow 15s infinite alternate;
 }
-
-/* Animation delay utility for Tailwind */
 .animation-delay-2000 {
     animation-delay: 2s;
 }
 .animation-delay-4000 {
     animation-delay: 4s;
 }
+
+
+/* NEW: Individual Floating Logo Animations */
+@keyframes floating-logo-animation-1 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(10px, -15px) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes floating-logo-animation-2 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-10px, 12px) scale(0.98); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes floating-logo-animation-3 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(15px, 8px) scale(1.03); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+@keyframes floating-logo-animation-4 {
+    0% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(-8px, -10px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+/* You can add more keyframes for floating-logo-animation-5, 6, etc. for more variety */
+/* Or reuse existing ones with different delays */
+
+.floating-logo-1 { animation: floating-logo-animation-1 10s ease-in-out infinite alternate; }
+.floating-logo-2 { animation: floating-logo-animation-2 12s ease-in-out infinite alternate 2s; } /* Delayed start */
+.floating-logo-3 { animation: floating-logo-animation-3 9s ease-in-out infinite alternate 4s; }
+.floating-logo-4 { animation: floating-logo-animation-4 11s ease-in-out infinite alternate 1s; }
+.floating-logo-5 { animation: floating-logo-animation-1 13s ease-in-out infinite alternate 3s; }
+.floating-logo-6 { animation: floating-logo-animation-2 10s ease-in-out infinite alternate 5s; }
+.floating-logo-7 { animation: floating-logo-animation-3 14s ease-in-out infinite alternate 2.5s; }
+.floating-logo-8 { animation: floating-logo-animation-4 9.5s ease-in-out infinite alternate 0.5s; }
+.floating-logo-9 { animation: floating-logo-animation-1 11.5s ease-in-out infinite alternate 3.5s; }
+.floating-logo-10 { animation: floating-logo-animation-2 12.5s ease-in-out infinite alternate 1.5s; }
     </style>
 </head>
 <body class="bg-gray-100">
