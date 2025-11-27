@@ -523,91 +523,110 @@
  </div>
         </div>
 
-       <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
-    <div class="absolute inset-0 pointer-events-none">
-        <span class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow"></span>
-        <span class="absolute top-1/2 right-1/4 w-64 h-64 bg-red-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-4000"></span>
-        <span class="absolute bottom-1/4 left-1/2 w-64 h-64 bg-green-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-2000"></span>
-    </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-16 shadow-lg py-4 px-6 mobile-menu">
+            <div class="flex justify-end mb-2">
+                <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-xl"></i></button>
+            </div>
+            <div class="flex flex-col space-y-4">
+                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+				<a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium">Packages</a>
+                <a href="#portfolio" class="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
+                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                <a href="#shop" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSf_wEFMX57KPSKYmJMiDImW7fpBQtgE4Omxl_Ey38D49RG7dA/viewform?usp=header" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-user-circle mr-2"></i>Login/Register</a>
+            </div>
+        </div>
+    </nav>
 
-    <div class="absolute inset-0 pointer-events-none z-0">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-1" style="top: 10%; left: 5%;" alt="Python Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-2" style="top: 25%; right: 10%;" alt="Google Ads Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-3" style="bottom: 15%; left: 15%;" alt="WordPress Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-4" style="top: 40%; left: 30%;" alt="WooCommerce Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-5" style="bottom: 30%; right: 5%;" alt="JavaScript Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-6" style="top: 5%; right: 40%;" alt="HTML5 Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-7" style="bottom: 5%; left: 45%;" alt="CSS3 Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-8" style="top: 18%; left: 45%;" alt="React Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-9" style="bottom: 25%; right: 25%;" alt="Vue.js Logo">
-        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-10" style="top: 60%; left: 5%;" alt="Figma Logo">
-    </div>
+    <!-- Hero Section -->
+  <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
+    <div class="absolute inset-0 pointer-events-none">
+        <span class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow"></span>
+        <span class="absolute top-1/2 right-1/4 w-64 h-64 bg-red-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-4000"></span>
+        <span class="absolute bottom-1/4 left-1/2 w-64 h-64 bg-green-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-2000"></span>
+    </div>
 
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 pt-10 md:pt-16">
-        <div class="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-10">
-            <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
-                Building Your <span class="gradient-text-hero">Digital Foundation</span>
-            </h1>
-            <p class="text-gray-600 text-base mb-6 max-w-md">
-                Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
-            </p>
-            
-            <div class="flex flex-wrap gap-3 mb-6">
-                <a href="https://wa.me/254727624353" class="px-6 py-3 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
-                    Start Consultation <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-                <a href="#portfolio" class="px-6 py-3 text-base border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-50 transition duration-300 font-semibold">
-                    View Case Studies
-                </a>
-            </div>
+    <div class="absolute inset-0 pointer-events-none z-0">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-1" style="top: 10%; left: 5%;" alt="Python Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-2" style="top: 25%; right: 10%;" alt="Google Ads Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-3" style="bottom: 15%; left: 15%;" alt="WordPress Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-4" style="top: 40%; left: 30%;" alt="WooCommerce Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-5" style="bottom: 30%; right: 5%;" alt="JavaScript Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-6" style="top: 5%; right: 40%;" alt="HTML5 Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-7" style="bottom: 5%; left: 45%;" alt="CSS3 Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-8" style="top: 18%; left: 45%;" alt="React Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-9" style="bottom: 25%; right: 25%;" alt="Vue.js Logo">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-10" style="top: 60%; left: 5%;" alt="Figma Logo">
+    </div>
 
-            <div class="flex items-center space-x-6 p-3 bg-white rounded-lg shadow-sm border-t-2 border-yellow-500 max-w-md">
-                <div class="flex items-center space-x-1">
-                    <div class="flex -space-x-2">
-                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 1">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 2">
-                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 3">
-                    </div>
-                    <span class="text-xs font-medium text-gray-700 ml-1">+50 Clients</span>
-                </div>
-                <div>
-                    <div class="flex items-center">
-                        <i class="fas fa-star text-yellow-500 text-sm mr-1"></i>
-                        <span class="font-extrabold text-gray-900 text-lg">5.0</span>
-                        <span class="text-gray-500 ml-1 text-sm">(128 Reviews)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-            <img src="https://outlineventures.ke/wp-content/uploads/2025/11/unnamed-1.jpg" alt="Digital Marketing Dashboard" class="w-full max-w-sm h-auto rounded-xl shadow-xl floating-lg border-2 border-white">
-        </div>
-    </div>
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 pt-10 md:pt-16">
+        <div class="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-10">
+            <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                Building Your <span class="gradient-text-hero">Digital Foundation</span>
+            </h1>
+            <p class="text-gray-600 text-base mb-6 max-w-md">
+                Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
+            </p>
+            
+            <div class="flex flex-wrap gap-3 mb-6">
+                <a href="https://wa.me/254727624353" class="px-6 py-3 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
+                    Start Consultation <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#portfolio" class="px-6 py-3 text-base border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-50 transition duration-300 font-semibold">
+                    View Case Studies
+                </a>
+            </div>
+
+            <div class="flex items-center space-x-6 p-3 bg-white rounded-lg shadow-sm border-t-2 border-yellow-500 max-w-md">
+                <div class="flex items-center space-x-1">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 1">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 2">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 3">
+                    </div>
+                    <span class="text-xs font-medium text-gray-700 ml-1">+50 Clients</span>
+                </div>
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-500 text-sm mr-1"></i>
+                        <span class="font-extrabold text-gray-900 text-lg">5.0</span>
+                        <span class="text-gray-500 ml-1 text-sm">(128 Reviews)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+            <img src="https://outlineventures.ke/wp-content/uploads/2025/11/unnamed-1.jpg" alt="Digital Marketing Dashboard" class="w-full max-w-sm h-auto rounded-xl shadow-xl floating-lg border-2 border-white">
+        </div>
+    </div>
 </section>
-        <section class="py-10 bg-white" data-animate>
+    <!-- Stats Section -->
+    <section class="py-10 bg-white" data-animate>
 
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold google-blue mb-2" data-count="150">0+</div>
-                    <div class="text-gray-600 text-sm md:text-base">WordPress Websites</div>
-                </div>
-                <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold google-green mb-2" data-count="500">$K</div>
-                    <div class="text-gray-600 text-sm md:text-base">Ad Spend Managed</div>
-                </div>
-                <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold google-yellow mb-2" data-count="300">0%</div>
-                    <div class="text-gray-600 text-sm md:text-base">Avg. ROAS Increase</div>
-                </div>
-                <div class="stats-item p-4 md:p-6 text-center">
-                    <div class="text-2xl md:text-3xl font-bold google-red mb-2">24/7</div>
-                    <div class="text-gray-600 text-sm md:text-base">Support Available</div>
-                </div>
-            </div>
-        </div>
-    </section>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold google-blue mb-2" data-count="150">0+</div>
+                    <div class="text-gray-600 text-sm md:text-base">WordPress Websites</div>
+                </div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold google-green mb-2" data-count="500">$K</div>
+                    <div class="text-gray-600 text-sm md:text-base">Ad Spend Managed</div>
+                </div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold google-yellow mb-2" data-count="300">0%</div>
+                    <div class="text-gray-600 text-sm md:text-base">Avg. ROAS Increase</div>
+                </div>
+                <div class="stats-item p-4 md:p-6 text-center">
+                    <div class="text-2xl md:text-3xl font-bold google-red mb-2">24/7</div>
+                    <div class="text-gray-600 text-sm md:text-base">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Logo Slider Section -->
     <section class="py-12 bg-gray-50" data-animate>
