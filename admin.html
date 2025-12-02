@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Panel | Klints Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-btn { background: linear-gradient(to right, #dc2626, #f97316); }
+    .floating { animation: float 25s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(8deg); }
+    }
+    .admin-sidebar { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+
+  <!-- Floating Tech Icons -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 opacity-20">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-16 floating" style="top:10%;left:5%;animation-delay:1s;" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="absolute w-14 floating" style="top:30%;right:8%;animation-delay:3s;" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-14 floating" style="bottom:15%;left:10%;animation-delay:5s;" alt="">
+    <img src="https://grok.x.ai/favicon.svg" class="absolute w-12 floating" style="top:60%;right:15%;animation-delay:2s;" alt="">
+    <img src="https://www.tesla.com/favicon.ico" class="absolute w-12 floating" style="bottom:25%;right:25%;animation-delay:7s;" alt="">
+  </div>
+
+  <div class="flex h-screen relative z-10">
+
+    <!-- Admin Sidebar -->
+    <aside class="w-72 admin-sidebar text-white shadow-2xl flex flex-col">
+      <div class="p-8 border-b border-gray-800">
+        <h1 class="text-3xl font-extrabold">
+          Klints <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Admin</span>
+        </h1>
+        <p class="text-gray-400 text-sm mt-1">Control Center</p>
+      </div>
+
+      <nav class="flex-1 px-6 py-6 space-y-3">
+        <a href="#" class="flex items-center px-5 py-4 bg-red-900/40 rounded-xl font-semibold border border-red-800">
+          <i class="fas fa-tachometer-alt mr-4"></i> Overview
+        </a>
+        <a href="#" class="flex items-center px-5 py-4 hover:bg-white/10 rounded-xl transition">
+          <i class="fas fa-users mr-4"></i> Clients
+        </a>
+        <a href="#" class="flex items-center px-5 py-4 hover:bg-white/10 rounded-xl transition">
+          <i class="fas fa-project-diagram mr-4"></i> Projects
+        </a>
+        <a href="#" class="flex items-center px-5 py-4 hover:bg-white/10 rounded-xl transition">
+          <i class="fas fa-chart-bar mr-4"></i> Analytics
+        </a>
+        <a href="#" class="flex items-center px-5 py-4 hover:bg-white/10 rounded-xl transition">
+          <i class="fas fa-envelope mr-4"></i> Messages
+        </a>
+        <a href="#" class="flex items-center px-5 py-4 hover:bg-white/10 rounded-xl transition">
+          <i class="fas fa-cog mr-4"></i> Settings
+        </a>
+      </nav>
+
+      <div class="p-6 border-t border-gray-800">
+        <div class="flex items-center space-x-4">
+          <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full ring-4 ring-red-500" alt="Admin">
+          <div>
+            <p class="font-bold">Hillary Korir</p>
+            <p class="text-sm text-gray-400">Super Admin</p>
+          </div>
+        </div>
+        <a href="dashboard.html" class="mt-4 block text-center py-3 gradient-btn text-white font-bold rounded-lg shadow-lg hover:shadow-xl transition">
+          <i class="fas fa-sign-out-alt mr-2"></i> Back to Client View
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Admin Content -->
+    <main class="flex-1 overflow-y-auto p-8">
+
+      <header class="mb-10">
+        <h1 class="text-4xl font-extrabold text-gray-900">Admin Overview</h1>
+        <p class="text-gray-600 mt-2">Manage clients, projects, and system performance</p>
+      </header>
+
+      <!-- Stats Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm">Total Clients</p>
+              <p class="text-4xl font-extrabold text-gray-900 mt-2">68</p>
+              <p class="text-green-600 text-sm mt-2">+12% from last month</p>
+            </div>
+            <i class="fas fa-users text-5xl text-red-500 opacity-20"></i>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm">Active Projects</p>
+              <p class="text-4xl font-extrabold text-gray-900 mt-2">142</p>
+              <p class="text-blue-600 text-sm mt-2">24 in progress</p>
+            </div>
+            <i class="fas fa-briefcase text-5xl text-blue-500 opacity-20"></i>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm">Revenue (This Month)</p>
+              <p class="text-4xl font-extrabold text-gray-900 mt-2">KSh 2.8M</p>
+              <p class="text-green-600 text-sm mt-2">+18% from last month</p>
+            </div>
+            <i class="fas fa-chart-line text-5xl text-green-500 opacity-20"></i>
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border border-gray-200 hover:shadow-xl transition">
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-gray-500 text-sm">Pending Approvals</p>
+              <p class="text-4xl font-extrabold text-gray-900 mt-2">7</p>
+              <p class="text-orange-600 text-sm mt-2">Requires attention</p>
+            </div>
+            <i class="fas fa-bell text-5xl text-orange-500 opacity-20"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- Revenue Chart -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Revenue Overview (2025)</h3>
+          <canvas id="revenueChart" height="300"></canvas>
+        </div>
+
+        <!-- Recent Clients -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-gray-200">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-xl font-bold text-gray-900">Recent Clients</h3>
+            <button class="text-red-600 hover:underline text-sm font-medium">View All</button>
+          </div>
+          <div class="space-y-5">
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div class="flex items-center space-x-4">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full" alt="">
+                <div>
+                  <p class="font-semibold">Sarah Kimani</p>
+                  <p class="text-sm text-gray-500">E-commerce Store</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div class="flex items-center space-x-4">
+                <img src="https://randomuser.me/api/portraits/men/86.jpg" class="w-12 h-12 rounded-full" alt="">
+                <div>
+                  <p class="font-semibold">David Otieno</p>
+                  <p class="text-sm text-gray-500">Google Ads Campaign</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Review</span>
+            </div>
+            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
+              <div class="flex items-center space-x-4">
+                <img src="https://randomuser.me/api/portraits/women/22.jpg" class="w-12 h-12 rounded-full" alt="">
+                <div>
+                  <p class="font-semibold">Mercy Wanjiku</p>
+                  <p class="text-sm text-gray-500">Python Automation</p>
+                </div>
+              </div>
+              <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Live</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Chart Script -->
+  <script>
+    const ctx = document.getElementById('revenueChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+        datasets: [{
+          label: 'Revenue (KSh)',
+          data: [180000, 220000, 280000, 310000, 380000, 420000, 480000, 520000, 580000, 720000, 890000, 2800000],
+          borderColor: '#dc2626',
+          backgroundColor: 'rgba(220, 38, 38, 0.1)',
+          tension: 0.4,
+          fill: true
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+  </script>
+</body>
+</html>
