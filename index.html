@@ -559,14 +559,23 @@
     </nav>
 
     <!-- Hero Section -->
-  <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
-    <div class="absolute inset-0 pointer-events-none">
+ <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
+    <!-- New Full Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1531311658047829&version=1757543328&transcode_extension=webp" 
+             alt="Background" 
+             class="w-full h-full object-cover opacity-20">
+    </div>
+
+    <!-- Existing Blobs -->
+    <div class="absolute inset-0 pointer-events-none z-10">
         <span class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow"></span>
         <span class="absolute top-1/2 right-1/4 w-64 h-64 bg-red-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-4000"></span>
         <span class="absolute bottom-1/4 left-1/2 w-64 h-64 bg-green-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-2000"></span>
     </div>
 
-    <div class="absolute inset-0 pointer-events-none z-0">
+    <!-- Floating Tech Icons -->
+    <div class="absolute inset-0 pointer-events-none z-20">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-1" style="top: 10%; left: 5%;" alt="Python Logo">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googleads/googleads-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-2" style="top: 25%; right: 10%;" alt="Google Ads Logo">
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-3" style="bottom: 15%; left: 15%;" alt="WordPress Logo">
@@ -579,7 +588,8 @@
         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-10" style="top: 60%; left: 5%;" alt="Figma Logo">
     </div>
 
-    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-10 pt-10 md:pt-16">
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-30 pt-10 md:pt-16">
         <div class="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-10">
             <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
                 Building Your <span class="gradient-text-hero">Digital Foundation</span>
@@ -587,7 +597,7 @@
             <p class="text-gray-600 text-base mb-6 max-w-md">
                 Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
             </p>
-            
+           
             <div class="flex flex-wrap gap-3 mb-6">
                 <a href="https://wa.me/254727624353" class="px-6 py-3 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
                     Start Consultation <i class="fas fa-arrow-right ml-2"></i>
@@ -596,7 +606,6 @@
                     View Case Studies
                 </a>
             </div>
-
             <div class="flex items-center space-x-6 p-3 bg-white rounded-lg shadow-sm border-t-2 border-yellow-500 max-w-md">
                 <div class="flex items-center space-x-1">
                     <div class="flex -space-x-2">
@@ -615,7 +624,7 @@
                 </div>
             </div>
         </div>
-        
+       
         <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
             <img src="https://outlineventures.ke/wp-content/uploads/2025/11/unnamed-1.jpg" alt="Digital Marketing Dashboard" class="w-full max-w-sm h-auto rounded-xl shadow-xl floating-lg border-2 border-white">
         </div>
