@@ -1,1 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Klints Solutions | Digital Brand Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Font Awesome for Icons (Used in Footer) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <style>
+        /* Custom styles to match Klints Solutions branding */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f9fa; /* Light background */
+        }
+        
+        /* Gradient for general text/logo */
+        .gradient-text {
+            background: linear-gradient(90deg, #1e3a8a 0%, #3b82f6 50%, #9333ea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
 
+        /* --- HERO SECTION STYLES & ANIMATIONS (Anime Graphics Feel) --- */
+        
+        /* Gradient for Hero Title Text (more vibrant) */
+        .gradient-text-hero {
+            background: linear-gradient(90deg, #fbbc05 0%, #ea4335 100%); /* Yellow to Red/Orange for energy */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Animation Keyframes */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes subtleRotate {
+            0% { transform: rotateY(0deg) scale(0.95); }
+            50% { transform: rotateY(5deg) scale(1.0); }
+            100% { transform: rotateY(0deg) scale(0.95); }
+        }
+        @keyframes drawFlow {
+            0% { stroke-dashoffset: 1000; opacity: 0.5; }
+            50% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 0.5; }
+        }
+        
+        /* Applying Animation to Hero Elements */
+        .animate-fade-in-down {
+            animation: fadeInDown 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.2s backwards;
+        }
+        .animate-fade-in {
+            animation: fadeIn 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s backwards;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.8s backwards;
+        }
+        
+        .hero-graphic {
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.7));
+            transform-style: preserve-3d;
+            animation: subtleRotate 15s ease-in-out infinite alternate; 
+        }
+
+        /* SVG Line Drawing Effect */
+        .data-flow {
+            stroke-dasharray: 1000;
+            animation: drawFlow 4s linear infinite;
+        }
+        .data-flow-2 {
+            animation-delay: 2s; /* Stagger the animation */
+        }
+        
+        /* --- STYLISH CONTACT FORM STYLES --- */
+        .stylish-form-bg {
+            /* Glassmorphism/Gradient Background Effect */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        .input-style {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque white */
+            border-color: #d1d5db; /* Default border */
+        }
+        .input-style:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5); /* Blue shadow */
+            border-color: #3b82f6;
+        }
+
+        /* WhatsApp Button Style */
+        .whatsapp-button {
+            background-color: #25D366; /* WhatsApp Green */
+        }
+        .whatsapp-button:hover {
+            background-color: #128C7E; /* Darker Green */
+        }
+
+
+        /* --- Footer Specific Styles --- */
+        .google-blue {
+            background-color: #4285f4; /* Google Blue */
+        }
+        .google-red:hover {
+            background-color: #ea4335; /* Google Red */
+        }
+        .google-yellow:hover {
+            background-color: #fbbc05; /* Google Yellow */
+        }
+        .google-green:hover {
+            background-color: #34a853; /* Google Green */
+        }
+        /* Primary Button Style (Used in Newsletter) */
+        .btn-primary {
+            background-color: #3b82f6; /* Tailwind blue-500/600 equivalent */
+        }
+        .btn-primary:hover {
+            background-color: #2563eb; /* Darker blue */
+        }
+        .footer-social {
+            transition: all 0.3s ease;
+        }
+        .footer-link:hover {
+            color: #3b82f6 !important; /* Blue hover for links */
+        }
+        /* Rainbow Shop Link Style */
+        .rainbow-shop {
+            font-weight: bold;
+            background: linear-gradient(90deg, #ef4444, #f97316, #eab308, #22c55e, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            transition: opacity 0.3s;
+        }
+        .rainbow-shop:hover {
+            opacity: 0.8;
+        }
+        /* --- General Styles --- */
+        .pulse {
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .7; }
+        }
+
+        .project-item {
+            transition: all 0.3s ease;
+        }
+        .project-item:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-md sticky top-0 z-50 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex justify-between items-center">
+            
+            <!-- Logo/Brand -->
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 rounded-lg google-blue flex items-center justify-center text-white font-bold pulse">
+                    <!-- Note: Using the provided image URL -->
+                    <img src="https://outlineventures.ke/wp-content/uploads/2025/11/apple-touch-icon.png" alt="Logo" class="w-full h-full object-cover rounded-lg">
+                </div>				
+                <span class="text-xl font-extrabold text-gray-800">Klints <span class="gradient-text">Solutions</span></span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex space-x-8 font-medium text-slate-600">
+                <a href="#portfolio" class="hover:text-blue-600 transition p-2">Services</a>
+                <a href="#portfolio" class="hover:text-blue-600 transition p-2">Packages</a>
+                <a href="#contact" class="hover:text-blue-600 transition p-2">Consultation</a>
+            </div>
+
+            <!-- Get Started Button -->
+            <a href="#contact" class="hidden md:inline-block bg-blue-600 text-white px-5 py-2 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg">
+                Get Started
+            </a>
+
+            <!-- Mobile Menu Button (Placeholder for functionality) -->
+            <button class="md:hidden text-gray-600 hover:text-blue-600 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            </button>
+        </div>
+    </nav>
+    
+    <!-- Stylized Hero Banner (Anime Graphics) -->
+    <section class="bg-gray-900 text-white pt-24 pb-16 overflow-hidden relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between z-10 relative">
+            <!-- Text Content -->
+            <div class="md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+                <h1 class="text-6xl sm:text-7xl font-extrabold mb-4 animate-fade-in-down">
+                    Ignite Your <span class="gradient-text-hero">Digital Future</span>
+                </h1>
+                <p class="text-xl text-gray-300 max-w-lg mx-auto md:mx-0 mb-8 animate-fade-in">
+                    We design, develop, and market solutions that have impact. Klints Solutions: Where innovation meets results.
+                </p>
+                <a href="#contact" class="inline-block bg-blue-600 text-white px-8 py-3 rounded-full font-bold text-lg hover:bg-blue-500 transition shadow-lg transform hover:scale-105 animate-fade-in-up">
+                    Start Your Journey
+                </a>
+            </div>
+
+            <!-- Anime Graphic/Stylized SVG -->
+            <div class="md:w-1/2 flex justify-center md:justify-end graphic-container">
+                <!-- Custom Dynamic SVG (represents a stylized circuit/brain/solution) -->
+                <svg class="hero-graphic w-full max-w-md h-auto" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Abstract Shape (Central Hub) -->
+                    <path d="M250 50 L350 150 L350 350 L250 450 L150 350 L150 150 Z" stroke="#3b82f6" stroke-width="8" stroke-linejoin="round" class="shape-outline" />
+                    <!-- Central Glowing Core -->
+                    <circle cx="250" cy="250" r="100" fill="url(#mainGradient)" class="center-glow" />
+                    
+                    <!-- Dynamic Data Flow Lines (Animated) -->
+                    <path d="M50 150 C100 100, 400 100, 450 150" stroke="#fbbc05" stroke-width="4" stroke-linecap="round" class="data-flow" />
+                    <path d="M50 350 C100 400, 400 400, 450 350" stroke="#ea4335" stroke-width="4" stroke-linecap="round" class="data-flow data-flow-2" />
+                    
+                    <!-- Defs for Gradient -->
+                    <defs>
+                        <radialGradient id="mainGradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                            <stop offset="0%" style="stop-color:#4285f4; stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1e3a8a; stop-opacity:0.8" />
+                        </radialGradient>
+                    </defs>
+                </svg>
+            </div>
+        </div>
+        <!-- Background element for depth/style -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-800 opacity-80 z-0"></div>
+        <!-- Subtle Pattern Overlay -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('https://placehold.co/1000x1000/000/3B82F6?text=CIRCUIT')] background-pattern"></div>
+    </section>
+
+    <!-- Portfolio Section (Main Content) -->
+    <section id="portfolio" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Section Header -->
+            <header class="text-center mb-12">
+                <p class="text-blue-600 font-semibold uppercase tracking-wider">Our Success Stories</p>
+                <h2 class="text-4xl font-bold text-gray-800 mt-2">Recent Projects</h2>
+                <p class="text-lg text-gray-600 mt-4 max-w-3xl mx-auto">
+                    Here are some of our recent **WordPress**, **Google Ads**, and **hardware** projects that drive real-world results.
+                </p>
+            </header>
+
+            <!-- Projects Grid (8 Items) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                
+                <!-- Project Item 1 (WordPress) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: WordPress (Simple Globe/Monitor) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">WordPress</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Outline Ventures</h3>
+                    <p class="text-gray-600 mb-4 text-sm">A dynamic business website built with WordPress for enhanced user engagement and branding.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        View Case Study
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 2 (WordPress) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: WordPress (Simple Globe/Monitor) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">WordPress</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Lunar Tech</h3>
+                    <p class="text-gray-600 mb-4 text-sm">A tech-focused website with custom WordPress development for seamless performance.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        View Case Study
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 3 (WordPress) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: WordPress (Simple Globe/Monitor) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-blue-100 text-blue-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+                    </div>
+                    <span class="inline-block bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">WordPress</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Skypeak Solutions</h3>
+                    <p class="text-gray-600 mb-4 text-sm">A professional website for IT solutions with optimized WordPress performance and design.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        View Case Study
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 4 (Hardware/IoT - Arduino) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: Arduino (Cog/Gear) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-purple-100 text-purple-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cog"><path d="M12 20a8 8 0 0 1-5.71-1.28l-.73.49a1 1 0 0 1-1.39-1.39l.49-.73A8 8 0 0 1 4 12c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8z"/><circle cx="12" cy="12" r="3"/></svg>
+                    </div>
+                    <span class="inline-block bg-purple-100 text-purple-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">Arduino</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Solar Control Camera</h3>
+                    <p class="text-gray-600 mb-4 text-sm">A standalone solar-powered surveillance camera system developed using Arduino and custom components.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        View Details
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 5 (Google Ads) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: Google Ads (Target/Bullseye) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-red-100 text-red-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+                    </div>
+                    <span class="inline-block bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">Google Ads</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Global Fitness Campaign</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Optimized Google Ads leading to a **40% increase in lead generation** and reduced CPA by 25%.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        View Campaign Results
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 6 (SEO/Content) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: SEO Strategy (Magnifying Glass) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-green-100 text-green-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                    </div>
+                    <span class="inline-block bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">SEO Strategy</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Eco-Farm Blog Redesign</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Full content audit and SEO implementation resulting in **65% growth in organic search traffic**.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        Read the Case Study
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 7 (Custom Software) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: Custom Software (Code) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-yellow-100 text-yellow-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                    </div>
+                    <span class="inline-block bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">Custom Software</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Inventory Tracking System</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Designed and deployed a lightweight web application to streamline warehouse inventory management.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        Implementation Details
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Project Item 8 (Website Redesign) -->
+                <div class="project-item bg-white p-6 rounded-xl border border-gray-200 shadow-lg">
+                    <!-- Icon: Redesign (Feather/Pen for writing/design) -->
+                    <div class="mb-4 w-12 h-12 flex items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-feather"><path d="M20.24 12.24l-8.08 8.08L3 17.5V6.5l9.16-9.16 8.08 8.08z"/><path d="M17.5 3.5l-14 14"/><path d="M10 10l-6 6"/></svg>
+                    </div>
+                    <span class="inline-block bg-indigo-100 text-indigo-800 text-xs font-semibold px-3 py-1 rounded-full mb-4">Redesign</span>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">City Arts Foundation</h3>
+                    <p class="text-gray-600 mb-4 text-sm">Modernized website visuals, improving user flow for ticketing and donation systems.</p>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition flex items-center">
+                        Check Out the New Site
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </a>
+                </div>
+            </div>
+            <!-- End Projects Grid -->
+
+            <!-- Overall Call to Action -->
+            <div class="text-center mt-12">
+                <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold text-lg hover:bg-blue-700 transition shadow-lg">
+                    Explore Our Services
+                </a>
+                <p class="mt-4 text-gray-500 text-sm">
+                    Note: Links are placeholders for demonstration purposes.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation Banner (Let's Work Together) -->
+    <section class="bg-blue-600 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-white mb-4">Let's Work Together</h2>
+            <p class="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
+                Ready to take your online presence to the next level? Get in touch today for a free consultation.
+            </p>
+            <a href="#contact" class="bg-white text-blue-600 px-8 py-3 rounded-xl font-bold text-lg hover:bg-gray-100 transition shadow-xl">
+                Request Quotations
+            </a>
+        </div>
+    </section>
+
+    <!-- STYLISH CONTACT FORM SECTION (WhatsApp Integrated) -->
+    <section id="contact" class="py-16 bg-gray-900 relative overflow-hidden">
+        <!-- Background elements for style -->
+        <div class="absolute inset-0 bg-gradient-to-br from-gray-800 via-gray-900 to-blue-900 opacity-90"></div>
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 bg-[url('https://placehold.co/1000x1000/000/fff?text=PATTERN')] background-pattern z-0"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <header class="text-center mb-12">
+                <p class="text-blue-400 font-semibold uppercase tracking-wider">Contact Us</p>
+                <h2 class="text-4xl font-bold text-white mt-2">Send an Inquiry via WhatsApp</h2>
+            </header>
+            
+            <div class="max-w-xl mx-auto p-6 md:p-10 rounded-3xl stylish-form-bg text-white">
+                <form id="whatsappForm" onsubmit="sendWhatsAppInquiry(event)" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-200">Your Name</label>
+                        <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm input-style focus:ring-blue-500 focus:border-blue-500 transition text-gray-900">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-200">Email Address (Optional)</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm input-style focus:ring-blue-500 focus:border-blue-500 transition text-gray-900">
+                    </div>
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-200">Inquiry Subject (e.g., WordPress Quote)</label>
+                        <input type="text" id="subject" name="subject" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm input-style focus:ring-blue-500 focus:border-blue-500 transition text-gray-900">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-200">Detailed Message</label>
+                        <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm input-style focus:ring-blue-500 focus:border-blue-500 transition text-gray-900"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full whatsapp-button text-white px-6 py-3 rounded-xl font-bold text-lg transition shadow-xl flex items-center justify-center space-x-2 transform hover:scale-[1.01]">
+                        <i class="fab fa-whatsapp text-2xl"></i>
+                        <span>Send Inquiry via WhatsApp</span>
+                    </button>
+                </form>
+
+                <p id="whatsappMessageStatus" class="mt-6 text-center text-sm text-gray-300 hidden">
+                    Redirecting you to WhatsApp...
+                </p>
+
+                <p class="mt-6 text-center text-xs text-gray-400">
+                    Your inquiry will be prepared and opened in your WhatsApp application, directed to the number +254727624353 for the fastest response.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12" data-animate>
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 footer-grid">
+                <!-- Brand Section -->
+                <div class="space-y-4">
+                    <div class="flex items-start space-x-2">
+                        <div class="w-8 h-8 rounded-lg google-blue flex items-center justify-center text-white pulse">
+                            <!-- Placeholder image URL is updated for better visual fidelity in the footer -->
+                            <img src="https://outlineventures.ke/wp-content/uploads/2025/11/apple-touch-icon.png" alt="Logo" class="w-full h-full object-cover rounded-lg">
+                        </div>
+                        <span class="text-lg md:text-xl font-bold">Klints<span class="gradient-text">Solutions</span></span>
+                    </div>
+                    <p class="text-gray-400 text-sm md:text-base">
+                        Empowering businesses with innovative WordPress, Google Ads, and ICT solutions.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex space-x-4">
+                        <!-- LinkedIn -->
+                        <a href="https://linkedin.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:bg-blue-600 transition" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <!-- Twitter (uses Google Green hover defined in custom CSS) -->
+                        <a href="https://twitter.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-green" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <!-- GitHub (uses Google Yellow hover defined in custom CSS) -->
+                        <a href="https://github.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-yellow" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <!-- YouTube (uses Google Red hover defined in custom CSS) -->
+                        <a href="https://youtube.com" target="_blank" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center text-white footer-social hover:google-red" aria-label="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <!-- Services Section -->
+                <div>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Our Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">WordPress Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Ads Management</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Google Merchant Center</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Python Development</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Meta Ads Management</a></li>
+                        <li><a href="#shop" class="rainbow-shop text-sm md:text-base">Shop ICT Products</a></li>
+                    </ul>
+                </div>
+                <!-- Quick Links Section -->
+                <div>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Home</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Portfolio</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Contact Us</a></li>
+                        <li><a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <!-- Newsletter & Contact Section -->
+                <div>
+                    <h4 class="font-bold text-base md:text-lg mb-4">Stay Connected</h4>
+                    <p class="text-gray-400 mb-4 text-sm md:text-base">
+                        Subscribe for the latest tips, updates, and offers.
+                    </p>
+                    <!-- Newsletter Form -->
+                    <div class="flex mb-6">
+                        <input type="email" id="newsletterEmail" placeholder="Your email" class="footer-newsletter px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-gray-900 w-full text-sm md:text-base transition-all duration-300" aria-label="Newsletter email">
+                        <button onclick="submitNewsletter()" class="px-4 py-2 rounded-r-lg btn-primary text-white text-sm md:text-base" aria-label="Subscribe to newsletter">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                    <!-- Contact Info -->
+                    <div class="space-y-2">
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-blue-400 mr-2 mt-1"></i>
+                            <a href="mailto:klintstech@gmail.com" class="text-gray-400 hover:text-white text-sm md:text-base">klintstech@gmail.com</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt text-green-400 mr-2 mt-1"></i>
+                            <a href="tel:+254727624353" class="text-gray-400 hover:text-white text-sm md:text-base">+254727624353</a>
+                        </div>
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-yellow-400 mr-2 mt-1"></i>
+                            <p class="text-gray-400 text-sm md:text-base">Nairobi CBD, Kimathi Street</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-start text-gray-400">
+                <p class="text-sm md:text-base mb-4 md:mb-0">
+                    © 2025 Klints Solutions. All rights reserved.
+                </p>
+                <div class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4">
+                    <a href="#privacy" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Privacy Policy</a>
+                    <a href="#terms" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Terms of Service</a>
+                    <a href="#sitemap" class="text-gray-400 hover:text-white footer-link text-sm md:text-base">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        function submitNewsletter() {
+            const emailInput = document.getElementById('newsletterEmail');
+            const email = emailInput.value;
+            if (email && email.includes('@') && email.includes('.')) {
+                // In a real application, you would send this to a server.
+                console.log(`Subscribing email: ${email}`);
+                // Simple visual feedback instead of alert()
+                emailInput.value = 'Thanks for subscribing!';
+                emailInput.classList.add('text-green-500', 'font-bold');
+                setTimeout(() => {
+                    emailInput.value = '';
+                    emailInput.classList.remove('text-green-500', 'font-bold');
+                }, 3000);
+            } else {
+                console.error("Invalid email format.");
+                emailInput.value = 'Please enter a valid email.';
+                emailInput.classList.add('text-red-500');
+                setTimeout(() => {
+                    emailInput.value = '';
+                    emailInput.classList.remove('text-red-500');
+                }, 2000);
+            }
+        }
+
+        function sendWhatsAppInquiry(event) {
+            event.preventDefault(); // Stop the default form submission
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const statusMessage = document.getElementById('whatsappMessageStatus');
+
+            // Format the message content
+            let whatsappMessage = `Hello Klints Solutions,\n\n`;
+            whatsappMessage += `I have an inquiry regarding: *${subject}*\n\n`;
+            whatsappMessage += `--- Inquiry Details ---\n`;
+            whatsappMessage += `Name: ${name}\n`;
+            if (email) {
+                whatsappMessage += `Email: ${email}\n`;
+            }
+            whatsappMessage += `Message: ${message}\n`;
+            whatsappMessage += `-----------------------\n\n`;
+            whatsappMessage += `Please advise on the next steps or quotation. Thank you.`;
+
+            // URL encode the message
+            const encodedMessage = encodeURIComponent(whatsappMessage);
+            const phoneNumber = "+254727624353";
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            // Show status message
+            statusMessage.classList.remove('hidden');
+
+            // Open the WhatsApp URL
+            window.open(whatsappUrl, '_blank');
+            
+            // Optionally, reset the form after a short delay
+            setTimeout(() => {
+                document.getElementById('whatsappForm').reset();
+                statusMessage.classList.add('hidden');
+            }, 5000);
+        }
+    </script>
+
+</body>
+</html>
