@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Klints Solutions</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-btn { background: linear-gradient(to right, #2563eb, #10b981); }
+    .floating { animation: float 20s ease-in-out infinite; }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-25px) rotate(6deg); }
+    }
+    .stat-card { transition: all 0.4s; }
+    .stat-card:hover { transform: translateY(-10px); }
+  </style>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 min-h-screen">
+
+  <!-- Floating Background Icons -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-12 opacity-10 floating" style="top:10%;left:8%;" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-12 opacity-10 floating" style="top:25%;right:10%;animation-delay:2s;" alt="">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-12 opacity-10 floating" style="bottom:15%;left:15%;animation-delay:4s;" alt="">
+    <img src="https://grok.x.ai/favicon.svg" class="absolute w-10 opacity-15 floating" style="top:60%;right:12%;animation-delay:3s;" alt="">
+    <img src="https://www.tesla.com/favicon.ico" class="absolute w-10 opacity-15 floating" style="bottom:25%;right:30%;animation-delay:5s;" alt="">
+  </div>
+
+  <div class="flex h-screen relative z-10">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white dark:bg-gray-800 shadow-xl flex flex-col">
+      <div class="p-6 border-b dark:border-gray-700">
+        <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white">Klints <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-green-500">Solutions</span></h2>
+      </div>
+      <nav class="flex-1 px-4 py-6 space-y-2">
+        <a href="#" class="flex items-center px-4 py-3 text-blue-600 bg-blue-50 dark:bg-blue-900/30 rounded-lg font-semibold">
+          <i class="fas fa-home mr-3"></i> Dashboard
+        </a>
+        <a href="#" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+          <i class="fas fa-briefcase mr-3"></i> Projects
+        </a>
+        <a href="#" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+          <i class="fas fa-chart-line mr-3"></i> Analytics
+        </a>
+        <a href="#" class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+          <i class="fas fa-cog mr-3"></i> Settings
+        </a>
+      </nav>
+      <div class="p-4 border-t dark:border-gray-700">
+        <button onclick="document.documentElement.classList.toggle('dark')" class="w-full py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">
+          <i class="fas fa-moon mr-2"></i> Toggle Dark Mode
+        </button>
+        <button class="w-full mt-3 py-3 gradient-btn text-white font-bold rounded-lg shadow-lg hover:shadow-xl">
+          <i class="fas fa-plus mr-2"></i> New Project
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto">
+      <header class="bg-white dark:bg-gray-800 shadow-sm px-8 py-6">
+        <div class="flex justify-between items-center">
+          <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white">Welcome back, Client!</h1>
+          <div class="flex items-center space-x-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-12 h-12 rounded-full border-2 border-blue-500" alt="Profile">
+            <div>
+              <p class="font-semibold text-gray-900 dark:text-white">John Doe</p>
+              <p class="text-sm text-gray-500">Premium Member</p>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="p-8">
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+          <div class="stat-card bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-blue-100 text-sm">Total Projects</p>
+                <p class="text-4xl font-extrabold mt-2">24</p>
+              </div>
+              <i class="fas fa-rocket text-4xl opacity-40"></i>
+            </div>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-green-500 to-emerald-600 text-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-green-100 text-sm">Revenue This Month</p>
+                <p class="text-4xl font-extrabold mt-2">KSh 482K</p>
+              </div>
+              <i class="fas fa-dollar-sign text-4xl opacity-40"></i>
+            </div>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-purple-500 to-pink-600 text-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-purple-100 text-sm">Active Campaigns</p>
+                <p class="text-4xl font-extrabold mt-2">18</p>
+              </div>
+              <i class="fas fa-bullhorn text-4xl opacity-40"></i>
+            </div>
+          </div>
+          <div class="stat-card bg-gradient-to-br from-orange-500 to-red-600 text-white p-6 rounded-xl shadow-lg">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-orange-100 text-sm">Support Tickets</p>
+                <p class="text-4xl font-extrabold mt-2">3</p>
+              </div>
+              <i class="fas fa-ticket-alt text-4xl opacity-40"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <!-- Recent Projects -->
+          <div class="lg:col-span-2 bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Recent Projects</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead class="border-b dark:border-gray-700">
+                  <tr class="text-gray-600 dark:text-gray-400 text-sm">
+                    <th class="pb-3">Project</th>
+                    <th class="pb-3">Status</th>
+                    <th class="pb-3">Progress</th>
+                  </tr>
+                </thead>
+                <tbody class="text-gray-800 dark:text-gray-200">
+                  <tr class="border-b dark:border-gray-700">
+                    <td class="py-4">TechStore WooCommerce</td>
+                    <td><span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Live</span></td>
+                    <td><div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-green-500 h-2 rounded-full" style="width:100%"></div></div></td>
+                  </tr>
+                  <tr class="border-b dark:border-gray-700">
+                    <td class="py-4">Google Ads Campaign</td>
+                    <td><span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Active</span></td>
+                    <td><div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-blue-500 h-2 rounded-full" style="width:78%"></div></div></td>
+                  </tr>
+                  <tr>
+                    <td class="py-4">Python Automation Script</td>
+                    <td><span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-xs">In Review</span></td>
+                    <td><div class="w-full bg-gray-200 rounded-full h-2"><div class="bg-yellow-500 h-2 rounded-full" style="width:45%"></div></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Activity Feed -->
+          <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-6">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Recent Activity</h3>
+            <div class="space-y-4 text-sm">
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"><i class="fas fa-check text-blue-600"></i></div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">Your Meta Ads campaign went live</p>
+                  <p class="text-gray-500 text-xs">2 hours ago</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"><i class="fas fa-wordpress text-green-600"></i></div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">New WordPress site deployed</p>
+                  <p class="text-gray-500 text-xs">5 hours ago</p>
+                </div>
+              </div>
+              <div class="flex items-start space-x-3">
+                <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center"><i class="fas fa-robot text-purple-600"></i></div>
+                <div>
+                  <p class="text-gray-800 dark:text-gray-200">Python script completed 1,200 tasks</p>
+                  <p class="text-gray-500 text-xs">Yesterday</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Simple welcome message
+    console.log("Welcome to your Klints Solutions Dashboard!");
+  </script>
+</body>
+</html>
