@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Email Notifications | Klints Solutions Admin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .gradient-btn { background: linear-gradient(to right, #dc2626, #f97316); }
+    .template-card { transition: all 0.3s; }
+    .template-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen py-12 px-6">
+
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-extrabold text-gray-900">
+        Email Notification Center
+      </h1>
+      <p class="text-xl text-gray-600 mt-4">Send beautiful, branded emails with one click</p>
+      <div class="flex justify-center mt-6">
+        <div class="bg-green-100 text-green-800 px-6 py-3 rounded-full font-bold">
+          Connected via EmailJS — 200 free emails/month
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+
+      <!-- Welcome Email -->
+      <div class="template-card bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="bg-gradient-to-r from-blue-600 to-green-500 p-8 text-white">
+          <i class="fas fa-envelope-open-text text-5xl mb-4"></i>
+          <h3 class="text-2xl font-bold">Welcome Email</h3>
+          <p class="mt-2 opacity-90">Sent when a client signs up</p>
+        </div>
+        <div class="p-8">
+          <div class="bg-gray-50 rounded-lg p-6 mb-6 font-mono text-sm">
+            <p><strong>To:</strong> {{email}}</p>
+            <p><strong>Subject:</strong> Welcome to Klints Solutions!</p>
+          </div>
+          <button onclick="sendWelcome()" class="w-full gradient-btn text-white py-4 rounded-lg font-bold hover:shadow-xl transition">
+            Send Test Welcome Email
+          </button>
+        </div>
+      </div>
+
+      <!-- Project Update -->
+      <div class="template-card bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="bg-gradient-to-r from-purple-600 to-pink-600 p-8 text-white">
+          <i class="fas fa-rocket text-5xl mb-4"></i>
+          <h3 class="text-2xl font-bold">Project Update</h3>
+          <p class="mt-2 opacity-90">Notify client about progress</p>
+        </div>
+        <div class="p-8">
+          <input id="projectName" placeholder="Project Name" class="w-full px-4 py-3 border rounded-lg mb-4">
+          <input id="projectStatus" placeholder="Status (e.g., 75% Complete)" class="w-full px-4 py-3 border rounded-lg mb-6">
+          <button onclick="sendProjectUpdate()" class="w-full gradient-btn text-white py-4 rounded-lg font-bold hover:shadow-xl transition">
+            Send Project Update
+          </button>
+        </div>
+      </div>
+
+      <!-- Invoice Email -->
+      <div class="template-card bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="bg-gradient-to-r from-green-600 to-emerald-600 p-8 text-white">
+          <i class="fas fa-file-invoice-dollar text-5xl mb-4"></i>
+          <h3 class="text-2xl font-bold">Invoice</h3>
+          <p class="mt-2 opacity-90">Send payment requests</p>
+        </div>
+        <div class="p-8">
+          <input id="invoiceAmount" placeholder="Amount (e.g., KSh 85,000)" class="w-full px-4 py-3 border rounded-lg mb-4">
+          <input id="invoiceDue" placeholder="Due Date" class="w-full px-4 py-3 border rounded-lg mb-6">
+          <button onclick="sendInvoice()" class="w-full gradient-btn text-white py-4 rounded-lg font-bold hover:shadow-xl transition">
+            Send Invoice
+          </button>
+        </div>
+      </div>
+
+      <!-- Password Reset -->
+      <div class="template-card bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-200">
+        <div class="bg-gradient-to-r from-orange-600 to-red-600 p-8 text-white">
+          <i class="fas fa-key text-5xl mb-4"></i>
+          <h3 class="text-2xl font-bold">Password Reset</h3>
+          <p class="mt-2 opacity-90">Secure recovery link</p>
+        </div>
+        <div class="p-8">
+          <button onclick="sendPasswordReset()" class="w-full gradient-btn text-white py-4 rounded-lg font-bold hover:shadow-xl transition">
+            Send Password Reset Link
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="mt-12 text-center">
+      <p class="text-gray-600">
+        Powered by <strong>EmailJS</strong> • No backend needed • 
+        <a href="https://dashboard.emailjs.com/" target="_blank" class="text-blue-600 underline">Configure Templates Here</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- EmailJS Script (Replace with your own keys) -->
+  <script type="text/javascript">
+    (function(){
+      emailjs.init("YOUR_PUBLIC_KEY"); // ← Replace with your EmailJS Public Key
+    })();
+
+    const templateParams = {
+      to_email: "test@klintssolutions.com",  // Change for testing
+      to_name: "Test Client"
+    };
+
+    function sendWelcome() {
+      emailjs.send("default_service", "template_welcome", {
+        ...templateParams,
+        client_name: "John Doe"
+      }).then(() => alert("Welcome Email Sent!"));
+    }
+
+    function sendProjectUpdate() {
+      const project = document.getElementById("projectName").value || "Your Project";
+      const status = document.getElementById("projectStatus").value || "In Progress";
+      emailjs.send("default_service", "template_project", {
+        ...templateParams,
+        project_name: project,
+        status: status
+      }).then(() => alert("Project Update Sent!"));
+    }
+
+    function sendInvoice() {
+      const amount = document.getElementById("invoiceAmount").value || "KSh 120,000";
+      const due = document.getElementById("invoiceDue").value || "30 days";
+      emailjs.send("default_service", "template_invoice", {
+        ...templateParams,
+        amount: amount,
+        due_date: due
+      }).then(() => alert("Invoice Sent!"));
+    }
+
+    function sendPasswordReset() {
+      emailjs.send("default_service", "template_reset", templateParams)
+        .then(() => alert("Password Reset Link Sent!"));
+    }
+  </script>
+
+  <!-- Beautiful Email Templates (Create these in EmailJS Dashboard) -->
+  <!-- 
+    Go to: https://dashboard.emailjs.com/admin/templates
+    Create 4 templates with these IDs:
+      - template_welcome
+      - template_project  
+      - template_invoice
+      - template_reset
+  -->
+</body>
+</html>
