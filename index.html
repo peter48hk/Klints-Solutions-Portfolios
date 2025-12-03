@@ -1398,32 +1398,92 @@
         </div>
     </section>
 
-    <!-- CEO Message Section -->
-    <section id="ceo-message" class="py-12 bg-gradient-to-r from-green-50 to-yellow-50" data-animate>
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Message from Our <span class="gradient-text">CEO</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                    A personal note from our leader to our valued clients and partners.
-                </p>
+   <!-- CEO Message Section – With Video Preview Modal -->
+<section id="ceo-message" class="py-16 lg:py-24 bg-gradient-to-br from-green-50 via-yellow-50 to-blue-50 overflow-hidden" data-animate>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-4">
+                Message from Our <span class="gradient-text-hero">CEO</span>
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                A personal welcome from our founder — watch the video or read below.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-10 items-center">
+            <!-- CEO Photo + Video Play Button Overlay -->
+            <div class="relative group mx-auto md:mx-0">
+                <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no"
+                     alt="Hillary Kamwaro Korir - CEO, Klints Solutions"
+                     class="w-64 h-64 md:w-80 md:h-80 rounded-full mx-auto object-cover border-8 border-white shadow-2xl transition-transform group-hover:scale-105">
+
+                <!-- Play Button Overlay -->
+                <button onclick="openVideoModal()"
+                        class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-40 rounded-full transition-all group-hover:bg-opacity-60">
+                    <div class="w-20 h-20 md:w-24 md:h-24 bg-white rounded-full flex items-center justify-center shadow-2xl transform transition-all hover:scale-110">
+                        <svg class="w-10 h-10 md:w-12 md:h-12 text-blue-600 ml-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7L8 5z"/>
+                        </svg>
+                    </div>
+                    <span class="absolute bottom-6 left-1/2 -translate-x-1/2 text-white font-bold text-sm md:text-lg opacity-0 group-hover:opacity-100 transition">
+                        Watch CEO Message
+                    </span>
+                </button>
             </div>
-            <div class="ceo-message p-6 md:p-12 flex flex-col md:flex-row items-center">
-                <div class="md:w-1/3 mb-6 md:mb-0">
-                    <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no" alt="Software Developer Hillary Kamwaro Korir" class="w-40 h-40 md:w-64 md:h-64 rounded-full mx-auto border-4 border-blue-500 hover:scale-105 transition">
+
+            <!-- CEO Written Message -->
+            <div class="md:col-span-2 space-y-6">
+                <blockquote class="text-lg md:text-xl text-gray-700 leading-relaxed italic">
+                    “At Klints Solutions, we don’t just build websites or run ads — we build <span class="font-bold text-blue-600">digital empires</span>. 
+                    From custom WordPress systems that scale with your vision, to AI-powered automation and high-ROI Meta & Google campaigns, 
+                    we’re here to turn your bold ideas into unstoppable growth.”
+                </blockquote>
+
+                <p class="text-gray-600 text-base md:text-lg">
+                    Our promise is simple: cutting-edge technology, transparent results, and 24/7 support that feels like an extension of your own team.
+                    Whether you're launching a startup or scaling an enterprise, we’ve got your back.
+                </p>
+
+                <div class="flex items-center gap-4 mt-8">
+                    <div>
+                        <p class="font-bold text-xl text-gray-900">Hillary Kamwaro Korir</p>
+                        <p class="text-blue-600 font-medium">Founder & CEO, Klints Solutions</p>
+                    </div>
                 </div>
-                <div class="md:w-2/3 md:pl-8">
-                    <p class="text-gray-600 mb-4 text-sm md:text-base">
-                        At Klints Solutions, our mission is to empower businesses to thrive in the digital age. We are dedicated to building robust online presences through innovative WordPress solutions, strategic Google Ads campaigns, and cutting-edge hardware projects like our solar-powered surveillance systems. Our team provides unwavering technical support to ensure your success. Thank you for trusting us to be your partner in growth.
-                    </p>
-                    <p class="text-gray-600 font-medium text-sm md:text-base">— Software Developer Hillary Kamwaro Korir, CEO</p>
-                    <div class="flex flex-wrap gap-4 mt-4">
- <a href="https://www.linkedin.com/in/hillary-korir-0888b733a" class="inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base">Learn More About Developer</a>
- <a href="https://raw.githubusercontent.com/peter48hk/Klints-Solutions-Portfolios/main/pdfs/my_document.pdf" download class="inline-block px-4 py-2 text-white rounded-lg btn-primary font-medium text-sm md:text-base">Download Document</a>
- </div>
+
+                <div class="flex flex-wrap gap-4 mt-6">
+                    <a href="https://www.linkedin.com/in/hillary-korir-0888b733a" target="_blank"
+                       class="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold hover:shadow-xl transition flex items-center gap-2">
+                        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+                    </a>
+                    <a href="https://raw.githubusercontent.com/peter48hk/Klints-Solutions-Portfolios/main/pdfs/my_document.pdf" download
+                       class="px-6 py-3 bg-black text-white rounded-xl font-bold hover:bg-gray-800 transition flex items-center gap-2">
+                        <i class="fas fa-download"></i> Download Company Profile
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- Video Modal (Hidden by default) -->
+<div id="ceoVideoModal" class="fixed inset-0 bg-black bg-opacity-90 z-[9999] hidden flex items-center justify-center p-4">
+    <div class="relative max-w-4xl w-full">
+        <button onclick="closeVideoModal()" class="absolute -top-12 right-0 text-white text-4xl hover:text-gray-400 transition">×</button>
+        
+        <!-- Replace with your actual YouTube/Vimeo link or hosted MP4 -->
+        <div class="relative pt-[56.25%] bg-black rounded-2xl overflow-hidden shadow-2xl">
+            <iframe class="absolute inset-0 w-full h-full" 
+                    src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE?autoplay=1&rel=0" 
+                    title="CEO Message - Hillary Korir" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+        <p class="text-center text-white mt-4 text-sm">Having trouble? <a href="https://youtu.be/YOUR_VIDEO_ID_HERE" target="_blank" class="underline">Watch on YouTube</a></p>
+    </div>
+</div>
 
     <!-- Testimonials Section -->
     <section id="testimonials-slider" class="py-16 bg-gray-50" data-animate>
@@ -1984,6 +2044,22 @@
     document.getElementById("grokQuery").addEventListener("keypress", e => {
         if (e.key === "Enter") sendMessage(e);
     });
+		function openVideoModal() {
+    document.getElementById('ceoVideoModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+}
+function closeVideoModal() {
+    document.getElementById('ceoVideoModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    // Stop iframe playback
+    const iframe = document.querySelector('#ceoVideoModal iframe');
+    if (iframe) iframe.src = iframe.src;
+}
+
+// Close modal when clicking outside video
+document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
+    if (e.target === this) closeVideoModal();
+});
     </script>
 </body>
 </html>
