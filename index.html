@@ -710,12 +710,47 @@
             </div>
         </div>
        
-        <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-    <img src="https://outlineventures.ke/wp-content/uploads/2025/12/Business-team.gif" 
-         alt="Klints Solutions – Driving Business Growth" 
-         class="w-full max-w-md h-auto rounded-3xl shadow-2xl border-8 border-white 
-                floating-lg transform hover:scale-105 transition duration-700 
-                object-cover object-top">
+   <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+    <div class="w-full max-w-md">
+        <!-- Search Engine Card -->
+        <div class="bg-white rounded-3xl shadow-2xl border-8 border-white p-8 floating-lg transform hover:scale-105 transition duration-700">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Search Anything</h2>
+                <p class="text-gray-600 text-sm">Powered by real-time web search</p>
+            </div>
+
+            <!-- Search Form -->
+            <form id="interactiveSearch" class="relative" onsubmit="performSearch(event)">
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <input 
+                        type="text" 
+                        id="searchQuery" 
+                        placeholder="Ask me anything..." 
+                        required
+                        class="w-full px-6 py-4 text-gray-800 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 focus:border-transparent transition placeholder-gray-400 text-lg"
+                        autocomplete="off"
+                    >
+                    <button 
+                        type="submit"
+                        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition shadow-lg whitespace-nowrap"
+                    >
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline -ml-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        Search
+                    </button>
+                </div>
+            </form>
+
+            <!-- Sample Quick Searches -->
+            <div class="mt-6 grid grid-cols-2 gap-3 text-sm">
+                <button onclick="quickSearch('Latest AI news')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Latest AI news</button>
+                <button onclick="quickSearch('Best productivity tools 2025')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Best tools 2025</button>
+                <button onclick="quickSearch('Weather in Nairobi today')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Nairobi weather</button>
+                <button onclick="quickSearch('How to grow a startup')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Grow a startup</button>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 </section>
