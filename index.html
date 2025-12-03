@@ -51,6 +51,15 @@
             background-clip: text;
             color: transparent;
         }
+@keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+    }
+    .floating-lg {
+        animation: float 6s ease-in-out infinite;
+    }
+		
 
         .rainbow-shop {
             background: linear-gradient(45deg, #4285F4, #34A853, #FBBC05, #EA4335);
@@ -1858,6 +1867,26 @@
   document.getElementById('searchResults').addEventListener('click', function(e) {
     e.stopPropagation();
   });
+		function performSearch(event) {
+        event.preventDefault();
+        const query = document.getElementById('searchQuery').value.trim();
+        if (query) {
+            const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
+            window.open(googleUrl, '_blank');
+        }
+    }
+
+    function quickSearch(text) {
+        document.getElementById('searchQuery').value = text;
+        performSearch(new Event('submit'));
+    }
+
+    // Optional: Press Enter in input triggers search
+    document.getElementById('searchQuery').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            performSearch(e);
+        }
+    });
 
     </script>
     <script>
