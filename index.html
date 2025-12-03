@@ -815,57 +815,43 @@
         <div class="bg-white rounded-3xl shadow-2xl border-8 border-white p-8 floating-lg transform hover:scale-105 transition duration-700">
             <div class="text-center mb-6">
                 <h2 class="text-2xl font-bold text-gray-800 mb-2">Grok AI Assistant</h2>
-                <p class="text-gray-600 text-sm">Powered by xAI's Grok – Ask anything, get real-time insights</p>
+                <p class="text-gray-600 text-sm">Powered by xAI – Ask anything, get instant answers</p>
             </div>
-            
-            <!-- Chat Input Form -->
-            <form id="grokChatForm" class="relative mb-4" onsubmit="sendToGrok(event)">
-                <div class="flex gap-3">
-                    <input
-                        type="text"
-                        id="grokQuery"
-                        placeholder="Ask Grok anything..."
-                        required
-                        class="w-full px-6 py-4 text-gray-800 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 focus:border-transparent transition placeholder-gray-400 text-lg"
-                        autocomplete="off"
-                    >
-                    <button
-                        type="submit"
-                        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition shadow-lg whitespace-nowrap"
-                        disabled
-                    >
+
+            <!-- Chat Input -->
+            <form id="grokChatForm" onsubmit="sendMessage(event)">
+                <div class="flex gap-3 mb-4">
+                    <input type="text" id="grokQuery" placeholder="Ask Grok anything..." required
+                        class="w-full px-6 py-4 text-gray-800 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 text-lg"
+                        autocomplete="off">
+                    <button type="submit"
+                        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition shadow-lg">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline -ml-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
                         </svg>
                         Send
                     </button>
                 </div>
             </form>
 
-            <!-- Sample Quick Queries -->
+            <!-- Quick Buttons -->
             <div class="grid grid-cols-2 gap-3 text-sm mb-6">
-                <button onclick="quickGrokQuery('Latest AI news')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Latest AI news</button>
-                <button onclick="quickGrokQuery('Best productivity tools 2025')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Best tools 2025</button>
-                <button onclick="quickGrokQuery('Weather in Nairobi today')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Nairobi weather</button>
-                <button onclick="quickGrokQuery('How to grow a startup')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Grow a startup</button>
+                <button onclick="quickAsk('Latest AI news')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Latest AI news</button>
+                <button onclick="quickAsk('Best tools 2025')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Best tools 2025</button>
+                <button onclick="quickAsk('Weather in Nairobi today')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Nairobi weather</button>
+                <button onclick="quickAsk('How to grow a startup')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Grow a startup</button>
             </div>
 
-            <!-- Chat Feedback Area -->
-            <div id="grokChatArea" class="max-h-64 overflow-y-auto bg-gray-50 rounded-xl p-4 space-y-3 text-sm hidden">
-                <!-- Messages will appear here -->
-                <div id="loadingSpinner" class="hidden text-center py-4">
-                    <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
-                    <p class="mt-2 text-gray-600">Grok is thinking...</p>
+            <!-- Chat Area -->
+            <div id="chatArea" class="bg-gray-50 rounded-xl p-4 max-h-80 overflow-y-auto space-y-4 text-sm hidden">
+                <div id="typing" class="hidden text-center text-gray-500">
+                    <div class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+                    <span class="ml-2">Grok is thinking...</span>
                 </div>
-                <div id="grokResponse" class="bg-white rounded-lg p-3 border-l-4 border-blue-500 text-gray-800"></div>
-                <div id="errorMsg" class="hidden bg-red-50 border border-red-200 rounded-lg p-3 text-red-700"></div>
+                <div id="grokAnswer" class="bg-white rounded-lg p-4 shadow-sm border-l-4 border-blue-500 text-gray-800 whitespace-pre-wrap"></div>
             </div>
-
-            <!-- API Note -->
-            <p class="text-xs text-gray-500 text-center mt-4">Integrate via xAI API: <a href="https://x.ai/api" target="_blank" class="text-blue-600 hover:underline">Get Started</a></p>
         </div>
     </div>
-</div
 </div>
 </div>
 </section>
