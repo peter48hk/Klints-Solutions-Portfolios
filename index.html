@@ -13,12 +13,6 @@
 	<link rel="icon" href="https://outlineventures.ke/wp-content/uploads/2025/11/apple-touch-icon.png" type="image/x-icon"> 
 	<link rel="shortcut icon" href="https://outlineventures.ke/wp-content/uploads/2025/11/apple-touch-icon.png">
     <style>
-		#home { 
-        margin-top: 60px !important; 
-    }
-    @media (max-width: 768px) {
-        #home { margin-top: 80px !important; }
-    }
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -723,31 +717,48 @@
         </div>
     </div>
     <!-- Mobile Menu -->
- !-- ====== PROMO BAR – JUST BELOW NAV (like the screenshot) ====== -->
-<div id="promoBar" class="w-full bg-[#84cc16] text-black font-bold text-center relative z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between py-3 text-sm md:text-base">
-
-            <!-- Main Message (centered on mobile, left-aligned on desktop) -->
-            <div class="flex-1 text-center md:text-left">
-                Connect, learn, and innovate. GTC is where AI breakthroughs happen.
-            </div>
-
-            <!-- Black CTA Button -->
-            <a href="https://wa.me/254727624353" 
-               class="inline-flex items-center bg-black text-white px-5 py-2 rounded-md font-bold hover:bg-gray-900 transition whitespace-nowrap">
-                Get Early-Bird Pricing
-            </a>
-
-            <!-- Close Button (×) -->
-            <button onclick="this.parentElement.parentElement.parentElement.remove()" 
-                    class="ml-4 text-black hover:opacity-70 text-2xl leading-none">
-                ×
-            </button>
+    <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-16 shadow-lg py-4 px-6 mobile-menu z-40">
+        <div class="flex justify-end mb-2">
+            <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-xl"></i></button>
+        </div>
+        <div class="flex flex-col space-y-4">
+            <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+            <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+            <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium">Packages</a>
+            <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
+            <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+            <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+            <a href="https://klintsshop.ct.ws/" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
+            <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-user-circle mr-2"></i>Login/Register</a>
         </div>
     </div>
-</div>
- <!-- Your Original Hero Section (unchanged except slight top padding adjustment) -->
+</nav>
+   <!-- Promotional Top Banner Slider + Hero Section -->
+<div class="relative">
+    <!-- Slim Promo Banner Slider -->
+    <div id="promoBanner" class="relative bg-gray-900 text-white overflow-hidden transition-all duration-500" style="height: 48px;">
+        <div class="absolute right-3 top-1/2 -translate-y-1/2 z-10">
+            <button onclick="document.getElementById('promoBanner').style.height='0';document.getElementById('promoBanner').style.padding='0'" 
+                    class="text-white opacity-70 hover:opacity-100 text-xl">×</button>
+        </div>
+        
+        <div id="promoSlider" class="flex h-full items-center justify-center">
+            <div class="promo-item active w-full text-center font-semibold text-sm md:text-base">
+                <span class="inline-block py-3 px-6 bg-green-600 w-full">Limited Time: 30% OFF Google & Meta Ads Management – December Only!</span>
+            </div>
+            <div class="promo-item w-full text-center font-semibold text-sm md:text-base">
+                <span class="inline-block py-3 px-6 bg-red-600 w-full">New: AI-Powered WordPress Sites with Grok Integration – From KSh 45,000</span>
+            </div>
+            <div class="promo-item w-full text-center font-semibold text-sm md:text-base">
+                <span class="inline-block py-3 px-6 bg-emerald-600 w-full">Free Python Automation Audit for All New Projects This Month!</span>
+            </div>
+            <div class="promo-item w-full text-center font-semibold text-sm md:text-base">
+                <span class="inline-block py-3 px-6 bg-rose-600 w-full">Lock 2025 Pricing Today – Save up to 25% on Annual Contracts!</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Your Original Hero Section (unchanged except slight top padding adjustment) -->
     <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate style="padding-top: 0 !important;">
         <!-- New Full Background Image -->
         <div class="absolute inset-0 z-0">
