@@ -2044,6 +2044,34 @@
     document.getElementById("grokQuery").addEventListener("keypress", e => {
         if (e.key === "Enter") sendMessage(e);
     });
+		let promoIndex = 0;
+const promoItems = document.querySelectorAll('#promoSlider .promo-item');
+
+function rotatePromo() {
+    promoItems.forEach(item => item.classList.remove('active'));
+    promoItems[promoIndex].classList.add('active');
+    promoIndex = (promoIndex + 1) % promoItems.length;
+}
+
+// Initial setup
+document.querySelectorAll('#promoSlider .promo-item').forEach((item, i) => {
+    item.style.position = 'absolute';
+    item.style.inset = '0';
+    item.style.opacity = i === 0 ? '1' : '0';
+    item.style.transition = 'opacity 0.8s ease';
+    if (i === 0) item.classList.add('active');
+});
+
+setInterval(rotatePromo, 4500);
+
+// Optional: Add this CSS if not already in your stylesheet
+const style = document.createElement('style');
+style.textContent = `
+    #promoSlider .promo-item { transition: opacity 0.8s ease; }
+    #promoSlider .active { opacity: 1; z-index: 5; }
+    #promoSlider > div:not(.active) { opacity: 0; }
+`;
+document.head.appendChild(style);
     </script>
 </body>
 </html>
