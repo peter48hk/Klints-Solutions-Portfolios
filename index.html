@@ -27,6 +27,17 @@
             100% { transform: translate(0, 0) rotate(0deg); }
         }
 
+		@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); } /* 50% for seamless loop with duplicates */
+}
+.animate-scroll {
+    animation: scroll 40s linear infinite;
+}
+.animate-scroll:hover {
+    animation-play-state: paused; /* Pause on hover for better UX */
+}
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.03); }
@@ -1413,21 +1424,240 @@
         </div>
     </div>
 </section>
-    <!-- Hugging Face AI Models Slider Section -->
-    <section class="py-12 bg-gradient-to-r from-blue-50 to-green-50" data-animate>
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-8">
-                <h2 class="text-2xl md:text-3xl font-bold mb-4">Explore Leading <span class="gradient-text">AI Models</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
-                    Showcasing powerful AI models from Hugging Face used in our projects.
-                </p>
-                <div class="text-center mt-6">
-                    <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
-                        Inquire <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
- <!-- AI Models content removed as per instruction -->
+<!-- Hugging Face AI Models Slider Section -->
+<section class="py-12 bg-gradient-to-r from-blue-50 to-green-50" data-animate>
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-8">
+            <h2 class="text-2xl md:text-3xl font-bold mb-4">Explore Leading <span class="gradient-text">AI Models</span></h2>
+            <p class="text-gray-500 max-w-2xl mx-auto text-sm md:text-base">
+                Showcasing powerful AI models from Hugging Face used in our projects.
+            </p>
+            <div class="text-center mt-6">
+                <a href="#contact" class="inline-block px-5 py-2 md:px-6 md:py-3 text-white rounded-lg btn-primary font-medium text-sm md:text-base">
+                    Inquire <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
         </div>
-    </section>
+
+        <!-- AI Models Horizontal Scrolling Slider -->
+        <div class="relative overflow-hidden">
+            <div class="flex animate-scroll whitespace-nowrap space-x-6 pb-4">
+                <!-- Model 1: Tongyi-MAI/Z-Image-Turbo -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/main/thumbnail.png?download=true" 
+                         alt="Tongyi-MAI/Z-Image-Turbo" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Image Gen</span>
+                </div>
+
+                <!-- Model 2: deepseek-ai/DeepSeek-V3.2 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/thumbnail.png?download=true" 
+                         alt="deepseek-ai/DeepSeek-V3.2" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Text Gen</span>
+                </div>
+
+                <!-- Model 3: deepseek-ai/DeepSeek-Math-V2 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/resolve/main/thumbnail.png?download=true" 
+                         alt="deepseek-ai/DeepSeek-Math-V2" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full">Math AI</span>
+                </div>
+
+                <!-- Model 4: deepseek-ai/DeepSeek-V3.2-Speciale -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale/resolve/main/thumbnail.png?download=true" 
+                         alt="deepseek-ai/DeepSeek-V3.2-Speciale" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Text Gen</span>
+                </div>
+
+                <!-- Model 5: black-forest-labs/FLUX.2-dev -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/black-forest-labs/FLUX.2-dev/resolve/main/thumbnail.png?download=true" 
+                         alt="black-forest-labs/FLUX.2-dev" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Image AI</span>
+                </div>
+
+                <!-- Model 6: Comfy-Org/z_image_turbo -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/Comfy-Org/z_image_turbo/resolve/main/thumbnail.png?download=true" 
+                         alt="Comfy-Org/z_image_turbo" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Image Turbo</span>
+                </div>
+
+                <!-- Model 7: tencent/HunyuanOCR -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/tencent/HunyuanOCR/resolve/main/thumbnail.png?download=true" 
+                         alt="tencent/HunyuanOCR" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full">OCR</span>
+                </div>
+
+                <!-- Model 8: nvidia/Orchestrator-8B -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/nvidia/Orchestrator-8B/resolve/main/thumbnail.png?download=true" 
+                         alt="nvidia/Orchestrator-8B" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Orchestrator</span>
+                </div>
+
+                <!-- Model 9: microsoft/Fara-7B -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/microsoft/Fara-7B/resolve/main/thumbnail.png?download=true" 
+                         alt="microsoft/Fara-7B" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Vision</span>
+                </div>
+
+                <!-- Model 10: facebook/sam3 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/facebook/sam3/resolve/main/thumbnail.png?download=true" 
+                         alt="facebook/sam3" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full">Segmentation</span>
+                </div>
+
+                <!-- Model 11: alibaba-pai/Z-Image-Turbo-Fun-Controlnet-Union -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/alibaba-pai/Z-Image-Turbo-Fun-Controlnet-Union/resolve/main/thumbnail.png?download=true" 
+                         alt="alibaba-pai/Z-Image-Turbo-Fun-Controlnet-Union" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">ControlNet</span>
+                </div>
+
+                <!-- Model 12: apple/starflow -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/apple/starflow/resolve/main/thumbnail.png?download=true" 
+                         alt="apple/starflow" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Starflow</span>
+                </div>
+
+                <!-- Model 13: PrimeIntellect/INTELLECT-3 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/PrimeIntellect/INTELLECT-3/resolve/main/thumbnail.png?download=true" 
+                         alt="PrimeIntellect/INTELLECT-3" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full">Intellect</span>
+                </div>
+
+                <!-- Model 14: jayn7/Z-Image-Turbo-GGUF -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/jayn7/Z-Image-Turbo-GGUF/resolve/main/thumbnail.png?download=true" 
+                         alt="jayn7/Z-Image-Turbo-GGUF" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">GGUF</span>
+                </div>
+
+                <!-- Model 15: AIDC-AI/Ovis-Image-7B -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/AIDC-AI/Ovis-Image-7B/resolve/main/thumbnail.png?download=true" 
+                         alt="AIDC-AI/Ovis-Image-7B" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Ovis Image</span>
+                </div>
+
+                <!-- Model 16: mistralai/Mistral-Large-3-675B-Instruct-2512 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/mistralai/Mistral-Large-3-675B-Instruct-2512/resolve/main/thumbnail.png?download=true" 
+                         alt="mistralai/Mistral-Large-3-675B-Instruct-2512" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Mistral</span>
+                </div>
+
+                <!-- Model 17: stepfun-ai/Step-Audio-R1 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/stepfun-ai/Step-Audio-R1/resolve/main/thumbnail.png?download=true" 
+                         alt="stepfun-ai/Step-Audio-R1" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full">Audio</span>
+                </div>
+
+                <!-- Model 18: tencent/HunyuanVideo-1.5 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/tencent/HunyuanVideo-1.5/resolve/main/thumbnail.png?download=true" 
+                         alt="tencent/HunyuanVideo-1.5" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Video Gen</span>
+                </div>
+
+                <!-- Model 19: Supertone/supertonic -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/Supertone/supertonic/resolve/main/thumbnail.png?download=true" 
+                         alt="Supertone/supertonic" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-orange-500 text-white text-xs px-2 py-1 rounded-full">TTS</span>
+                </div>
+
+                <!-- Model 20: T5B/Z-Image-Turbo-FP8 -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/T5B/Z-Image-Turbo-FP8/resolve/main/thumbnail.png?download=true" 
+                         alt="T5B/Z-Image-Turbo-FP8" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">FP8 Image</span>
+                </div>
+
+                <!-- Duplicate items for seamless infinite scroll -->
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/Tongyi-MAI/Z-Image-Turbo/resolve/main/thumbnail.png?download=true" 
+                         alt="Tongyi-MAI/Z-Image-Turbo" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-blue-500 text-white text-xs px-2 py-1 rounded-full">Image Gen</span>
+                </div>
+
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/deepseek-ai/DeepSeek-V3.2/resolve/main/thumbnail.png?download=true" 
+                         alt="deepseek-ai/DeepSeek-V3.2" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Text Gen</span>
+                </div>
+
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/deepseek-ai/DeepSeek-Math-V2/resolve/main/thumbnail.png?download=true" 
+                         alt="deepseek-ai/DeepSeek-Math-V2" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-purple-500 text-white text-xs px-2 py-1 rounded-full">Math AI</span>
+                </div>
+
+                <div class="flex-shrink-0 w-32 h-32 bg-white rounded-xl shadow-lg flex items-center justify-center border border-gray-200 hover:shadow-xl transition-shadow">
+                    <img src="https://huggingface.co/deepseek-ai/DeepSeek-V3.2-Speciale/resolve/main/thumbnail.png?download=true" 
+                         alt="deepseek-ai/DeepSeek-V3.2-Speciale" 
+                         class="w-20 h-20 object-contain rounded-md" 
+                         onerror="this.src='https://huggingface.co/datasets/huggingface/documentation-images/resolve/main/transformers-logo.svg?download=true'">
+                    <span class="absolute bottom-2 right-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">Text Gen</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
    <!-- CEO Message Section – With Video Preview Modal -->
 <section id="ceo-message" class="py-16 lg:py-24 bg-gradient-to-br from-green-50 via-yellow-50 to-blue-50 overflow-hidden" data-animate>
