@@ -90,7 +90,7 @@
           <div class="flex items-center justify-between">
             <div>
               <p class="text-gray-500 text-sm">Total Clients</p>
-              <p class="text-4xl font-extrabold text-gray-900 mt-2">68</p>
+              <p id="total-clients" class="text-4xl font-extrabold text-gray-900 mt-2">68</p>
               <p class="text-green-600 text-sm mt-2">+12% from last month</p>
             </div>
             <i class="fas fa-users text-5xl text-red-500 opacity-20"></i>
@@ -100,7 +100,7 @@
           <div class="flex items-center justify-between">
             <div>
               <p class="text-gray-500 text-sm">Active Projects</p>
-              <p class="text-4xl font-extrabold text-gray-900 mt-2">142</p>
+              <p id="active-projects" class="text-4xl font-extrabold text-gray-900 mt-2">142</p>
               <p class="text-blue-600 text-sm mt-2">24 in progress</p>
             </div>
             <i class="fas fa-briefcase text-5xl text-blue-500 opacity-20"></i>
@@ -110,7 +110,7 @@
           <div class="flex items-center justify-between">
             <div>
               <p class="text-gray-500 text-sm">Revenue (This Month)</p>
-              <p class="text-4xl font-extrabold text-gray-900 mt-2">KSh 2.8M</p>
+              <p id="revenue" class="text-4xl font-extrabold text-gray-900 mt-2">KSh 2.8M</p>
               <p class="text-green-600 text-sm mt-2">+18% from last month</p>
             </div>
             <i class="fas fa-chart-line text-5xl text-green-500 opacity-20"></i>
@@ -120,7 +120,7 @@
           <div class="flex items-center justify-between">
             <div>
               <p class="text-gray-500 text-sm">Pending Approvals</p>
-              <p class="text-4xl font-extrabold text-gray-900 mt-2">7</p>
+              <p id="pending-approvals" class="text-4xl font-extrabold text-gray-900 mt-2">7</p>
               <p class="text-orange-600 text-sm mt-2">Requires attention</p>
             </div>
             <i class="fas fa-bell text-5xl text-orange-500 opacity-20"></i>
@@ -142,38 +142,8 @@
             <h3 class="text-xl font-bold text-gray-900">Recent Clients</h3>
             <button class="text-red-600 hover:underline text-sm font-medium">View All</button>
           </div>
-          <div class="space-y-5">
-            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div class="flex items-center space-x-4">
-                <img src="https://randomuser.me/api/portraits/women/44.jpg" class="w-12 h-12 rounded-full" alt="">
-                <div>
-                  <p class="font-semibold">Sarah Kimani</p>
-                  <p class="text-sm text-gray-500">E-commerce Store</p>
-                </div>
-              </div>
-              <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Active</span>
+          <div id="recent-clients-container" class="space-y-5">
             </div>
-            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div class="flex items-center space-x-4">
-                <img src="https://randomuser.me/api/portraits/men/86.jpg" class="w-12 h-12 rounded-full" alt="">
-                <div>
-                  <p class="font-semibold">David Otieno</p>
-                  <p class="text-sm text-gray-500">Google Ads Campaign</p>
-                </div>
-              </div>
-              <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">Review</span>
-            </div>
-            <div class="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
-              <div class="flex items-center space-x-4">
-                <img src="https://randomuser.me/api/portraits/women/22.jpg" class="w-12 h-12 rounded-full" alt="">
-                <div>
-                  <p class="font-semibold">Mercy Wanjiku</p>
-                  <p class="text-sm text-gray-500">Python Automation</p>
-                </div>
-              </div>
-              <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs">Live</span>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -181,27 +151,6 @@
   </div>
 
   <!-- Chart Script -->
-  <script>
-    const ctx = document.getElementById('revenueChart').getContext('2d');
-    new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-        datasets: [{
-          label: 'Revenue (KSh)',
-          data: [180000, 220000, 280000, 310000, 380000, 420000, 480000, 520000, 580000, 720000, 890000, 2800000],
-          borderColor: '#dc2626',
-          backgroundColor: 'rgba(220, 38, 38, 0.1)',
-          tension: 0.4,
-          fill: true
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: { legend: { display: false } },
-        scales: { y: { beginAtZero: true } }
-      }
-    });
-  </script>
+  <script src="admin.js"></script>
 </body>
 </html>
