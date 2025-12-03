@@ -734,6 +734,23 @@
 </nav>
     <!-- Hero Section -->
  <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
+	 <div class="relative w-full bg-gray-900 overflow-hidden" style="height: 48px;">
+    <div id="promoSlider" class="flex items-center justify-center h-full text-white font-semibold text-sm md:text-base whitespace-nowrap">
+        <!-- Messages - add/remove as many as you want -->
+        <div class="promo-item flex-shrink-0 w-full text-center py-3 bg-green-600">
+            🚀 Limited Offer: Get 30% OFF on Meta & Google Ads Management this December!
+        </div>
+        <div class="promo-item flex-shrink-0 w-full text-center py-3 bg-red-600">
+            ⚡ New: AI-Powered WordPress Sites with Grok Integration – Starting at KSh 45,000
+        </div>
+        <div class="promo-item flex-shrink-0 w-full text-center py-3 bg-emerald-600">
+            💥 Black Friday Extended: Free Python Automation Audit on all new projects!
+        </div>
+        <div class="promo-item flex-shrink-0 w-full text-center py-3 bg-rose-600">
+            🎯 2026 Early Bird: Book now and lock 2025 pricing – Save up to 25%!
+        </div>
+    </div>
+</div>
     <!-- New Full Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1531311658047829&version=1757543328&transcode_extension=webp" 
@@ -2037,6 +2054,30 @@
     document.getElementById("grokQuery").addEventListener("keypress", e => {
         if (e.key === "Enter") sendMessage(e);
     });
+		let currentPromo = 0;
+const items = document.querySelectorAll('#promoSlider .promo-item');
+const totalItems = items.length;
+
+function showNextPromo() {
+    items[currentPromo].style.opacity = '0';
+    currentPromo = (currentPromo + 1) % totalItems;
+    items.forEach(item => item.style.transition = 'opacity 0.8s ease');
+    items[currentPromo].style.opacity = '1';
+}
+
+function initPromoSlider() {
+    // Hide all except first
+    items.forEach((item, idx) => {
+        item.style.opacity = idx === 0 ? '1' : '0';
+        item.style.position = 'absolute';
+        item.style.inset = '0';
+    });
+    // Start rotation
+    setInterval(showNextPromo, 5000);
+}
+
+// Run when page loads
+document.addEventListener('DOMContentLoaded', initPromoSlider);
     </script>
 </body>
 </html>
