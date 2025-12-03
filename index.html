@@ -733,135 +733,129 @@
         </div>
     </div>
 </nav>
-   <!-- Promotional Top Banner Slider + Hero Section -->
-<div class="relative">
-    <!-- Slim Promo Banner Slider -->
-    <div id="promoBanner" class="relative bg-gray-900 text-white overflow-hidden transition-all duration-500" style="height: 48px;">
-        <div class="absolute right-3 top-1/2 -translate-y-1/2 z-10">
-            <button onclick="document.getElementById('promoBanner').style.height='0';document.getElementById('promoBanner').style.padding='0'" 
-                    class="text-white opacity-70 hover:opacity-100 text-xl">×</button>
+    <!-- Hero Section -->
+ <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
+    <!-- New Full Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1531311658047829&version=1757543328&transcode_extension=webp" 
+             alt="Background" 
+             class="w-full h-full object-cover opacity-70">
+    </div>
+
+    <!-- Existing Blobs -->
+    <div class="absolute inset-0 pointer-events-none z-10">
+        <span class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow"></span>
+        <span class="absolute top-1/2 right-1/4 w-64 h-64 bg-red-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-4000"></span>
+        <span class="absolute bottom-1/4 left-1/2 w-64 h-64 bg-green-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-2000"></span>
+    </div>
+
+    <!-- Floating Tech Icons -->
+    <div class="absolute inset-0 pointer-events-none z-20">
+       <!-- Your core service icons (unchanged) -->
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-1" style="top: 10%; left: 5%;" alt="Python">
+   
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-meta" style="top: 45%; right: 8%;" alt="Meta Ads">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-3" style="bottom: 15%; left: 15%;" alt="WordPress">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-4" style="top: 40%; left: 30%;" alt="WooCommerce">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-5" style="bottom: 30%; right: 5%;" alt="JavaScript">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-8" style="top: 18%; left: 45%;" alt="React">
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-10" style="top: 60%; left: 5%;" alt="Figma">
+
+   
+
+    <!-- NEW: NVIDIA, DeepSeek, Grok (xAI), Tesla -->
+    
+    
+    <img src="https://deepseek.com/favicon.ico" class="absolute w-9 h-9 md:w-11 md:h-11 opacity-25 rounded-full floating-logo-deepseek" style="bottom: 8%; left: 25%;" alt="DeepSeek">
+    
+
+    
+    <img src="https://www.tesla.com/favicon.ico" class="absolute w-9 h-9 md:w-11 md:h-11 opacity-25 floating-logo-tesla" style="top: 5%; left: 18%;" alt="Tesla">
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-30 pt-10 md:pt-16">
+        <div class="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-10">
+            <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
+                Building Your <span class="gradient-text-hero">Digital Foundation</span>
+            </h1>
+           <p class="text-black text-base mb-6 max-w-md">
+    Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
+</p>
+           
+            <div class="flex flex-wrap gap-3 mb-6">
+                <a href="https://wa.me/254727624353" class="px-6 py-3 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
+                    Start Consultation <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#portfolio" class="px-6 py-3 text-base border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-50 transition duration-300 font-semibold">
+                    View Case Studies
+                </a>
+            </div>
+            <div class="flex items-center space-x-6 p-3 bg-white rounded-lg shadow-sm border-t-2 border-yellow-500 max-w-md">
+                <div class="flex items-center space-x-1">
+                    <div class="flex -space-x-2">
+                        <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 1">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 2">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 3">
+                    </div>
+                    <span class="text-xs font-medium text-gray-700 ml-1">+50 Clients</span>
+                </div>
+                <div>
+                    <div class="flex items-center">
+                        <i class="fas fa-star text-yellow-500 text-sm mr-1"></i>
+                        <span class="font-extrabold text-gray-900 text-lg">5.0</span>
+                        <span class="text-gray-500 ml-1 text-sm">(128 Reviews)</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        
-        <div id="promoSlider" class="flex h-full items-center justify-center">
-            <div class="promo-item active w-full text-center font-semibold text-sm md:text-base">
-                <span class="inline-block py-3 px-6 bg-green-600 w-full">Limited Time: 30% OFF Google & Meta Ads Management – December Only!</span>
+       
+   <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
+    <div class="w-full max-w-md">
+        <!-- Grok AI Chat Card -->
+        <div class="bg-white rounded-3xl shadow-2xl border-8 border-white p-8 floating-lg transform hover:scale-105 transition duration-700">
+            <div class="text-center mb-6">
+                <h2 class="text-2xl font-bold text-gray-800 mb-2">Grok AI Assistant</h2>
+                <p class="text-gray-600 text-sm">Powered by xAI – Ask anything, get instant answers</p>
             </div>
-            <div class="promo-item w-full text-center font-semibold text-sm md:text-base">
-                <span class="inline-block py-3 px-6 bg-red-600 w-full">New: AI-Powered WordPress Sites with Grok Integration – From KSh 45,000</span>
+
+            <!-- Chat Input -->
+            <form id="grokChatForm" onsubmit="sendMessage(event)">
+                <div class="flex gap-3 mb-4">
+                    <input type="text" id="grokQuery" placeholder="Ask Grok anything..." required
+                        class="w-full px-6 py-4 text-gray-800 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 text-lg"
+                        autocomplete="off">
+                    <button type="submit"
+                        class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline -ml-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+                        </svg>
+                        Send
+                    </button>
+                </div>
+            </form>
+
+            <!-- Quick Buttons -->
+            <div class="grid grid-cols-2 gap-3 text-sm mb-6">
+                <button onclick="quickAsk('Latest AI news')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Latest AI news</button>
+                <button onclick="quickAsk('Best tools 2025')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Best tools 2025</button>
+                <button onclick="quickAsk('Weather in Nairobi today')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Nairobi weather</button>
+                <button onclick="quickAsk('How to grow a startup')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Grow a startup</button>
             </div>
-            <div class="promo-item w-full text-center font-semibold text-sm md:text-base">
-                <span class="inline-block py-3 px-6 bg-emerald-600 w-full">Free Python Automation Audit for All New Projects This Month!</span>
-            </div>
-            <div class="promo-item w-full text-center font-semibold text-sm md:text-base">
-                <span class="inline-block py-3 px-6 bg-rose-600 w-full">Lock 2025 Pricing Today – Save up to 25% on Annual Contracts!</span>
+
+            <!-- Chat Area -->
+            <div id="chatArea" class="bg-gray-50 rounded-xl p-4 max-h-80 overflow-y-auto space-y-4 text-sm hidden">
+                <div id="typing" class="hidden text-center text-gray-500">
+                    <div class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
+                    <span class="ml-2">Grok is thinking...</span>
+                </div>
+                <div id="grokAnswer" class="bg-white rounded-lg p-4 shadow-sm border-l-4 border-blue-500 text-gray-800 whitespace-pre-wrap"></div>
             </div>
         </div>
     </div>
-
-    <!-- Your Original Hero Section (unchanged except slight top padding adjustment) -->
-    <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate style="padding-top: 0 !important;">
-        <!-- New Full Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1531311658047829&version=1757543328&transcode_extension=webp"
-                 alt="Background" class="w-full h-full object-cover opacity-70">
-        </div>
-
-        <!-- Existing Blobs & Floating Icons (100% unchanged) -->
-        <div class="absolute inset-0 pointer-events-none z-10">
-            <span class="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow"></span>
-            <span class="absolute top-1/2 right-1/4 w-64 h-64 bg-red-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-4000"></span>
-            <span class="absolute bottom-1/4 left-1/2 w-64 h-64 bg-green-400 opacity-5 rounded-full mix-blend-multiply filter blur-2xl animate-blob-slow animation-delay-2000"></span>
-        </div>
-
-        <div class="absolute inset-0 pointer-events-none z-20">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-1" style="top: 10%; left: 5%;" alt="Python">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/facebook/facebook-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-meta" style="top: 45%; right: 8%;" alt="Meta Ads">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-3" style="bottom: 15%; left: 15%;" alt="WordPress">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/woocommerce/woocommerce-plain-wordmark.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-4" style="top: 40%; left: 30%;" alt="WooCommerce">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-5" style="bottom: 30%; right: 5%;" alt="JavaScript">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-8" style="top: 18%; left: 45%;" alt="React">
-            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" class="absolute w-8 h-8 md:w-10 md:h-10 opacity-30 floating-logo-10" style="top: 60%; left: 5%;" alt="Figma">
-            <img src="https://deepseek.com/favicon.ico" class="absolute w-9 h-9 md:w-11 md:h-11 opacity-25 rounded-full floating-logo-deepseek" style="bottom: 8%; left: 25%;" alt="DeepSeek">
-            <img src="https://www.tesla.com/favicon.ico" class="absolute w-9 h-9 md:w-11 md:h-11 opacity-25 floating-logo-tesla" style="top: 5%; left: 18%;" alt="Tesla">
-        </div>
-
-        <!-- Main Content (unchanged) -->
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center relative z-30 pt-10 md:pt-16">
-            <!-- Left side text & buttons -->
-            <div class="md:w-1/2 mb-8 md:mb-0 pr-0 md:pr-10">
-                <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-gray-900">
-                    Building Your <span class="gradient-text-hero">Digital Foundation</span>
-                </h1>
-                <p class="text-black text-base mb-6 max-w-md">
-                    Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads, and specialized Python Automation.
-                </p>
-                <div class="flex flex-wrap gap-3 mb-6">
-                    <a href="https://wa.me/254727624353" class="px-6 py-3 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
-                        Start Consultation <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#portfolio" class="px-6 py-3 text-base border-2 border-red-500 text-red-600 rounded-lg hover:bg-red-50 transition duration-300 font-semibold">
-                        View Case Studies
-                    </a>
-                </div>
-                <div class="flex items-center space-x-6 p-3 bg-white rounded-lg shadow-sm border-t-2 border-yellow-500 max-w-md">
-                    <div class="flex items-center space-x-1">
-                        <div class="flex -space-x-2">
-                            <img src="https://randomuser.me/api/portraits/women/12.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 1">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 2">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" class="w-8 h-8 rounded-full border-2 border-white" alt="Client 3">
-                        </div>
-                        <span class="text-xs font-medium text-gray-700 ml-1">+50 Clients</span>
-                    </div>
-                    <div>
-                        <div class="flex items-center">
-                            <i class="fas fa-star text-yellow-500 text-sm mr-1"></i>
-                            <span class="font-extrabold text-gray-900 text-lg">5.0</span>
-                            <span class="text-gray-500 ml-1 text-sm">(128 Reviews)</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Grok AI Chat Card (unchanged) -->
-            <div class="md:w-1/2 flex justify-center mt-6 md:mt-0">
-                <div class="w-full max-w-md">
-                    <div class="bg-white rounded-3xl shadow-2xl border-8 border-white p-8 floating-lg transform hover:scale-105 transition duration-700">
-                        <div class="text-center mb-6">
-                            <h2 class="text-2xl font-bold text-gray-800 mb-2">Grok AI Assistant</h2>
-                            <p class="text-gray-600 text-sm">Powered by xAI – Ask anything, get instant answers</p>
-                        </div>
-                        <form id="grokChatForm" onsubmit="sendMessage(event)">
-                            <div class="flex gap-3 mb-4">
-                                <input type="text" id="grokQuery" placeholder="Ask Grok anything..." required
-                                    class="w-full px-6 py-4 text-gray-800 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-4 focus:ring-blue-300 text-lg" autocomplete="off">
-                                <button type="submit"
-                                    class="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-2xl hover:from-blue-700 hover:to-purple-700 transform hover:-translate-y-1 transition shadow-lg">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline -ml-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
-                                    </svg>
-                                    Send
-                                </button>
-                            </div>
-                        </form>
-                        <div class="grid grid-cols-2 gap-3 text-sm mb-6">
-                            <button onclick="quickAsk('Latest AI news')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Latest AI news</button>
-                            <button onclick="quickAsk('Best tools 2025')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Best tools 2025</button>
-                            <button onclick="quickAsk('Weather in Nairobi today')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Nairobi weather</button>
-                            <button onclick="quickAsk('How to grow a startup')" class="text-left text-gray-600 hover:text-blue-600 bg-gray-50 hover:bg-blue-50 px-4 py-3 rounded-xl transition">Grow a startup</button>
-                        </div>
-                        <div id="chatArea" class="bg-gray-50 rounded-xl p-4 max-h-80 overflow-y-auto space-y-4 text-sm hidden">
-                            <div id="typing" class="hidden text-center text-gray-500">
-                                <div class="inline-block animate-spin rounded-full h-6 w-6 border-b-2 border-blue-600"></div>
-                                <span class="ml-2">Grok is thinking...</span>
-                            </div>
-                            <div id="grokAnswer" class="bg-white rounded-lg p-4 shadow-sm border-l-4 border-blue-500 text-gray-800 whitespace-pre-wrap"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 </div>
+</div>
+</section>
     <!-- Stats Section -->
     <section class="py-10 bg-white" data-animate>
 
@@ -2044,34 +2038,6 @@
     document.getElementById("grokQuery").addEventListener("keypress", e => {
         if (e.key === "Enter") sendMessage(e);
     });
-		let promoIndex = 0;
-const promoItems = document.querySelectorAll('#promoSlider .promo-item');
-
-function rotatePromo() {
-    promoItems.forEach(item => item.classList.remove('active'));
-    promoItems[promoIndex].classList.add('active');
-    promoIndex = (promoIndex + 1) % promoItems.length;
-}
-
-// Initial setup
-document.querySelectorAll('#promoSlider .promo-item').forEach((item, i) => {
-    item.style.position = 'absolute';
-    item.style.inset = '0';
-    item.style.opacity = i === 0 ? '1' : '0';
-    item.style.transition = 'opacity 0.8s ease';
-    if (i === 0) item.classList.add('active');
-});
-
-setInterval(rotatePromo, 4500);
-
-// Optional: Add this CSS if not already in your stylesheet
-const style = document.createElement('style');
-style.textContent = `
-    #promoSlider .promo-item { transition: opacity 0.8s ease; }
-    #promoSlider .active { opacity: 1; z-index: 5; }
-    #promoSlider > div:not(.active) { opacity: 0; }
-`;
-document.head.appendChild(style);
     </script>
 </body>
 </html>
