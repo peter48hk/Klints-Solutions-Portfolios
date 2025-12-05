@@ -2464,6 +2464,27 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
     if (e.target === this) closeVideoModal();
 });
 		
+		const track = document.getElementById('sliderTrack');
+    let currentSlide = 0;
+    const slides = track.children.length;
+    const slideWidth = track.children[0].offsetWidth + 24; // card + gap
+
+    function slideNext() {
+        if (currentSlide < slides - 1) {
+            currentSlide++;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    }
+
+    function slidePrev() {
+        if (currentSlide > 0) {
+            currentSlide--;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+    }
+
+    // Auto-play (optional)
+    setInterval(slideNext, 5000);
     </script>
 </body>
 </html>
