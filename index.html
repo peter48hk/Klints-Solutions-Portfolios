@@ -18,34 +18,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-	.scrollbar-hide {
-        -ms-overflow-style: none;  /* IE and Edge */
-        scrollbar-width: none;  /* Firefox */
-    }
-    .scrollbar-hide::-webkit-scrollbar {
-        display: none;  /* Chrome, Safari, Opera */
-    }
-    /* Enhanced snap for better feel */
-    #sliderTrack {
-        scroll-snap-type: x mandatory;
-        -webkit-overflow-scrolling: touch; /* Smooth iOS scrolling */
-    }
-    #sliderTrack > div {
-        scroll-snap-align: center;
-    }
-    /* Line clamp for text overflow */
-    .line-clamp-2 {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        overflow: hidden;
-    }
-    /* Hide arrows on mobile, show on md+ */
-    @media (max-width: 768px) {
-        button[onclick*="scroll"] {
-            display: none !important;
-        }
-    }
 
         @keyframes liquidFloat {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -535,6 +507,37 @@
 .floating-logo-8 { animation: floating-logo-animation-4 9.5s ease-in-out infinite alternate 0.5s; }
 .floating-logo-9 { animation: floating-logo-animation-1 11.5s ease-in-out infinite alternate 3.5s; }
 .floating-logo-10 { animation: floating-logo-animation-2 12.5s ease-in-out infinite alternate 1.5s; }
+		.scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    #sliderTrack {
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+    }
+    #sliderTrack > div { scroll-snap-align: center; }
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    /* Responsive card sizing */
+    @media (max-width: 640px) {
+        #sliderTrack > div { width: calc(100vw - 2rem); }
+    }
+    @media (min-width: 641px) and (max-width: 1024px) {
+        #sliderTrack > div { width: 50%; }
+    }
+    @media (min-width: 1025px) {
+        #sliderTrack > div { width: 25%; }
+        button[onclick*="scroll"] { display: block !important; }
+    }
+    /* Hover scale for desktop */
+    @media (hover: hover) {
+        #sliderTrack > div:hover { transform: scale(1.02); }
+    }
     </style>
 	
 </head>
@@ -1162,123 +1165,239 @@
         </div>
     </section>
 <!-- ============================================= -->
-<!--   FEATURED PRODUCTS SLIDER SECTION (RESPONSIVE + REAL IMAGES) -->
+<!--   FEATURED PRODUCTS SLIDER SECTION (FULLY RESPONSIVE + 10 PRODUCTS + FIXED SLIDING) -->
 <!-- ============================================= -->
 <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6">
         <!-- Section Title -->
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
                 Featured Products from <span class="gradient-text">Territories.co.ke</span>
             </h2>
-            <p class="text-lg text-gray-600">Top tech essentials — order instantly via WhatsApp delivery in Nairobi</p>
+            <p class="text-lg text-gray-600">Top tech & gadgets — order instantly via WhatsApp with Nairobi delivery</p>
         </div>
 
         <!-- Slider Container -->
-        <div class="relative overflow-hidden rounded-2xl shadow-lg">
-            <div class="flex snap-x snap-mandatory gap-4 md:gap-6 pb-4 scrollbar-hide overflow-x-auto scroll-smooth" id="sliderTrack">
+        <div class="relative rounded-2xl shadow-lg overflow-hidden">
+            <!-- Track -->
+            <div class="flex gap-4 md:gap-6 scrollbar-hide overflow-x-auto scroll-smooth snap-x snap-mandatory pb-6" id="sliderTrack">
                 <!-- Product 1: Oraimo TenderPot OEC-201A -->
-                <div class="flex-shrink-0 snap-center w-[calc(100%-1rem)] md:w-48 lg:w-56 xl:w-64 bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/oraimo-tenderpot-oec-201a-6l-1000w-electric-pressure-cooker-1.jpg" 
-                         alt="Oraimo TenderPot OEC-201A 6L 1000W Electric Pressure Cooker" 
-                         class="w-full h-40 md:h-48 object-cover bg-gray-200" 
-                         loading="lazy"
-                         onerror="this.src='https://via.placeholder.com/300x200/gray/white?text=No+Image'">
-                    <div class="p-3 md:p-4">
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/oraimo-tenderpot-oec-201a-6l-1000w-electric-pressure-cooker-1.jpg" 
+                             alt="Oraimo TenderPot OEC-201A" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Oraimo+TenderPot'">
+                    </div>
+                    <div class="p-4">
                         <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Oraimo TenderPot OEC-201A 6L 1000W Electric Pressure Cooker</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-3 line-clamp-2">6L Large Capacity, 9 Smart Cooking Programs, Swift Nutrient-Rich Cooking</p>
-                        <div class="text-lg md:text-xl font-extrabold text-blue-600 mb-4">KES 12,500</div>
-                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20I'd%20like%20to%20order%20the%20Oraimo%20TenderPot%20OEC-201A%20for%20KES%2012,500.%20Delivery%20to%20Nairobi." 
-                           class="block text-center bg-green-500 text-white py-2 md:py-2.5 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2 text-sm" 
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">6L capacity for family meals. 9 smart programs, non-stick pot, auto keep-warm function.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 12,500</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Oraimo%20TenderPot%20OEC-201A%20-%20KES%2012,500.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
                            target="_blank">
-                            <i class="fab fa-whatsapp text-base md:text-lg"></i> Order via WhatsApp
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 2: Havit H2230d Gaming Headphones -->
-                <div class="flex-shrink-0 snap-center w-[calc(100%-1rem)] md:w-48 lg:w-56 xl:w-64 bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/havit-h2230d-3-5mm-high-magnetic-50mm-speaker-gaming-headphones-1.jpg" 
-                         alt="Havit H2230d 3.5mm High Magnetic 50mm Speaker Gaming Headphones" 
-                         class="w-full h-40 md:h-48 object-cover bg-gray-200" 
-                         loading="lazy"
-                         onerror="this.src='https://via.placeholder.com/300x200/gray/white?text=No+Image'">
-                    <div class="p-3 md:p-4">
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/havit-h2230d-3-5mm-high-magnetic-50mm-speaker-gaming-headphones-1.jpg" 
+                             alt="Havit H2230d Gaming Headphones" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Havit+H2230d'">
+                    </div>
+                    <div class="p-4">
                         <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Havit H2230d 3.5mm High Magnetic 50mm Speaker Gaming Headphones</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-3 line-clamp-2">Speaker: 50mm, Impedance: 32Ω, Sensitivity: 116dB, Frequency Response: 20Hz to 20kHz</p>
-                        <div class="text-lg md:text-xl font-extrabold text-blue-600 mb-4">KES 3,000</div>
-                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20I'd%20like%20to%20order%20the%20Havit%20H2230d%20Gaming%20Headphones%20for%20KES%203,000.%20Delivery%20to%20Nairobi." 
-                           class="block text-center bg-green-500 text-white py-2 md:py-2.5 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2 text-sm" 
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">50mm drivers for immersive sound. Comfortable over-ear design, built-in mic for gaming.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 3,000</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Havit%20H2230d%20Headphones%20-%20KES%203,000.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
                            target="_blank">
-                            <i class="fab fa-whatsapp text-base md:text-lg"></i> Order via WhatsApp
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 3: Havit h2019u Gaming Headset -->
-                <div class="flex-shrink-0 snap-center w-[calc(100%-1rem)] md:w-48 lg:w-56 xl:w-64 bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/havit-h2019u-gaming-headset-with-usb-7-1-surround-sound50mm-cool-rgb-lights-1.jpg" 
-                         alt="Havit h2019u gaming headset with usb 7.1 surround sound,50mm & cool rgb lights" 
-                         class="w-full h-40 md:h-48 object-cover bg-gray-200" 
-                         loading="lazy"
-                         onerror="this.src='https://via.placeholder.com/300x200/gray/white?text=No+Image'">
-                    <div class="p-3 md:p-4">
-                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Havit h2019u Gaming Headset with USB 7.1 Surround Sound</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-3 line-clamp-2">Unique design, High quality material, USB jack, 7.1 surround sound, RGB lights</p>
-                        <div class="text-lg md:text-xl font-extrabold text-blue-600 mb-4">KES 3,400</div>
-                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20I'd%20like%20to%20order%20the%20Havit%20h2019u%20Gaming%20Headset%20for%20KES%203,400.%20Delivery%20to%20Nairobi." 
-                           class="block text-center bg-green-500 text-white py-2 md:py-2.5 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2 text-sm" 
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/havit-h2019u-gaming-headset-with-usb-7-1-surround-sound50mm-cool-rgb-lights-1.jpg" 
+                             alt="Havit h2019u Gaming Headset" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Havit+h2019u'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Havit h2019u Gaming Headset USB 7.1 Surround Sound 50mm RGB</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">7.1 virtual surround, RGB lighting, noise-canceling mic, lightweight comfort.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 3,400</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Havit%20h2019u%20Headset%20-%20KES%203,400.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
                            target="_blank">
-                            <i class="fab fa-whatsapp text-base md:text-lg"></i> Order via WhatsApp
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 4: Havit Gamenote MS1011SE Gaming Mouse -->
-                <div class="flex-shrink-0 snap-center w-[calc(100%-1rem)] md:w-48 lg:w-56 xl:w-64 bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/havit-gamenote-ms1011se-transparent-programmable-1-5m-wired-gaming-mouse-1.jpg" 
-                         alt="Havit Gamenote MS1011SE transparent programmable 1.5m wired gaming mouse" 
-                         class="w-full h-40 md:h-48 object-cover bg-gray-200" 
-                         loading="lazy"
-                         onerror="this.src='https://via.placeholder.com/300x200/gray/white?text=No+Image'">
-                    <div class="p-3 md:p-4">
-                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Havit Gamenote MS1011SE Transparent Programmable Gaming Mouse</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-3 line-clamp-2">8 keys, 1200-7200 DPI, 1.6m cable, Transparent design, 3M key life</p>
-                        <div class="text-lg md:text-xl font-extrabold text-blue-600 mb-4">KES 1,500</div>
-                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20I'd%20like%20to%20order%20the%20Havit%20Gamenote%20MS1011SE%20Gaming%20Mouse%20for%20KES%201,500.%20Delivery%20to%20Nairobi." 
-                           class="block text-center bg-green-500 text-white py-2 md:py-2.5 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2 text-sm" 
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/havit-gamenote-ms1011se-transparent-programmable-1-5m-wired-gaming-mouse-1.jpg" 
+                             alt="Havit Gamenote MS1011SE Gaming Mouse" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Havit+MS1011SE'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Havit Gamenote MS1011SE Transparent Programmable Wired Gaming Mouse</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">1200-7200 DPI adjustable, 8 programmable buttons, RGB lighting, ergonomic grip.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 1,500</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Havit%20MS1011SE%20Mouse%20-%20KES%201,500.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
                            target="_blank">
-                            <i class="fab fa-whatsapp text-base md:text-lg"></i> Order via WhatsApp
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
                         </a>
                     </div>
                 </div>
 
                 <!-- Product 5: THINKSYSTEM 960GB SATA SSD SERVER -->
-                <div class="flex-shrink-0 snap-center w-[calc(100%-1rem)] md:w-48 lg:w-56 xl:w-64 bg-gray-50 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-shadow">
-                    <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/thinksystem-960gb-sata-ssd-server-1.jpg" 
-                         alt="THINKSYSTEM 960GB SATA SSD SERVER" 
-                         class="w-full h-40 md:h-48 object-cover bg-gray-200" 
-                         loading="lazy"
-                         onerror="this.src='https://via.placeholder.com/300x200/gray/white?text=No+Image'">
-                    <div class="p-3 md:p-4">
-                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">THINKSYSTEM 960GB SATA SSD SERVER</h3>
-                        <p class="text-xs md:text-sm text-gray-600 mb-3 line-clamp-2">960GB capacity, SATA interface, Lenovo brand, Internal 3.5" server drive</p>
-                        <div class="text-lg md:text-xl font-extrabold text-blue-600 mb-4">KES 29,500</div>
-                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20I'd%20like%20to%20order%20the%20THINKSYSTEM%20960GB%20SATA%20SSD%20SERVER%20for%20KES%2029,500.%20Delivery%20to%20Nairobi." 
-                           class="block text-center bg-green-500 text-white py-2 md:py-2.5 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2 text-sm" 
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/10/thinksystem-960gb-sata-ssd-server-1.jpg" 
+                             alt="THINKSYSTEM 960GB SATA SSD SERVER" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=ThinkSystem+SSD'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Lenovo ThinkSystem 960GB SATA SSD Server Drive</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">High-performance 2.5" SSD for servers, read/write speeds up to 550/520 MB/s, enterprise grade.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 29,500</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20ThinkSystem%20960GB%20SSD%20-%20KES%2029,500.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
                            target="_blank">
-                            <i class="fab fa-whatsapp text-base md:text-lg"></i> Order via WhatsApp
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 6: Oraimo Power Bank (Added) -->
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/09/oraimo-osiap-163-10000mah-power-bank-1.jpg" 
+                             alt="Oraimo OSIA-P163 10000mAh Power Bank" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Oraimo+Power+Bank'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Oraimo OSIA-P163 10000mAh Power Bank</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">Slim design, 22.5W fast charging, dual output ports for phone & tablet.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 2,800</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Oraimo%20OSIA-P163%20Power%20Bank%20-%20KES%202,800.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 7: Anker Soundcore (Added) -->
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/09/anker-soundcore-life-q20-hybrid-active-noise-cancelling-headphones-1.jpg" 
+                             alt="Anker Soundcore Life Q20 Noise Cancelling Headphones" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Anker+Soundcore'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Anker Soundcore Life Q20 Hybrid Active Noise Cancelling Headphones</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">40H playtime, ANC up to 40dB, bass-heavy sound, foldable design.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 6,500</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Anker%20Soundcore%20Q20%20-%20KES%206,500.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 8: Samsung Galaxy A05 (Added) -->
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/09/samsung-galaxy-a05-6-7-50mp-5000mah-4gb-64gb-1.jpg" 
+                             alt="Samsung Galaxy A05 6.7\" 50MP 5000mAh 4GB 64GB" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Samsung+A05'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Samsung Galaxy A05 6.7" 50MP Dual Camera 5000mAh 4GB 64GB</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">6.7-inch PLS LCD, Helio G85 processor, 50MP main camera, long battery life.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 15,000</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Samsung%20Galaxy%20A05%20-%20KES%2015,000.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 9: Logitech M185 Wireless Mouse (Added) -->
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/09/logitech-m185-wireless-mouse-1.jpg" 
+                             alt="Logitech M185 Wireless Mouse" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=Logitech+M185'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">Logitech M185 Wireless Mouse</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">12-month battery life, 2.4GHz wireless, ambidextrous design, plug-and-play.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 1,800</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20Logitech%20M185%20Mouse%20-%20KES%201,800.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Product 10: TP-Link Archer C6 Router (Added) -->
+                <div class="flex-shrink-0 snap-center w-60 md:w-72 lg:w-80 bg-white border border-gray-200 rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition-all duration-300">
+                    <div class="relative h-48 md:h-56 bg-gray-100">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/09/tp-link-archer-c6-ac1200-dual-band-router-1.jpg" 
+                             alt="TP-Link Archer C6 AC1200 Dual Band Router" 
+                             class="w-full h-full object-cover" 
+                             loading="lazy"
+                             onerror="this.src='https://via.placeholder.com/320x200/e0e0e0/6b7280?text=TP-Link+Archer+C6'">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="font-bold text-base md:text-lg mb-2 line-clamp-2">TP-Link Archer C6 AC1200 Dual Band Router</h3>
+                        <p class="text-sm text-gray-600 mb-3 line-clamp-2">MU-MIMO, 4 antennas, beamforming, easy setup app, covers 2000 sq ft.</p>
+                        <div class="text-xl md:text-2xl font-extrabold text-blue-600 mb-4">KES 5,200</div>
+                        <a href="https://wa.me/254727624353?text=Hi%20Territories!%20Order:%20TP-Link%20Archer%20C6%20Router%20-%20KES%205,200.%20Delivery%20Nairobi." 
+                           class="block text-center bg-green-500 text-white py-3 rounded-lg font-semibold hover:bg-green-600 transition flex items-center justify-center gap-2" 
+                           target="_blank">
+                            <i class="fab fa-whatsapp text-lg"></i> Order Now
                         </a>
                     </div>
                 </div>
             </div>
 
-            <!-- Optional Arrow Buttons (JS-enhanced) -->
-            <button onclick="scrollLeft()" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 md:p-3 transition opacity-0 md:opacity-100 group md:-translate-x-0">
-                <i class="fas fa-chevron-left text-gray-700 group-hover:text-blue-600 text-sm md:text-base"></i>
+            <!-- Navigation Arrows (Visible on md+ ) -->
+            <button onclick="scrollLeft()" class="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 z-10 bg-white/95 hover:bg-white shadow-lg rounded-full p-3 md:p-4 transition-all opacity-0 md:opacity-100 group hover:opacity-100" style="display: none;">
+                <i class="fas fa-chevron-left text-gray-700 group-hover:text-blue-600 text-lg md:text-xl"></i>
             </button>
-            <button onclick="scrollRight()" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 md:p-3 transition opacity-0 md:opacity-100 group md:translate-x-0">
-                <i class="fas fa-chevron-right text-gray-700 group-hover:text-blue-600 text-sm md:text-base"></i>
+            <button onclick="scrollRight()" class="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 z-10 bg-white/95 hover:bg-white shadow-lg rounded-full p-3 md:p-4 transition-all opacity-0 md:opacity-100 group hover:opacity-100" style="display: none;">
+                <i class="fas fa-chevron-right text-gray-700 group-hover:text-blue-600 text-lg md:text-xl"></i>
             </button>
         </div>
 
@@ -1286,8 +1405,7 @@
         <div class="text-center mt-12">
             <a href="https://www.territories.co.ke/shop" target="_blank"
                class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition shadow-lg hover:shadow-xl">
-                Browse Full Store
-                <i class="fas fa-external-link-alt"></i>
+                Browse Full Store <i class="fas fa-external-link-alt ml-1"></i>
             </a>
         </div>
     </div>
@@ -2529,6 +2647,29 @@ const track = document.getElementById('sliderTrack');
     // Update on resize
     window.addEventListener('resize', updateScrollAmount);
     updateScrollAmount(); // Initial set
+		const track = document.getElementById('sliderTrack');
+    let scrollAmount = 0;
+
+    function updateScrollAmount() {
+        if (window.innerWidth < 641) scrollAmount = track.offsetWidth;
+        else if (window.innerWidth < 1025) scrollAmount = track.offsetWidth / 2;
+        else scrollAmount = track.offsetWidth / 4;
+    }
+
+    function scrollLeft() {
+        track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+        track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+
+    // Init & Resize
+    updateScrollAmount();
+    window.addEventListener('resize', updateScrollAmount);
+
+    // Auto-scroll every 4s (optional, comment out if unwanted)
+    // setInterval(scrollRight, 4000);
 
     </script>
 </body>
