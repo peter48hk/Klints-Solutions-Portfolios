@@ -986,47 +986,22 @@
         </div>
     </section>
 <!-- Lime-Green Promo Bar – Exactly like your screenshot -->
-<!-- Auto-Rotating Top Promo Slider (3 banners) -->
-<div id="topPromoSlider" class="fixed top-0 left-0 right-0 z-50 overflow-hidden bg-[#84cc16] text-black font-bold text-sm md:text-base shadow-lg">
-    <div class="container mx-auto px-6 py-3 flex items-center justify-between max-w-7xl relative">
-        
-        <!-- Sliding Messages -->
-        <div class="slider-wrapper overflow-hidden flex-1">
-            <div id="sliderTrack" class="flex transition-transform duration-1000 ease-in-out" style="transform: translateX(0%);">
-                
-                <!-- Slide 1 -->
-                <div class="slide flex items-center justify-center min-w-full text-center">
-                    <p>Klints Solutions is where AI breakthroughs happen.
-                        <span class="hidden md:inline ml-3"></span>
-                        <a href="https://wa.me/254727624353" class="inline-block bg-black text-white px-5 py-2 rounded-md font-bold whitespace-nowrap hover:bg-gray-900 transition ml-4">
-                            Get Early-Bird Pricing
-                        </a>
-                    </p>
-                </div>
+<div id="topPromoBar" class="fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-[#84cc16] text-black font-bold text-sm md:text-base shadow-lg transition-all duration-500">
+    <div class="container mx-auto px-6 py-3 flex items-center justify-between max-w-7xl">
+        <!-- Main Message -->
+        <p class="text-center flex-1">
+         Klints Solutions  is where AI breakthroughs happen.
+            <span class="hidden md:inline ml-3"></span>
+        </p>
 
-                <!-- Slide 2 -->
-                <div class="slide flex items-center justify-center min-w-full text-center">
-                    <p>Limited Slots: Custom AI Automation + WordPress Sites from KES 25,000 only!
-                        <a href="Packagesandconsultation.html" class="inline-block bg-black text-white px-5 py-2 rounded-md font-bold whitespace-nowrap hover:bg-gray-900 transition ml-4">
-                            Book Your Slot Now
-                        </a>
-                    </p>
-                </div>
+        <!-- CTA Button -->
+        <a href="https://wa.me/254727624353" class="bg-black text-white px-5 py-2 rounded-md font-bold whitespace-nowrap hover:bg-gray-900 transition ml-4">
+            Get Early-Bird Pricing
+        </a>
 
-                <!-- Slide 3 -->
-                <div class="slide flex items-center justify-center min-w-full text-center">
-                    <p>New: Solar-Powered AI Security Cameras + Full Installation in Nairobi
-                        <a href="https://wa.me/254727624353" class="inline-block bg-black text-white px-5 py-2 rounded-md font-bold whitespace-nowrap hover:bg-gray-900 transition ml-4">
-                            Get Quote on WhatsApp
-                        </a>
-                    </p>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Close Button (closes the whole bar) -->
-        <button id="closeSlider" class="ml-4 text-black opacity-70 hover:opacity-100 text-2xl leading-none flex-shrink-0">
+        <!-- Close Button -->
+        <button onclick="document.getElementById('topPromoBar').style.transform='translateY(-100%)'" 
+                class="ml-4 text-black opacity-70 hover:opacity-100 text-xl leading-none">
             ×
         </button>
     </div>
@@ -2711,39 +2686,6 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
             searchDropdown.classList.remove('opacity-100', 'scale-100');
         }
     });
-		const slider = document.getElementById('sliderTrack');
-    const slides = document.querySelectorAll('.slide');
-    const closeBtn = document.getElementById('closeSlider');
-    let currentIndex = 0;
-    let autoSlideInterval;
-
-    function goToSlide(index) {
-        slider.style.transform = `translateX(-${index * 100}%)`;
-        currentIndex = index;
-    }
-
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        goToSlide(currentIndex);
-    }
-
-    // Auto-play every 5 seconds
-    function startAutoSlide() {
-        autoSlideInterval = setInterval(nextSlide, 5000);
-    }
-
-    // Pause on hover (optional – nice UX)
-    document.getElementById('topPromoSlider').addEventListener('mouseenter', () => clearInterval(autoSlideInterval));
-    document.getElementById('topPromoSlider').addEventListener('mouseleave', startAutoSlide);
-
-    // Close the entire bar
-    closeBtn.addEventListener('click', () => {
-        document.getElementById('topPromoSlider').style.transform = 'translateY(-100%)';
-        clearInterval(autoSlideInterval);
-    });
-
-    // Start the slider
-    startAutoSlide();
 		
     </script>
 </body>
