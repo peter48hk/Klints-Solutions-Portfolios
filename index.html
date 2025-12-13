@@ -1,5 +1,6 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,15 +16,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-		/* If using custom CSS, ensure you define the scrollbar-hide class */
-.scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
-}
-.scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, Opera */
-}
-/* The active-dot color is handled by Tailwind's bg-blue-600 in the JS */
 
         @keyframes liquidFloat {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -1343,145 +1335,140 @@
             </div>
         </div>
     </section>
-<section class="py-16 sm:py-20 bg-gray-50 overflow-hidden" aria-label="Featured Products Slider">
+	<!-- ============================================= -->
+<!--   AUTO-PLAY FEATURED PRODUCTS SLIDER (FINAL)  -->
+<!-- ============================================= -->
+<section class="py-16 sm:py-20 bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Title -->
         <div class="text-center mb-12">
             <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 mb-4">
-                Featured Products from <span class="text-blue-600 underline decoration-wavy">Klints Solutions</span>
+                Featured Products from <span class="gradient-text">Klints Solutions</span>
             </h2>
             <p class="text-base sm:text-lg text-gray-600">Best-selling tech — order instantly via WhatsApp</p>
         </div>
 
+        <!-- Slider Container -->
         <div class="relative group">
-            <div id="autoSlider" class="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide select-none" role="region" aria-live="polite">
-                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4" role="group" aria-label="Slide 1 of 6">
-                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
+            <div id="autoSlider" class="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-hide select-none">
+                <!-- 10 Real Products (same as before, slightly cleaner) -->
+                <!-- Product 1 -->
+                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4">
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <img src="https://www.territories.co.ke/wp-content/uploads/2025/12/Untitled-design-2025-12-05T142421.006.png" 
-                            alt="Oraimo TenderPot 6L Pressure Cooker" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
-                        <div class="p-4 sm:p-6 flex-grow flex flex-col">
+                             alt="Oraimo TenderPot" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+                        <div class="p-4 sm:p-6">
                             <h3 class="font-bold text-lg mb-2 line-clamp-2">Oraimo TenderPot 6L Pressure Cooker</h3>
-                            <p class="text-sm text-gray-600 mb-3 flex-grow">9 programs • Non-stick • Family size</p>
-                            <div class="text-2xl font-extrabold text-blue-600 mb-4 mt-auto">KES 12,500</div>
+                            <p class="text-sm text-gray-600 mb-3">9 programs • Non-stick • Family size</p>
+                            <div class="text-2xl font-extrabold text-blue-600 mb-4">KES 12,500</div>
                             <a href="https://wa.me/254727624353?text=Hi! Order Oraimo TenderPot 6L - KES 12,500 (Nairobi delivery)" 
-                                class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                                aria-label="Order Oraimo TenderPot via WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                               class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
                                 WhatsApp Order
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4" role="group" aria-label="Slide 2 of 6">
-                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
-                        <img src="https://www.territories.co.ke/wp-content/uploads/2025/12/Untitled-design-2025-12-05T130156.056.png" 
-                            alt="Havit H2230d Gaming Headphones" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
-                        <div class="p-4 sm:p-6 flex-grow flex flex-col">
-                            <h3 class="font-bold text-lg mb-2 line-clamp-2">Havit H2230d Gaming Headphones</h3>
-                            <p class="text-sm text-gray-600 mb-3 flex-grow">50mm drivers • Clear mic</p>
-                            <div class="text-2xl font-extrabold text-blue-600 mb-4 mt-auto">KES 3,000</div>
-                            <a href="https://wa.me/254727624353?text=Hi! Order Havit H2230d - KES 3,000" 
-                                class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                                aria-label="Order Havit H2230d via WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <!-- Product 2 to 10 (abridged for space — same pattern) -->
+                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4">
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2025/12/Untitled-design-2025-12-05T130156.056.png" alt="Havit H2230d" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg mb-2">Havit H2230d Gaming Headphones</h3>
+                            <p class="text-sm text-gray-600 mb-3">50mm drivers • Clear mic</p>
+                            <div class="text-2xl font-extrabold text-blue-600 mb-4">KES 3,000</div>
+                            <a href="https://wa.me/254727624353?text=Hi! Order Havit H2230d - KES 3,000" class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
                                 WhatsApp Order
                             </a>
                         </div>
                     </div>
                 </div>
-
-                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4" role="group" aria-label="Slide 3 of 6">
-                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
+<!-- Product 1 -->
+                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4">
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <img src="https://www.territories.co.ke/wp-content/uploads/2024/09/HP-Probook-640-G5-14-intel-Core-i5-8665U-8-GB-RAM-256-SSD-1.jpg" 
-                            alt="HP Probook 640 G5" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
-                        <div class="p-4 sm:p-6 flex-grow flex flex-col">
+                             alt="Oraimo TenderPot" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+                        <div class="p-4 sm:p-6">
                             <h3 class="font-bold text-lg mb-2 line-clamp-2">HP Probook 640 G5</h3>
-                            <p class="text-sm text-gray-600 mb-3 flex-grow">RAM: 8 GB CPU: i5-8565U</p>
-                            <div class="text-2xl font-extrabold text-blue-600 mb-4 mt-auto">KES 25,000</div>
+                            <p class="text-sm text-gray-600 mb-3">RAM: 8 GB CPU: i5-8565U</p>
+                            <div class="text-2xl font-extrabold text-blue-600 mb-4">KES 25,000</div>
                             <a href="https://wa.me/254727624353?text=Hi! HP Probook 640 G5 - KES 25,000 (Nairobi delivery)" 
-                                class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                                aria-label="Order HP Probook via WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                               class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
                                 WhatsApp Order
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4" role="group" aria-label="Slide 4 of 6">
-                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
-                        <img src="https://www.territories.co.ke/wp-content/uploads/2025/07/Untitled-design-2025-07-16T181107.270.png" 
-                            alt="oraimo Smart Clipper 2" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
-                        <div class="p-4 sm:p-6 flex-grow flex flex-col">
-                            <h3 class="font-bold text-lg mb-2 line-clamp-2">oraimo Smart Clipper 2</h3>
-                            <p class="text-sm text-gray-600 mb-3 flex-grow">Charging: 3 hrs • Working: 4 hrs • Model: OPC-CL30G</p>
-                            <div class="text-2xl font-extrabold text-blue-600 mb-4 mt-auto">KES 4,000</div>
-                            <a href="https://wa.me/254727624353?text=Hi! oraimo Smart Clipper 2 - KES 4,000" 
-                                class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                                aria-label="Order oraimo Smart Clipper 2 via WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <!-- Product 2 to 10 (abridged for space — same pattern) -->
+                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4">
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2025/07/Untitled-design-2025-07-16T181107.270.png" alt="Havit H2230d" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg mb-2">oraimo Smart Clipper 2</h3>
+                            <p class="text-sm text-gray-600 mb-3">Charging Time: 3 hourFull Working time: 4 hrs (240 mins) Model :OPC-CL30G</p>
+                            <div class="text-2xl font-extrabold text-blue-600 mb-4">KES 4,000</div>
+                            <a href="https://wa.me/254727624353?text=Hi! oraimo Smart Clipper 2 - KES 4,000" class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
                                 WhatsApp Order
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4" role="group" aria-label="Slide 5 of 6">
-                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
+				<!-- Product 1 -->
+                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4">
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
                         <img src="https://www.territories.co.ke/wp-content/uploads/2024/06/Handboss-Universal-Foam-Cleaning-Agent-1.jpg" 
-                            alt="Handboss Universal Foam Cleaning Agent" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
-                        <div class="p-4 sm:p-6 flex-grow flex flex-col">
-                            <h3 class="font-bold text-lg mb-2 line-clamp-2">Handboss Universal Foam Cleaning Agent</h3>
-                            <p class="text-sm text-gray-600 mb-3 flex-grow">All-purpose cleaning foam</p>
-                            <div class="text-2xl font-extrabold text-blue-600 mb-4 mt-auto">KSh 600.00</div>
+                             alt="Oraimo TenderPot" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg mb-2 line-clamp-2">Handboss Universal Foam</h3>
+                            <p class="text-sm text-gray-600 mb-3">Handboss Universal Foam</p>
+                            <div class="text-2xl font-extrabold text-blue-600 mb-4">KSh 600.00</div>
                             <a href="https://wa.me/254727624353?text=Hi! Handboss Universal Foam- KSh 600.00 (Nairobi delivery)" 
-                                class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                                aria-label="Order Handboss Foam via WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                               class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
                                 WhatsApp Order
                             </a>
                         </div>
                     </div>
                 </div>
 
-                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4" role="group" aria-label="Slide 6 of 6">
-                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
-                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/06/Google-Chromecast-Streaming-Device-with-HDMI-Cable-2.jpg" 
-                            alt="Google Chromecast Streaming Device" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
-                        <div class="p-4 sm:p-6 flex-grow flex flex-col">
-                            <h3 class="font-bold text-lg mb-2 line-clamp-2">Google Chromecast Streaming Device</h3>
-                            <p class="text-sm text-gray-600 mb-3 flex-grow">Wi-Fi • HDMI connection • Stream to TV</p>
-                            <div class="text-2xl font-extrabold text-blue-600 mb-4 mt-auto">KES 9,000</div>
-                            <a href="https://wa.me/254727624353?text=Hi!Google Chromecast - KES 9,000" 
-                                class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2"
-                                aria-label="Order Google Chromecast via WhatsApp">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <!-- Product 2 to 10 (abridged for space — same pattern) -->
+                <div class="flex-shrink-0 snap-center w-full sm:w-1/2 lg:w-1/4">
+                    <div class="bg-white border border-gray-200 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden">
+                        <img src="https://www.territories.co.ke/wp-content/uploads/2024/06/Google-Chromecast-Streaming-Device-with-HDMI-Cable-2.jpg" alt="Havit H2230d" class="w-full h-48 sm:h-56 object-cover" loading="lazy">
+                        <div class="p-4 sm:p-6">
+                            <h3 class="font-bold text-lg mb-2">Google Chromecast</h3>
+                            <p class="text-sm text-gray-600 mb-3">Wi-Fi Connector Type	HDMI</p>
+                            <div class="text-2xl font-extrabold text-blue-600 mb-4">KES 9,000</div>
+                            <a href="https://wa.me/254727624353?text=Hi!Google Chromecast - KES 9,000" class="block text-center bg-green-500 text-white py-3 rounded-lg font-bold hover:bg-green-600 transition flex items-center justify-center gap-2">
                                 WhatsApp Order
                             </a>
                         </div>
                     </div>
                 </div>
-                </div>
+            
+            </div>
 
-            <button onclick="prevSlide()" aria-label="Previous slide" class="absolute left-0 -translate-x-1/2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border border-gray-200 shadow-lg rounded-full p-3 opacity-0 group-hover:opacity-100 transition duration-300 hidden lg:block z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gray-700"><path d="M15 18l-6-6 6-6"/></svg>
+            <!-- Navigation Arrows (Desktop only) -->
+            <button onclick="prevSlide()" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 opacity-0 group-hover:opacity-100 transition hidden lg:block">
+                Previous
             </button>
-            <button onclick="nextSlide()" aria-label="Next slide" class="absolute right-0 translate-x-1/2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white border border-gray-200 shadow-lg rounded-full p-3 opacity-0 group-hover:opacity-100 transition duration-300 hidden lg:block z-10">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-gray-700"><path d="M9 18l6-6-6-6"/></svg>
+            <button onclick="nextSlide()" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-3 opacity-0 group-hover:opacity-100 transition hidden lg:block">
+                Next
             </button>
 
-            <div id="sliderDots" class="flex justify-center gap-2 mt-6" role="tablist">
-                <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition active-dot" onclick="goToSlide(0)" role="tab" aria-selected="true" aria-controls="product-0"></div>
-                <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(1)" role="tab" aria-selected="false" aria-controls="product-1"></div>
-                <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(2)" role="tab" aria-selected="false" aria-controls="product-2"></div>
-                <div class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(3)" role="tab" aria-selected="false" aria-controls="product-3"></div>
-                </div>
+            <!-- Dots Indicator -->
+            <div class="flex justify-center gap-2 mt-6">
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(0)"></span>
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(1)"></span>
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(2)"></span>
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition" onclick="goToSlide(3)"></span>
+            </div>
         </div>
 
+        <!-- View Store Button -->
         <div class="text-center mt-10">
             <a href="shop.html" target="_blank" 
-                class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-lg">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+               class="inline-flex items-center gap-2 bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-lg hover:bg-blue-700 transition shadow-lg">
                 View All Products
             </a>
         </div>
@@ -2688,187 +2675,8 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
             searchDropdown.classList.remove('opacity-100', 'scale-100');
         }
     });
-		<script>
-    const slider = document.getElementById('autoSlider');
-    const productCards = slider ? Array.from(slider.children) : [];
-    const dotsContainer = document.getElementById('sliderDots');
-    let productWidth = 0;
-    let autoPlayInterval;
-    const intervalTime = 4000; // Auto-play speed in milliseconds (4 seconds)
-
-    // Helper to calculate the scroll position for a given index
-    function getScrollPosition(index) {
-        if (!slider) return 0;
-        const gap = parseInt(window.getComputedStyle(slider).gap);
-        
-        // Calculate the scroll position based on product width and gaps
-        // This relies on the W-1/4, SM:W-1/2, W-full classes in Tailwind
-        if (window.innerWidth >= 1024) { // lg:w-1/4
-             // For 4 items visible, scroll to the start of the next item group (4 items per slide)
-            return productCards[index * 4]?.offsetLeft || 0;
-        } else if (window.innerWidth >= 640) { // sm:w-1/2
-            // For 2 items visible, scroll to the start of the next item group (2 items per slide)
-            return productCards[index * 2]?.offsetLeft || 0;
-        } else { // w-full
-            // For 1 item visible, scroll to the next single item
-            return productCards[index]?.offsetLeft || 0;
-        }
-    }
-
-    // Main scroll function for arrows and dots
-    function goToSlide(index) {
-        if (!slider) return;
-        const scrollPos = getScrollPosition(index);
-        slider.scrollLeft = scrollPos;
-        updateDots(index);
-        resetAutoPlay();
-    }
-
-    // Updates the visual appearance of the dots
-    function updateDots(activeIndex) {
-        const dots = dotsContainer.querySelectorAll('.dot');
-        dots.forEach((dot, i) => {
-            dot.classList.remove('active-dot', 'bg-blue-600');
-            dot.classList.add('bg-gray-400');
-            dot.setAttribute('aria-selected', 'false');
-            if (i === activeIndex) {
-                dot.classList.add('active-dot', 'bg-blue-600');
-                dot.classList.remove('bg-gray-400');
-                dot.setAttribute('aria-selected', 'true');
-            }
-        });
-    }
-
-    // Calculates the number of slides based on screen size and total products
-    function getNumSlides() {
-        if (window.innerWidth >= 1024) { // lg:w-1/4 (4 items per slide)
-            return Math.ceil(productCards.length / 4);
-        } else if (window.innerWidth >= 640) { // sm:w-1/2 (2 items per slide)
-            return Math.ceil(productCards.length / 2);
-        } else { // w-full (1 item per slide)
-            return productCards.length;
-        }
-    }
-    
-    // Calculates the current active slide index based on scroll position
-    function getCurrentIndex() {
-        if (!slider || productCards.length === 0) return 0;
-
-        const scrollLeft = slider.scrollLeft;
-        const numVisible = getNumVisibleItems();
-        
-        let bestIndex = 0;
-        let minDiff = Infinity;
-
-        // Iterate through all possible snap points (start of each visible group)
-        for (let i = 0; i < productCards.length; i += numVisible) {
-            const snapPosition = productCards[i].offsetLeft;
-            const diff = Math.abs(scrollLeft - snapPosition);
-            
-            if (diff < minDiff) {
-                minDiff = diff;
-                bestIndex = i / numVisible;
-            }
-        }
-        return bestIndex;
-    }
-
-    // Utility for how many products are visible at once
-    function getNumVisibleItems() {
-         if (window.innerWidth >= 1024) return 4;
-         if (window.innerWidth >= 640) return 2;
-         return 1;
-    }
-
-    // Public API functions for the button clicks
-    function nextSlide() {
-        const numSlides = getNumSlides();
-        let currentIndex = getCurrentIndex();
-        currentIndex = (currentIndex + 1) % numSlides;
-        goToSlide(currentIndex);
-    }
-
-    function prevSlide() {
-        const numSlides = getNumSlides();
-        let currentIndex = getCurrentIndex();
-        currentIndex = (currentIndex - 1 + numSlides) % numSlides;
-        goToSlide(currentIndex);
-    }
-
-    // --- Auto-Play Logic ---
-    function startAutoPlay() {
-        // Clear any existing interval first
-        clearInterval(autoPlayInterval); 
-        autoPlayInterval = setInterval(nextSlide, intervalTime);
-    }
-
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        startAutoPlay();
-    }
-    
-    // Stop auto-play when user interacts with the slider (e.g., manual scroll, hover)
-    function pauseAutoPlayOnInteraction() {
-        clearInterval(autoPlayInterval);
-    }
-    
-    // --- Event Listeners and Initial Setup ---
-    
-    // Initial dot setup (creates the correct number of dots based on the visible product count)
-    function setupDots() {
-        if (!dotsContainer) return;
-        dotsContainer.innerHTML = '';
-        const numSlides = getNumSlides();
-
-        for (let i = 0; i < numSlides; i++) {
-            const dot = document.createElement('div');
-            dot.className = `dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition`;
-            dot.setAttribute('role', 'tab');
-            dot.setAttribute('aria-controls', `product-${i}`);
-            dot.onclick = () => goToSlide(i);
-            dotsContainer.appendChild(dot);
-        }
-        updateDots(0);
-    }
-    
-    // Initialization on load
-    window.addEventListener('load', () => {
-        setupDots();
-        startAutoPlay();
-    });
-
-    // Recalculate dots and ensure correct scroll position on resize
-    window.addEventListener('resize', () => {
-        setupDots();
-        goToSlide(getCurrentIndex()); // Recenter on resize
-    });
-    
-    // Pause auto-play when hovering over the slider container
-    if (slider) {
-        slider.addEventListener('mouseenter', pauseAutoPlayOnInteraction);
-        slider.addEventListener('mouseleave', startAutoPlay);
-        
-        // Also pause/reset on manual scroll interaction
-        let scrollTimeout;
-        slider.addEventListener('scroll', () => {
-            clearTimeout(scrollTimeout);
-            pauseAutoPlayOnInteraction(); // Pause immediately on scroll start
-            scrollTimeout = setTimeout(() => {
-                const currentIndex = getCurrentIndex();
-                updateDots(currentIndex); // Update dot after scroll stops
-                startAutoPlay(); // Restart auto-play after a short delay
-            }, 500); // Wait 500ms after scroll ends to restart
-        });
-    }
-
-
-    // Make the functions globally accessible for inline HTML (like onclick)
-    window.prevSlide = prevSlide;
-    window.nextSlide = nextSlide;
-    window.goToSlide = goToSlide;
-
-</script>
 		
     </script>
 </body>
 </html>
+
