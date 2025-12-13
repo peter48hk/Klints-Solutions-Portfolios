@@ -16,6 +16,19 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+		#testimonial-track > div {
+        min-width: 100%;
+    }
+    @media (min-width: 768px) {
+        #testimonial-track > div {
+            min-width: 50%;
+        }
+    }
+    @media (min-width: 1024px) {
+        #testimonial-track > div {
+            min-width: 25%;
+        }
+    }
 
         @keyframes liquidFloat {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -1825,98 +1838,122 @@
     </div>
 </div>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials-slider" class="py-16 bg-gray-50" data-animate>
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Client Success Stories: <span class="gradient-text">In Their Own Words</span></h2>
-            <p class="text-gray-500 max-w-3xl mx-auto text-base md:text-lg">
-                See how we’ve delivered measurable results and exceptional service across various projects.
+  <!-- COMPACT & RESPONSIVE TESTIMONIALS SECTION – Equal Heights, Smaller Cards, 4 Testimonials -->
+<section id="testimonials-slider" class="py-12 md:py-16 bg-gray-50" data-animate>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header (Compact) -->
+        <div class="text-center mb-10">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                Client Success Stories: <span class="gradient-text">In Their Own Words</span>
+            </h2>
+            <p class="text-gray-600 text-base max-w-2xl mx-auto">
+                See how we’ve delivered real results for Kenyan businesses.
             </p>
         </div>
 
-        <div class="relative overflow-hidden">
-            <div id="testimonial-track" class="flex transition-transform duration-700 ease-in-out">
-
-                <div class="w-full flex-shrink-0 p-4">
-                    <div class="max-w-4xl mx-auto bg-white p-8 md:p-10 rounded-2xl shadow-xl border-l-4 border-blue-500">
-                        <div class="flex items-center mb-4 text-yellow-400">
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star"></i>
+        <!-- Slider Container -->
+        <div class="relative group">
+            <div id="testimonial-track" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 transition-transform duration-700 ease-in-out">
+                <!-- Testimonial 1 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border-l-4 border-blue-500">
+                    <div class="p-5 md:p-6 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="text-sm md:text-base italic text-gray-700 leading-relaxed mb-4">
+                                "Klints transformed our online store. WooCommerce + Google Shopping increased revenue by <span class="text-blue-600 font-bold">150%</span> in 3 months."
+                            </blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
-                        <blockquote class="text-xl md:text-2xl italic font-medium text-gray-800 leading-relaxed mb-6">
-                            "Klints Solutions transformed our online store. Their WooCommerce setup with Google Shopping integration increased our revenue by <span class="text-green-600 font-bold">150% in just 3 months.</span> The results are truly outstanding."
-                        </blockquote>
-                        <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
-                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sarah Karanja" class="w-14 h-14 rounded-full object-cover shadow-md">
+                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="Sarah Karanja" class="w-12 h-12 rounded-full object-cover shadow">
                             <div>
-                                <p class="font-bold text-lg text-gray-800">Sarah Karanja</p>
-                                <p class="text-sm text-gray-500">CEO, Fashion Boutique Nairobi CBD</p>
+                                <p class="font-bold text-gray-800 text-sm">Sarah Karanja</p>
+                                <p class="text-xs text-gray-500">CEO, Fashion Boutique</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full flex-shrink-0 p-4">
-                    <div class="max-w-4xl mx-auto bg-white p-8 md:p-10 rounded-2xl shadow-xl border-l-4 border-red-500">
-                        <div class="flex items-center mb-4 text-yellow-400">
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star-half-alt"></i>
+                <!-- Testimonial 2 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border-l-4 border-green-500">
+                    <div class="p-5 md:p-6 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <blockquote class="text-sm md:text-base italic text-gray-700 leading-relaxed mb-4">
+                                "Google Ads restructuring was flawless. Cost per lead dropped <span class="text-green-600 font-bold">60%</span> with better quality leads."
+                            </blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
-                        <blockquote class="text-xl md:text-2xl italic font-medium text-gray-800 leading-relaxed mb-6">
-                            "They restructured our Google Ads campaigns and tracking implementation was flawless. Our cost per lead dropped by <span class="text-red-600 font-bold">60%</span> while the overall lead quality dramatically improved."
-                        </blockquote>
-                        <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Kibet" class="w-14 h-14 rounded-full object-cover shadow-md">
+                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Kibet" class="w-12 h-12 rounded-full object-cover shadow">
                             <div>
-                                <p class="font-bold text-lg text-gray-800">Michael Kibet</p>
-                                <p class="text-sm text-gray-500">Marketing Director, TechStart Kilimani</p>
+                                <p class="font-bold text-gray-800 text-sm">Michael Kibet</p>
+                                <p class="text-xs text-gray-500">Marketing Director, TechStart</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="w-full flex-shrink-0 p-4">
-                    <div class="max-w-4xl mx-auto bg-white p-8 md:p-10 rounded-2xl shadow-xl border-l-4 border-yellow-500">
-                        <div class="flex items-center mb-4 text-yellow-400">
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star mr-1"></i>
-                            <i class="fas fa-star"></i>
+                <!-- Testimonial 3 -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border-l-4 border-yellow-500">
+                    <div class="p-5 md:p-6 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="text-sm md:text-base italic text-gray-700 leading-relaxed mb-4">
+                                "Custom Python automation saved us 20+ hours weekly. Efficiency gains have been <span class="text-yellow-600 font-bold">game-changing</span>."
+                            </blockquote>
                         </div>
-                        <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
-                        <blockquote class="text-xl md:text-2xl italic font-medium text-gray-800 leading-relaxed mb-6">
-                            "The custom Python automation script they delivered saved my team over 20 hours of manual work per week. The efficiency gains have been <span class="text-yellow-600 font-bold">game-changing</span> for our data processing."
-                        </blockquote>
-                        <div class="flex items-center space-x-4 pt-4 border-t border-gray-100">
-                            <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Alex Mutua" class="w-14 h-14 rounded-full object-cover shadow-md">
+                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/men/15.jpg" alt="Alex Mutua" class="w-12 h-12 rounded-full object-cover shadow">
                             <div>
-                                <p class="font-bold text-lg text-gray-800">Alex Mutua</p>
-                                <p class="text-sm text-gray-500">CTO, Data Systems East Africa</p>
+                                <p class="font-bold text-gray-800 text-sm">Alex Mutua</p>
+                                <p class="text-xs text-gray-500">CTO, Data Systems</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 (New) -->
+                <div class="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden flex flex-col h-full border-l-4 border-purple-500">
+                    <div class="p-5 md:p-6 flex flex-col h-full justify-between">
+                        <div>
+                            <div class="flex text-yellow-400 mb-3">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                            <blockquote class="text-sm md:text-base italic text-gray-700 leading-relaxed mb-4">
+                                "Their WordPress speed optimization and SEO work took our site from page 5 to <span class="text-purple-600 font-bold">#1 on Google</span> in under 2 months."
+                            </blockquote>
+                        </div>
+                        <div class="flex items-center space-x-3 pt-4 border-t border-gray-100">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Grace Wanjiku" class="w-12 h-12 rounded-full object-cover shadow">
+                            <div>
+                                <p class="font-bold text-gray-800 text-sm">Grace Wanjiku</p>
+                                <p class="text-xs text-gray-500">Founder, Nairobi Real Estate Hub</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <button id="prev-slide" class="absolute top-1/2 left-0 md:left-4 transform -translate-y-1/2 p-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 z-20">
-                <i class="fas fa-chevron-left text-xl"></i>
+            <!-- Navigation Arrows (Visible on Hover) -->
+            <button id="prev-slide" class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 md:p-3 opacity-0 group-hover:opacity-100 transition-all hidden md:block z-20">
+                <i class="fas fa-chevron-left text-gray-700 text-lg md:text-xl"></i>
             </button>
-            <button id="next-slide" class="absolute top-1/2 right-0 md:right-4 transform -translate-y-1/2 p-3 bg-white text-gray-800 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 z-20">
-                <i class="fas fa-chevron-right text-xl"></i>
+            <button id="next-slide" class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 md:p-3 opacity-0 group-hover:opacity-100 transition-all hidden md:block z-20">
+                <i class="fas fa-chevron-right text-gray-700 text-lg md:text-xl"></i>
             </button>
 
-            <div id="slider-dots" class="flex justify-center space-x-2 mt-8">
-                </div>
+            <!-- Dots Indicator -->
+            <div class="flex justify-center gap-2 mt-8">
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition hover:bg-blue-600" onclick="goToSlide(0)"></span>
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition hover:bg-blue-600" onclick="goToSlide(1)"></span>
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition hover:bg-blue-600" onclick="goToSlide(2)"></span>
+                <span class="dot w-2 h-2 bg-gray-400 rounded-full cursor-pointer transition hover:bg-blue-600" onclick="goToSlide(3)"></span>
+            </div>
         </div>
     </div>
 </section>
@@ -2485,6 +2522,39 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
             searchDropdown.classList.remove('opacity-100', 'scale-100');
         }
     });
+		const track = document.getElementById('testimonial-track');
+    const dots = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    const totalSlides = 4;
+
+    function updateSlider() {
+        track.style.transform = `translateX(-${currentSlide * 100}%)`;
+        dots.forEach((dot, i) => dot.style.backgroundColor = i === currentSlide ? '#2563eb' : '#9ca3af');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateSlider();
+    }
+
+    function prevSlide() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateSlider();
+    }
+
+    function goToSlide(index) {
+        currentSlide = index;
+        updateSlider();
+    }
+
+    document.getElementById('next-slide').addEventListener('click', nextSlide);
+    document.getElementById('prev-slide').addEventListener('click', prevSlide);
+
+    // Auto-play every 6 seconds
+    setInterval(nextSlide, 6000);
+
+    // Initial update
+    updateSlider();
 		
     </script>
 </body>
