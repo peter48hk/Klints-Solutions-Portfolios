@@ -761,9 +761,9 @@
     </div>
 </nav>
 	
-<!-- HERO SECTION – With Right-Side Changing Photos Slider -->
+<!-- HERO SECTION – Fixed Right-Side Single Image Slider (No Vertical Stacking) -->
 <section id="home" class="py-12 md:py-16 px-4 bg-gray-50 relative overflow-hidden" data-animate>
-    <!-- Shared Background + Blobs + Floating Icons -->
+    <!-- Shared Background + Blobs + Floating Icons (unchanged) -->
     <div class="absolute inset-0 z-0">
         <img src="https://lookaside.fbsbx.com/elementpath/media/?media_id=1531311658047829&version=1757543328&transcode_extension=webp"
              alt="Background" class="w-full h-full object-cover opacity-85">
@@ -786,10 +786,10 @@
         <img src="https://www.tesla.com/favicon.ico" class="absolute w-9 h-9 md:w-11 md:h-11 opacity-25 floating-logo-tesla" style="top: 5%; left: 18%;" alt="Tesla">
     </div>
 
-    <!-- Main Content -->
+    <!-- Main Content Grid -->
     <div class="max-w-7xl mx-auto relative z-30">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <!-- Left: Text Content -->
+            <!-- Left: Text Content (unchanged) -->
             <div class="text-center md:text-left">
                 <h1 class="text-3xl lg:text-5xl font-extrabold mb-4 leading-tight text-white drop-shadow-2xl [text-shadow:0_4px_25px_rgba(0,0,0,0.9)]">
                     Building Your
@@ -825,32 +825,32 @@
                 </div>
             </div>
 
-            <!-- Right: Changing Photos Slider -->
-            <div class="mx-auto max-w-lg">
-                <div class="swiper heroImagesSwiper rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Right: Fixed Single-Image Slider -->
+            <div class="mx-auto max-w-lg md:max-w-xl">
+                <div class="swiper heroImagesSwiper rounded-2xl overflow-hidden shadow-2xl h-96 md:h-full min-h-96">
                     <div class="swiper-wrapper">
-                        <!-- Python Development -->
+                        <!-- Professional Web Development Workspace -->
                         <div class="swiper-slide">
-                            <img src="https://files.realpython.com/media/win-10-setup_windows_terminal.a53e3d57c1ea.png" alt="Python Development Workspace" class="w-full h-full object-cover">
+                            <img src="https://blog.claritee.io/wp-content/uploads/2024/10/image-228-1024x683.jpg" alt="Professional Web Development Workspace" class="w-full h-full object-cover">
+                        </div>
+                        <!-- Sleek Modern Coding Setup -->
+                        <div class="swiper-slide">
+                            <img src="https://strapi-aws-s3-imagesbucket.s3.us-west-2.amazonaws.com/DALL_E_2024_09_27_09_44_33_A_sharp_and_clean_widescreen_image_showing_a_sleek_modern_workspace_with_a_computer_displaying_HTML_and_CSS_code_in_a_live_preview_environment_surrou_b75ecd59fa.jpeg" alt="Modern Web Development Environment" class="w-full h-full object-cover">
                         </div>
                         <!-- WordPress Dashboard -->
                         <div class="swiper-slide">
-                            <img src="https://wordpress.org/documentation/files/2018/10/administrations_screen_4.9.4_with_note.jpg" alt="WordPress Dashboard" class="w-full h-full object-cover">
+                            <img src="https://d2zm6ltkguvwr7.cloudfront.net/wp-content/uploads/2015/11/1-WP-Dashboard.png" alt="Custom WordPress Dashboard" class="w-full h-full object-cover">
                         </div>
                         <!-- Ads Analytics Dashboard -->
                         <div class="swiper-slide">
-                            <img src="https://images.ctfassets.net/dfcvkz6j859j/4VQAilw98LWeq4HQpnSLvc/1a4a4a9dc6f70223dbd924a0b9dcf69b/Facebook-Ads-Dashboard-Example.png" alt="Meta Ads Analytics Dashboard" class="w-full h-full object-cover">
+                            <img src="https://static.coupler.io/templates/google-ads-vs-meta-ads-dashboard.png" alt="Google & Meta Ads Analytics" class="w-full h-full object-cover">
                         </div>
                         <!-- Python Automation Script -->
                         <div class="swiper-slide">
-                            <img src="https://www.xcitium.com/blog/wp-content/uploads/2025/10/how-to-run-a-python-script.png" alt="Running Python Automation Script" class="w-full h-full object-cover">
-                        </div>
-                        <!-- Professional Web Dev Workspace -->
-                        <div class="swiper-slide">
-                            <img src="https://cdn.autonomous.ai/production/ecm/250614/blackdesksetup(1).webp" alt="Professional Web Development Setup" class="w-full h-full object-cover">
+                            <img src="https://images.ctfassets.net/lzny33ho1g45/6e1tg8fixoqfcSCGzoIjCv/c6c1595bb14f0debcdce8beb19fe1f82/executing-script-in-terminal.jpg" alt="Python Automation in Action" class="w-full h-full object-cover">
                         </div>
                     </div>
-                    <!-- Pagination dots (bottom) -->
+                    <!-- Pagination Dots -->
                     <div class="swiper-pagination !relative mt-4"></div>
                 </div>
             </div>
@@ -2428,16 +2428,22 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
 		document.addEventListener('DOMContentLoaded', () => {
         new Swiper('.heroImagesSwiper', {
             loop: true,
+            slidesPerView: 1,           // Forces only ONE image visible
+            spaceBetween: 0,
             autoplay: {
                 delay: 4000,
                 disableOnInteraction: false,
             },
-            effect: 'fade', // Smooth fade like LOOP banner
+            effect: 'fade',
+            fadeEffect: { crossFade: true },
             speed: 1200,
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
+                dynamicBullets: true,
             },
+            observer: true,
+            observeParents: true,
         });
     });
     </script>
