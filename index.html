@@ -830,6 +830,52 @@
                 </div>
             </div>
         </div>
+		<!-- Changing Photos Container – Horizontal Slide from Left to Right -->
+<div class="relative w-full overflow-hidden bg-gray-100 rounded-2xl shadow-2xl">
+    <!-- Swiper Container for Horizontal Sliding Photos -->
+    <div class="swiper photoSlider w-full h-96 md:h-full min-h-96">
+        <div class="swiper-wrapper">
+            <!-- Photo 1 -->
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="https://blog.claritee.io/wp-content/uploads/2024/10/image-228-1024x683.jpg" 
+                     alt="Professional Web Development Workspace" 
+                     class="w-full h-full object-cover">
+            </div>
+            <!-- Photo 2 -->
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="https://strapi-aws-s3-imagesbucket.s3.us-west-2.amazonaws.com/DALL_E_2024_09_27_09_44_33_A_sharp_and_clean_widescreen_image_showing_a_sleek_modern_workspace_with_a_computer_displaying_HTML_and_CSS_code_in_a_live_preview_environment_surrou_b75ecd59fa.jpeg" 
+                     alt="Modern Coding Setup" 
+                     class="w-full h-full object-cover">
+            </div>
+            <!-- Photo 3 -->
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="https://d2zm6ltkguvwr7.cloudfront.net/wp-content/uploads/2015/11/1-WP-Dashboard.png" 
+                     alt="WordPress Dashboard" 
+                     class="w-full h-full object-cover">
+            </div>
+            <!-- Photo 4 -->
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="https://static.coupler.io/templates/google-ads-vs-meta-ads-dashboard.png" 
+                     alt="Ads Analytics Dashboard" 
+                     class="w-full h-full object-cover">
+            </div>
+            <!-- Photo 5 -->
+            <div class="swiper-slide flex items-center justify-center">
+                <img src="https://images.ctfassets.net/lzny33ho1g45/6e1tg8fixoqfcSCGzoIjCv/c6c1595bb14f0debcdce8beb19fe1f82/executing-script-in-terminal.jpg" 
+                     alt="Python Script Execution" 
+                     class="w-full h-full object-cover">
+            </div>
+            <!-- Add more photos as needed -->
+        </div>
+
+        <!-- Navigation Arrows (Left/Right) -->
+        <div class="swiper-button-next text-white bg-black/30 hover:bg-black/50 rounded-full"></div>
+        <div class="swiper-button-prev text-white bg-black/30 hover:bg-black/50 rounded-full"></div>
+
+        <!-- Pagination Dots -->
+        <div class="swiper-pagination !bottom-4"></div>
+    </div>
+</div>
                 </div>
             </div>
         </div>
@@ -2403,7 +2449,33 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
             searchDropdown.classList.remove('opacity-100', 'scale-100');
         }
     });
+		document.addEventListener('DOMContentLoaded', () => {
+        new Swiper('.photoSlider', {
+            loop: true,
+            autoplay: {
+                delay: 4000,
+                disableOnInteraction: false,
+            },
+            effect: 'slide', // Default horizontal slide (left to right)
+            direction: 'horizontal',
+            speed: 800,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            observer: true,
+            observeParents: true,
+        });
+    });
 		
     </script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
 </body>
 						</html>
