@@ -1749,9 +1749,18 @@
                        class="px-6 py-3 bg-black text-white rounded-xl font-bold hover:bg-gray-800 transition flex items-center gap-2">
                         <i class="fas fa-download"></i> Download Company Profile
                     </a>
+					
                 </div>
             </div>
         </div>
+		<div id="videoModal" class="fixed inset-0 bg-black bg-opacity-75 hidden flex items-center justify-center z-50">
+    <div class="relative bg-white rounded-lg overflow-hidden max-w-4xl w-full">
+        <button onclick="closeVideoModal()" class="absolute top-4 right-4 text-white text-3xl z-10">&times;</button>
+        <div class="aspect-w-16 aspect-h-9">
+            <iframe id="ceoVideo" class="w-full h-96 md:h-full" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
     </div>
 </section>
 
@@ -2415,6 +2424,33 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
             searchDropdown.classList.remove('opacity-100', 'scale-100');
         }
     });
+		function openVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('ceoVideo');
+        iframe.src = "https://youtu.be/nYyuLlx3xq4?si=ioEIFOoBYByT8iNd";  // Replace with your video ID
+        modal.classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('ceoVideo');
+        iframe.src = "";  // Stops the video
+        modal.classList.add('hidden');
+    }
+
+    // Optional: Close modal when clicking outside
+    document.getElementById('videoModal').addEventListener('click', function(e) {
+        if (e.target === this) closeVideoModal();
+    });
+</script>
+
+<!-- Optional Tailwind classes for styling (since your code uses Tailwind-like classes) -->
+<style>
+    .fixed { position: fixed; }
+    .inset-0 { top:0; left:0; right:0; bottom:0; }
+    .z-50 { z-index: 50; }
+    .aspect-w-16 { position: relative; padding-bottom: 56.25%; } /* 16:9 ratio */
+    .aspect-w-16 iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
 		
     </script>
 </body>
