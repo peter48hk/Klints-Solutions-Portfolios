@@ -2451,16 +2451,42 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
     document.getElementById('videoModal').addEventListener('click', function(e) {
         if (e.target === this) closeVideoModal();
     });
-</script>
+		function openVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('ceoVideo');
+        iframe.src = "https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE?autoplay=1";  // Replace with your video ID
+        modal.classList.remove('hidden');
+    }
 
-<!-- Optional Tailwind classes for styling (since your code uses Tailwind-like classes) -->
-<style>
-    .fixed { position: fixed; }
-    .inset-0 { top:0; left:0; right:0; bottom:0; }
-    .z-50 { z-index: 50; }
-    .aspect-w-16 { position: relative; padding-bottom: 56.25%; } /* 16:9 ratio */
-    .aspect-w-16 iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
-		
-    </script>
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('ceoVideo');
+        iframe.src = "";  // Stops the video
+        modal.classList.add('hidden');
+    }
+
+    // Optional: Close modal when clicking outside
+    document.getElementById('videoModal').addEventListener('click', function(e) {
+        if (e.target === this) closeVideoModal();
+    });
+		function openVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('ceoVideo');
+        iframe.src = "https://www.youtube.com/embed/YOUR_YOUTUBE_VIDEO_ID_HERE?autoplay=1";  // Replace with your video ID
+        modal.classList.remove('hidden');
+    }
+
+    function closeVideoModal() {
+        const modal = document.getElementById('videoModal');
+        const iframe = document.getElementById('ceoVideo');
+        iframe.src = "";  // Stops the video
+        modal.classList.add('hidden');
+    }
+
+    // Optional: Close modal when clicking outside
+    document.getElementById('videoModal').addEventListener('click', function(e) {
+        if (e.target === this) closeVideoModal();
+    });
+</script>
 </body>
 	</html>
