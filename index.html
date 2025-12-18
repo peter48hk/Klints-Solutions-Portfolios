@@ -1977,7 +1977,8 @@
                 <p class="text-gray-400 text-sm md:text-base">
                     Empowering businesses with innovative WordPress, Google Ads, and ICT solutions.
                 </p>
-				<div class="relative mx-auto max-w-4xl my-10">
+				<!-- CEO Video Section (Fixed Version) -->
+<div class="relative mx-auto max-w-4xl my-10">
     <!-- Thumbnail with Play Button Overlay -->
     <div id="youtubeThumbnail" class="relative group cursor-pointer">
         <img src="https://lh3.googleusercontent.com/a/ACg8ocJmKQ4RdoUB3gWz50MhV_K0_7_OJvKUGOgKW2tKO_4BYLD4Ikk=s288-c-no"
@@ -1992,6 +1993,7 @@
                 </svg>
             </div>
             <span class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white font-bold text-lg md:text-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                Watch CEO Message
             </span>
         </div>
     </div>
@@ -2000,6 +2002,7 @@
     <div id="youtubePlayer" class="relative pt-[56.25%] rounded-2xl overflow-hidden shadow-2xl hidden">
         <iframe class="absolute inset-0 w-full h-full"
                 src=""
+                loading="lazy"
                 title="CEO Message - Hillary Kamwaro Korir, Klints Solutions"
                 frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -2522,7 +2525,8 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
     const iframe = player.querySelector('iframe');
 
     thumbnail.addEventListener('click', function() {
-        iframe.src = "https://www.youtube.com/embed/Z4Km_Nb56Xo?autoplay=1&rel=0&modestbranding=1";
+        // Update this line: Replace yourdomain.com with your actual website domain (e.g., klintssolutions.com or www.klintssolutions.co.ke)
+        iframe.src = "https://www.youtube.com/embed/Z4Km_Nb56Xo?autoplay=1&rel=0&modestbranding=1&origin=https://klints-solutions-portfolios.vercel.app/";
         
         // Hide thumbnail and show video player
         thumbnail.classList.add('hidden');
