@@ -19,300 +19,290 @@
     }
   </style>
 </head>
-   
-<body class="bg-gray-50 min-h-screen flex items-center justify-center relative overflow-hidden">
 
+<body class="bg-gray-50 min-h-screen relative overflow-hidden">
   <!-- Floating Tech Icons Background -->
   <div class="absolute inset-0 pointer-events-none">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-10 opacity-20 floating-logo-1" style="top:10%;left:10%;" alt=""/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-10 opacity-20 floating-logo-2" style="top:20%;right:15%;" alt=""/>
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-10 opacity-20 floating-logo-3" style="bottom:15%;left:20%;" alt=""/>
-    <img src="https://grok.x.ai/favicon.svg" class="absolute w-9 opacity-25" style="top:60%;right:10%;" alt=""/>
-    <img src="https://www.tesla.com/favicon.ico" class="absolute w-9 opacity-25" style="bottom:30%;right:25%;" alt=""/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" class="absolute w-10 opacity-20 floating-logo-1" style="top:10%;left:10%;" alt="Python"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="absolute w-10 opacity-20 floating-logo-2" style="top:20%;right:15%;" alt="React"/>
+    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" class="absolute w-10 opacity-20 floating-logo-3" style="bottom:15%;left:20%;" alt="WordPress"/>
+    <img src="https://grok.x.ai/favicon.svg" class="absolute w-9 opacity-25" style="top:60%;right:10%;" alt="Grok"/>
+    <img src="https://www.tesla.com/favicon.ico" class="absolute w-9 opacity-25" style="bottom:30%;right:25%;" alt="Tesla"/>
   </div>
 
-  <!-- Login Card -->
-  <div class="relative z-10 bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md border border-gray-100">
-    <nav class="py-6 px-6 lg:px-12 bg-white shadow-lg sticky top-0 z-50 rounded-3xl border-2 border-gray-200 border-t-4 border-t-blue-600">
+  <!-- Global Navigation (Top Bar + Main Nav) -->
+  <nav class="py-6 px-6 lg:px-12 bg-white shadow-lg sticky top-0 z-50 rounded-3xl border-2 border-gray-200 border-t-4 border-t-blue-600">
     <!-- Thick Top Bar with Contact Details & Desktop-Only Search -->
     <div class="bg-blue-600 text-white text-sm py-2 px-6 lg:px-12 -mx-6 -mt-6 mb-4 flex items-center justify-between md:justify-end space-x-6 lg:space-x-8">
-        <!-- Contact Info (centered on mobile, right-aligned on desktop) -->
-        <div class="flex items-center space-x-6 justify-center md:justify-start">
-            <div class="flex items-center space-x-2">
-                <i class="fas fa-phone-alt"></i>
-                <span>+254 727 624 353</span>
-            </div>
-            <a href="https://wa.me/254727624353" class="flex items-center space-x-2 hover:underline">
-                <i class="fab fa-whatsapp"></i>
-                <span>WhatsApp</span>
-            </a>
+      <div class="flex items-center space-x-6 justify-center md:justify-start">
+        <div class="flex items-center space-x-2">
+          <i class="fas fa-phone-alt"></i>
+          <span>+254 727 624 353</span>
         </div>
-
-        <!-- Search Bar – Visible only on desktop (md and up) -->
-        <div class="hidden md:flex items-center w-80 max-w-full">
-            <form action="/search" method="GET" class="flex items-center w-full bg-white/20 rounded-full overflow-hidden border border-white/30 focus-within:border-white focus-within:ring-2 ring-white">
-                <input 
-                    type="text" 
-                    name="q" 
-                    placeholder="Search services, packages..." 
-                    class="w-full bg-transparent px-5 py-2 text-white placeholder-white/70 focus:outline-none"
-                />
-                <button type="submit" class="px-4 py-2 text-white hover:bg-white/10 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
-            </form>
-        </div>
+        <a href="https://wa.me/254727624353" class="flex items-center space-x-2 hover:underline">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+      <!-- Search Bar – Visible only on desktop -->
+      <div class="hidden md:flex items-center w-80 max-w-full">
+        <form action="/search" method="GET" class="flex items-center w-full bg-white/20 rounded-full overflow-hidden border border-white/30 focus-within:border-white focus-within:ring-2 ring-white">
+          <input type="text" name="q" placeholder="Search services, packages..." class="w-full bg-transparent px-5 py-2 text-white placeholder-white/70 focus:outline-none"/>
+          <button type="submit" class="px-4 py-2 text-white hover:bg-white/10 transition">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          </button>
+        </form>
+      </div>
     </div>
 
     <!-- Main Navigation Content -->
     <div class="flex justify-between items-center max-w-7xl mx-auto">
-        <div class="flex items-center space-x-4">
-            <button class="md:hidden text-gray-700" id="mobileMenuButton" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-            <a href="#home" class="flex items-center space-x-2">
-                <div class="w-40 h-10 flex items-center justify-center rounded-lg border border-gray-300 bg-white">
-                    <img src="https://outlineventures.ke/wp-content/uploads/2025/12/Wamuchiri-Cyber-Services-2.png"
-                         alt="Klints Solutions Logo"
-                         class="w-full h-full object-contain rounded-lg">
-                </div>
-                <span class="text-xl font-semibold"><span class="gradient-text"></span></span>
+      <div class="flex items-center space-x-4">
+        <button class="md:hidden text-gray-700" id="mobileMenuButton" aria-label="Toggle mobile menu">
+          <i class="fas fa-bars text-2xl"></i>
+        </button>
+        <a href="#home" class="flex items-center space-x-2">
+          <div class="w-40 h-10 flex items-center justify-center rounded-lg border border-gray-300 bg-white">
+            <img src="https://outlineventures.ke/wp-content/uploads/2025/12/Wamuchiri-Cyber-Services-2.png"
+                 alt="Klints Solutions Logo"
+                 class="w-full h-full object-contain rounded-lg">
+          </div>
+          <span class="text-xl font-semibold"><span class="gradient-text"></span></span>
+        </a>
+      </div>
+
+      <!-- Desktop Navigation with All Dropdowns -->
+      <div class="hidden md:flex items-center space-x-6 lg:space-x-8 relative z-50">
+        <!-- Home Dropdown -->
+        <div class="relative group">
+          <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
+            Home
+            <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
+            <a href="#home" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Welcome</a>
+            <a href="#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">About Us</a>
+            <a href="#news" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Latest News</a>
+          </div>
+        </div>
+
+        <!-- Services Dropdown (All Items) -->
+        <div class="relative group">
+          <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
+            Services
+            <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
+            <a href="#wordpress" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+              WordPress Development
             </a>
-        </div>
-
-        <!-- Desktop Navigation with All Dropdowns -->
-        <div class="hidden md:flex items-center space-x-6 lg:space-x-8 relative z-50">
-            <!-- Home Dropdown -->
-            <div class="relative group">
-                <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
-                    Home
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
-                    <a href="#home" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Welcome</a>
-                    <a href="#about" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">About Us</a>
-                    <a href="#news" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Latest News</a>
-                </div>
-            </div>
-
-            <!-- Services Dropdown (All Items) -->
-            <div class="relative group">
-                <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
-                    Services
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-                <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
-                    <a href="#wordpress" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
-                        WordPress Development
-                    </a>
-                    <a href="#google-ads" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        Google Ads Management
-                    </a>
-                    <a href="#google-merchant" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        Google Merchant Center
-                    </a>
-                    <a href="#python" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
-                        Python Development
-                    </a>
-                    <a href="#meta-ads" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        Meta Ads Management
-                    </a>
-                    <a href="#branding" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4"></path></svg>
-                        Branding & Graphics
-                    </a>
-                    <a href="#laptop" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        Laptop Troubleshooting
-                    </a>
-                    <a href="#ict-products" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
-                        ICT Products
-                    </a>
-                </div>
-            </div>
-
-            <!-- Packages Dropdown -->
-            <div class="relative group">
-                <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
-                    Packages
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-                <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
-                    <a href="#digital-starter" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Digital Starter (KES 25,000)</a>
-                    <a href="#growth-pro" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Growth Pro (KES 40,000)</a>
-                    <a href="#ecommerce" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">E-commerce Accelerator (KES 100,000)</a>
-                    <a href="#custom-automation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Custom Automation (Quote)</a>
-                    <a href="Packagesandconsultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View All Packages</a>
-                </div>
-            </div>
-
-            <!-- Portfolio Dropdown -->
-            <div class="relative group">
-                <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
-                    Portfolio
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-                <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
-                    <a href="#outline-ventures" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Outline Ventures (WordPress)</a>
-                    <a href="#lunar-tech" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Lunar Tech (Custom WP)</a>
-                    <a href="#solar-cam" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Solar-Powered AI Security Cam</a>
-                    <a href="#nexgen-fashion" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">NexGen Fashion Store</a>
-                    <a href="#kenya-crypto" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">KenyaCrypto Exchange</a>
-                    <a href="#autogrow-ads" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">AutoGrow AI Ads Engine</a>
-                    <a href="1.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View Full Portfolio</a>
-                </div>
-            </div>
-
-            <!-- Testimonials Dropdown -->
-            <div class="relative group">
-                <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
-                    Testimonials
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-                <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
-                    <a href="#sarah-karanja" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Sarah Karanja - Fashion Boutique</a>
-                    <a href="#michael-kibet" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Michael Kibet - TechStart</a>
-                    <a href="#alex-mutua" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Alex Mutua - Data Systems</a>
-                    <a href="#all-testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View All Stories</a>
-                </div>
-            </div>
-
-            <!-- Contact Dropdown -->
-            <div class="relative group">
-                <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
-                    Contact
-                    <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                    </svg>
-                </a>
-                <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
-                    <a href="mailto:klintstech@gmail.com" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Email Us</a>
-                    <a href="tel:+254727624353" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Call: +254 727 624 353</a>
-                    <a href="https://wa.me/254727624353" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">WhatsApp Consultation</a>
-                    <a href="#location" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Nairobi Office</a>
-                </div>
-            </div>
-
-            <!-- Search Trigger -->
-            <div class="relative">
-                <button id="searchTrigger" class="text-gray-700 hover:text-blue-600 transition focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                </button>
-                <div id="searchDropdown" class="absolute right-0 mt-3 w-80 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden opacity-0 invisible transform scale-95 transition-all duration-300 ease-out z-60">
-                    <form action="/search" method="GET" class="flex items-center">
-                        <input type="text" name="q" placeholder="Search services, packages, portfolio..." autocomplete="off"
-                               class="w-full px-5 py-4 text-gray-800 placeholder-gray-400 focus:outline-none text-base" required />
-                        <button type="submit" class="px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white transition">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                            </svg>
-                        </button>
-                    </form>
-                    <div class="px-5 py-3 border-t border-gray-100 text-sm text-gray-600">
-                        <p class="font-medium text-gray-800 mb-2">Quick Search:</p>
-                        <div class="flex flex-wrap gap-2">
-                            <a href="#wordpress" class="hover:text-blue-600 transition">WordPress</a> •
-                            <a href="#google-ads" class="hover:text-blue-600 transition">Google Ads</a> •
-                            <a href="#ecommerce" class="hover:text-blue-600 transition">E-commerce</a> •
-                            <a href="#python" class="hover:text-blue-600 transition">Python Automation</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Shop Button -->
-            <a href="https://klints.42web.io/" class="rainbow-shop font-medium px-4 py-2 rounded-lg hover:opacity-90 transition">Shop</a>
-        </div>
-
-        <!-- Desktop Login -->
-        <div class="hidden md:flex items-center space-x-4">
-            <a href="login.html" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" aria-label="Login/Register">
-                <i class="fas fa-user-circle"></i>
-                <span class="text-sm">Login/Register</span>
+            <a href="#google-ads" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+              Google Ads Management
             </a>
+            <a href="#google-merchant" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              Google Merchant Center
+            </a>
+            <a href="#python" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+              Python Development
+            </a>
+            <a href="#meta-ads" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              Meta Ads Management
+            </a>
+            <a href="#branding" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17v4a2 2 0 002 2h4"></path></svg>
+              Branding & Graphics
+            </a>
+            <a href="#laptop" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              Laptop Troubleshooting
+            </a>
+            <a href="#ict-products" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition flex items-center">
+              ICT Products
+            </a>
+          </div>
         </div>
 
-        <!-- Mobile Login -->
-        <div class="md:hidden flex items-center space-x-1 ml-4" aria-label="Login/Register link">
-            <a href="login.html" class="flex items-center space-x-1">
-                <i class="fas fa-user-circle text-2xl"></i>
-            </a>
+        <!-- Packages Dropdown -->
+        <div class="relative group">
+          <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
+            Packages
+            <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-56 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
+            <a href="#digital-starter" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Digital Starter (KES 25,000)</a>
+            <a href="#growth-pro" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Growth Pro (KES 40,000)</a>
+            <a href="#ecommerce" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">E-commerce Accelerator (KES 100,000)</a>
+            <a href="#custom-automation" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Custom Automation (Quote)</a>
+            <a href="Packagesandconsultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View All Packages</a>
+          </div>
         </div>
+
+        <!-- Portfolio Dropdown -->
+        <div class="relative group">
+          <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
+            Portfolio
+            <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
+            <a href="#outline-ventures" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Outline Ventures (WordPress)</a>
+            <a href="#lunar-tech" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Lunar Tech (Custom WP)</a>
+            <a href="#solar-cam" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Solar-Powered AI Security Cam</a>
+            <a href="#nexgen-fashion" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">NexGen Fashion Store</a>
+            <a href="#kenya-crypto" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">KenyaCrypto Exchange</a>
+            <a href="#autogrow-ads" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">AutoGrow AI Ads Engine</a>
+            <a href="1.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View Full Portfolio</a>
+          </div>
+        </div>
+
+        <!-- Testimonials Dropdown -->
+        <div class="relative group">
+          <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
+            Testimonials
+            <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-64 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
+            <a href="#sarah-karanja" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Sarah Karanja - Fashion Boutique</a>
+            <a href="#michael-kibet" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Michael Kibet - TechStart</a>
+            <a href="#alex-mutua" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Alex Mutua - Data Systems</a>
+            <a href="#all-testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View All Stories</a>
+          </div>
+        </div>
+
+        <!-- Contact Dropdown -->
+        <div class="relative group">
+          <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
+            Contact
+            <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </a>
+          <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
+            <a href="mailto:klintstech@gmail.com" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Email Us</a>
+            <a href="tel:+254727624353" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Call: +254 727 624 353</a>
+            <a href="https://wa.me/254727624353" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">WhatsApp Consultation</a>
+            <a href="#location" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Nairobi Office</a>
+          </div>
+        </div>
+
+        <!-- Search Trigger -->
+        <div class="relative">
+          <button id="searchTrigger" class="text-gray-700 hover:text-blue-600 transition focus:outline-none">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+            </svg>
+          </button>
+          <div id="searchDropdown" class="absolute right-0 mt-3 w-80 bg-white rounded-xl shadow-xl border border-gray-200 overflow-hidden opacity-0 invisible transform scale-95 transition-all duration-300 ease-out z-60">
+            <form action="/search" method="GET" class="flex items-center">
+              <input type="text" name="q" placeholder="Search services, packages, portfolio..." autocomplete="off"
+                     class="w-full px-5 py-4 text-gray-800 placeholder-gray-400 focus:outline-none text-base" required />
+              <button type="submit" class="px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white transition">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+              </button>
+            </form>
+            <div class="px-5 py-3 border-t border-gray-100 text-sm text-gray-600">
+              <p class="font-medium text-gray-800 mb-2">Quick Search:</p>
+              <div class="flex flex-wrap gap-2">
+                <a href="#wordpress" class="hover:text-blue-600 transition">WordPress</a> •
+                <a href="#google-ads" class="hover:text-blue-600 transition">Google Ads</a> •
+                <a href="#ecommerce" class="hover:text-blue-600 transition">E-commerce</a> •
+                <a href="#python" class="hover:text-blue-600 transition">Python Automation</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Shop Button -->
+        <a href="https://klints.42web.io/" class="rainbow-shop font-medium px-4 py-2 rounded-lg hover:opacity-90 transition">Shop</a>
+      </div>
+
+      <!-- Desktop Login -->
+      <div class="hidden md:flex items-center space-x-4">
+        <a href="login.html" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" aria-label="Login/Register">
+          <i class="fas fa-user-circle"></i>
+          <span class="text-sm">Login/Register</span>
+        </a>
+      </div>
+
+      <!-- Mobile Login -->
+      <div class="md:hidden flex items-center space-x-1 ml-4" aria-label="Login/Register link">
+        <a href="login.html" class="flex items-center space-x-1">
+          <i class="fas fa-user-circle text-2xl"></i>
+        </a>
+      </div>
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-[88px] shadow-lg py-4 px-6 mobile-menu z-40">
-        <div class="flex justify-end mb-2">
-            <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-xl"></i></button>
+      <div class="flex justify-end mb-2">
+        <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-xl"></i></button>
+      </div>
+      <div class="flex flex-col space-y-4">
+        <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+        <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+        <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium">Packages</a>
+        <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
+        <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+        <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+        <a href="https://klintsshop.ct.ws/" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
+        <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-user-circle mr-2"></i>Login/Register</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Login Card -->
+  <div class="relative z-10 flex items-center justify-center min-h-[calc(100vh-120px)] px-4">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md border border-gray-100">
+      <div class="text-center mb-8">
+        <h1 class="text-3xl font-extrabold text-gray-900">Welcome Back</h1>
+        <p class="text-gray-600 mt-2">Log in to your Klints Solutions account</p>
+      </div>
+
+      <form class="space-y-6">
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="you@example.com"/>
         </div>
-        <div class="flex flex-col space-y-4">
-            <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
-            <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
-            <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium">Packages</a>
-            <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
-            <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
-            <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
-            <a href="https://klintsshop.ct.ws/" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
-            <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-user-circle mr-2"></i>Login/Register</a>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Password</label>
+          <input type="password" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••"/>
         </div>
-    </div>
-</nav>
-    <div class="text-center mb-8">
-      <h1 class="text-3xl font-extrabold text-gray-900">Welcome Back</h1>
-      <p class="text-gray-600 mt-2">Log in to your Klints Solutions account</p>
-    </div>
+        <div class="flex items-center justify-between">
+          <label class="flex items-center">
+            <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded"/>
+            <span class="ml-2 text-sm text-gray-600">Remember me</span>
+          </label>
+          <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+        </div>
+        <button type="button" onclick="window.location.href='dashboard.html'" class="w-full py-3.5 gradient-btn text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
+          Log In <i class="fas fa-arrow-right ml-2"></i>
+        </button>
+      </form>
 
-    <form class="space-y-6">
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Email</label>
-        <input type="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="you@example.com"/>
-      </div>
-      <div>
-        <label class="block text-sm font-medium text-gray-700">Password</label>
-        <input type="password" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••"/>
-      </div>
-
-      <div class="flex items-center justify-between">
-        <label class="flex items-center">
-          <input type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded"/>
-          <span class="ml-2 text-sm text-gray-600">Remember me</span>
-        </label>
-        <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
+      <div class="mt-6 text-center">
+        <p class="text-gray-600">
+          Don't have an account?
+          <a href="register.html" class="font-semibold text-blue-600 hover:underline">Sign up free</a>
+        </p>
       </div>
 
-      <button type="button" 
-        onclick="window.location.href='dashboard.html'" 
-        class="w-full py-3.5 gradient-btn text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
-    Log In <i class="fas fa-arrow-right ml-2"></i>
-</button>
-    </form>
-
-    <div class="mt-6 text-center">
-      <p class="text-gray-600">
-        Don't have an account? 
-        <a href="register.html" class="font-semibold text-blue-600 hover:underline">Sign up free</a>
-      </p>
-    </div>
-
-    <div class="mt-8 flex justify-center space-x-4">
-      <button class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50"><i class="fab fa-google text-red-500"></i></button>
-      <button class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50"><i class="fab fa-facebook text-blue-600"></i></button>
+      <div class="mt-8 flex justify-center space-x-4">
+        <button class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50"><i class="fab fa-google text-red-500"></i></button>
+        <button class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50"><i class="fab fa-facebook text-blue-600"></i></button>
+      </div>
     </div>
   </div>
 </body>
