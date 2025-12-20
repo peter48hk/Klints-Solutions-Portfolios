@@ -557,20 +557,41 @@
     </div>
 
     <!-- Main Navigation Content -->
-    <div class="flex justify-between items-center max-w-7xl mx-auto">
-        <div class="flex items-center space-x-4">
-            <button class="md:hidden text-gray-700" id="mobileMenuButton" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-            <a href="#home" class="flex items-center space-x-2">
-                <div class="w-40 h-10 flex items-center justify-center rounded-lg border border-gray-300">
-                    <img src="https://outlineventures.ke/wp-content/uploads/2025/12/Gemini_Generated_Image_rdj6p2rdj6p2rdj6.png"
-                         alt="Logo"
-                         class="w-full h-full object-contain rounded-lg">
-                </div>
-                <span class="text-xl font-semibold"><span class="gradient-text"></span></span>
-            </a>
-        </div>
+<div class="flex justify-between items-center max-w-7xl mx-auto">
+    <!-- Left: Mobile Menu Button + Logo -->
+    <div class="flex items-center space-x-4">
+        <!-- Mobile Menu Toggle -->
+        <button class="md:hidden text-gray-700 hover:text-blue-600 transition" 
+                id="mobileMenuButton" 
+                aria-label="Toggle mobile menu">
+            <i class="fas fa-bars text-2xl"></i>
+        </button>
+
+        <!-- Logo -->
+        <a href="#home" class="flex items-center space-x-3 group">
+            <div class="w-48 h-12 flex items-center justify-center rounded-xl border border-gray-300 bg-white shadow-sm hover:shadow-md hover:border-blue-400 transition-all duration-300">
+                <img src="https://outlineventures.ke/wp-content/uploads/2025/12/Gemini_Generated_Image_rdj6p2rdj6p2rdj6.png"
+                     alt="Klints Solutions - Digital Growth Experts"
+                     class="w-full h-full object-contain p-1 rounded-xl">
+            </div>
+            <!-- Optional: Brand name (uncomment if you want text beside logo) -->
+            <!-- <span class="text-2xl font-bold bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">Klints</span> -->
+        </a>
+    </div>
+
+    <!-- Right: Desktop Navigation, Search, Shop, Login -->
+    <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+        <!-- Your existing dropdowns, search, shop, login go here -->
+        <!-- ... paste your original desktop nav items ... -->
+    </div>
+
+    <!-- Mobile Login Icon -->
+    <div class="md:hidden flex items-center">
+        <a href="login.html" class="text-gray-700 hover:text-blue-600 transition" aria-label="Login/Register">
+            <i class="fas fa-user-circle text-2xl"></i>
+        </a>
+    </div>
+</div>
 
         <!-- Desktop Navigation with Dropdowns -->
         <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
