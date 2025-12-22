@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQs - Klints Solutions | Creating Digital Brands Online</title>
+    <meta name="description" content="Frequently Asked Questions about Klints Solutions services including WordPress development, Google Ads, Meta Ads, Python automation, and more.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item:hover {
+            transform: translateY(-2px);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .accordion-content.open {
+            max-height: 1000px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-50 to-white text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-4 shadow-lg">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Klints Solutions</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-blue-200">Home</a></li>
+                    <li><a href="/services" class="hover:text-blue-200">Services</a></li>
+                    <li><a href="/portfolio" class="hover:text-blue-200">Portfolio</a></li>
+                    <li><a href="/contact" class="hover:text-blue-200">Contact</a></li>
+                    <li><a href="/faqs" class="font-semibold">FAQs</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-blue-50 py-16">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our services, pricing, process, and more. If you don't find what you're looking for, feel free to contact us!</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="space-y-6">
+
+                <!-- FAQ 1 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        What services does Klints Solutions offer?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">We specialize in:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li>Custom WordPress Development & WooCommerce</li>
+                            <li>Google Ads Management & Google Merchant Center</li>
+                            <li>Meta (Facebook/Instagram) Ads Management</li>
+                            <li>Python Development & AI Automation</li>
+                            <li>Branding & Graphic Design</li>
+                            <li>Laptop Troubleshooting & ICT Products</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        What are your pricing packages?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">Our main packages include:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li><strong>Digital Starter:</strong> KES 25,000</li>
+                            <li><strong>Growth Pro:</strong> KES 40,000 (one-time) – Premium design, ads setup, SEO, free domain</li>
+                            <li><strong>E-commerce Accelerator:</strong> KES 100,000 – Full WooCommerce store, payments, ads</li>
+                            <li><strong>Custom Automation:</strong> Custom quote for Python/AI projects</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">All prices are in Kenyan Shillings. Contact us for a personalized quote.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        How long does it take to build a website?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">Timelines vary depending on complexity:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li>Basic WordPress site: 1-2 weeks</li>
+                            <li>Custom WooCommerce store: 4-6 weeks</li>
+                            <li>Full e-commerce accelerator: 6-8 weeks</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">We provide regular updates and prioritize fast delivery without compromising quality.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        Do you provide ongoing support and maintenance?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">Yes! We offer:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li>90 days priority support on Growth Pro package</li>
+                            <li>6 months support on E-commerce Accelerator</li>
+                            <li>1-year IT support on Custom Automation</li>
+                            <li>Monthly maintenance plans available</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        How do your Google and Meta Ads services work?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">We handle everything:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li>Campaign strategy & setup</li>
+                            <li>Audience targeting & creative optimization</li>
+                            <li>Conversion tracking & A/B testing</li>
+                            <li>Monthly performance reports</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">Clients have seen 3x ROAS and significant cost-per-lead reductions.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        What is included in Python development and AI automation?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">We build custom solutions such as:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li>Automation scripts & bots</li>
+                            <li>Data analysis & AI-powered tools</li>
+                            <li>API integrations & CRM automation</li>
+                            <li>Unlimited revisions & 1-year support</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq-item bg-white rounded-xl shadow-md overflow-hidden">
+                    <button class="accordion-btn w-full text-left px-8 py-6 flex justify-between items-center text-lg font-semibold text-gray-800 hover:bg-gray-50 focus:outline-none">
+                        How can I get started?
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-8 pb-6">
+                        <p class="text-gray-600">Simply reach out via:</p>
+                        <ul class="list-disc pl-6 mt-2 text-gray-600">
+                            <li>WhatsApp: <a href="https://wa.me/254727624353" class="text-blue-600 hover:underline">+254 727 624 353</a></li>
+                            <li>Email: klintstech@gmail.com</li>
+                            <li>Phone: +254 727 624 353</li>
+                        </ul>
+                        <p class="mt-4 text-gray-600">We offer free consultations via Zoom or WhatsApp Video.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-blue-700 to-indigo-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-4">&copy; 2025 Klints Solutions. All rights reserved.</p>
+            <p class="text-sm">Creating Digital Brands Online | Nairobi, Kenya</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Accordion -->
+    <script>
+        document.querySelectorAll('.accordion-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+                const icon = button.querySelector('i');
+
+                // Close other accordions
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    if (item !== content) {
+                        item.classList.remove('open');
+                        item.style.maxHeight = null;
+                        const otherIcon = item.previousElementSibling.querySelector('i');
+                        if (otherIcon) otherIcon.classList.remove('rotate-180');
+                    }
+                });
+
+                // Toggle current
+                content.classList.toggle('open');
+                icon.classList.toggle('rotate-180');
+                
+                if (content.classList.contains('open')) {
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                } else {
+                    content.style.maxHeight = null;
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
