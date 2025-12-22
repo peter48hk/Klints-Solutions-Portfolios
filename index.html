@@ -2612,6 +2612,50 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
     document.getElementById('videoModal').addEventListener('click', function(e) {
         if (e.target === this) closeVideoModal();
     });
+		document.addEventListener('DOMContentLoaded', () => {
+    // Get all search forms on the page (in case you have multiple)
+    const searchForms = document.querySelectorAll('form[action="/search"]');
+
+    searchForms.forEach(form => {
+        const input = form.querySelector('input[name="q"]');
+        const submitButton = form.querySelector('button[type="submit"]');
+
+        // Optional: Submit on Enter key (already default, but we can enhance)
+        input.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                form.submit();
+            }
+        });
+
+        // Optional: Disable button when input is empty
+        const toggleButtonState = () => {
+            if (input.value.trim() === '') {
+                submitButton.disabled = true;
+                submitButton.style.opacity = '0.5';
+                submitButton.style.cursor = 'not-allowed';
+            } else {
+                submitButton.disabled = false;
+                submitButton.style.opacity = '1';
+                submitButton.style.cursor = 'pointer';
+            }
+        };
+
+        input.addEventListener('input', toggleButtonState);
+
+        // Initial check
+        toggleButtonState();
+
+        // Optional: Add a nice visual feedback when focused
+        input.addEventListener('focus', () => {
+            form.classList.add('ring-white', 'border-white');
+        });
+
+        input.addEventListener('blur', () => {
+            form.classList.remove('ring-white', 'border-white');
+        });
+    });
+});
 </script>
 </body>
 	</html>
