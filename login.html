@@ -19,7 +19,6 @@
     }
   </style>
 </head>
-
 <body class="bg-gray-50 min-h-screen relative overflow-hidden">
   <!-- Floating Tech Icons Background -->
   <div class="absolute inset-0 pointer-events-none">
@@ -54,7 +53,6 @@
         </form>
       </div>
     </div>
-
     <!-- Main Navigation Content -->
     <div class="flex justify-between items-center max-w-7xl mx-auto">
       <div class="flex items-center space-x-4">
@@ -70,7 +68,6 @@
           <span class="text-xl font-semibold"><span class="gradient-text"></span></span>
         </a>
       </div>
-
       <!-- Desktop Navigation with All Dropdowns -->
       <div class="hidden md:flex items-center space-x-6 lg:space-x-8 relative z-50">
         <!-- Home Dropdown -->
@@ -87,7 +84,6 @@
             <a href="#news" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Latest News</a>
           </div>
         </div>
-
         <!-- Services Dropdown (All Items) -->
         <div class="relative group">
           <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
@@ -127,7 +123,6 @@
             </a>
           </div>
         </div>
-
         <!-- Packages Dropdown -->
         <div class="relative group">
           <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
@@ -144,7 +139,6 @@
             <a href="Packagesandconsultation.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View All Packages</a>
           </div>
         </div>
-
         <!-- Portfolio Dropdown -->
         <div class="relative group">
           <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
@@ -163,7 +157,6 @@
             <a href="1.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View Full Portfolio</a>
           </div>
         </div>
-
         <!-- Testimonials Dropdown -->
         <div class="relative group">
           <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
@@ -179,7 +172,6 @@
             <a href="#all-testimonials" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View All Stories</a>
           </div>
         </div>
-
         <!-- Contact Dropdown -->
         <div class="relative group">
           <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
@@ -195,7 +187,6 @@
             <a href="#location" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Nairobi Office</a>
           </div>
         </div>
-
         <!-- Search Trigger -->
         <div class="relative">
           <button id="searchTrigger" class="text-gray-700 hover:text-blue-600 transition focus:outline-none">
@@ -224,11 +215,9 @@
             </div>
           </div>
         </div>
-
         <!-- Shop Button -->
         <a href="https://klints.42web.io/" class="rainbow-shop font-medium px-4 py-2 rounded-lg hover:opacity-90 transition">Shop</a>
       </div>
-
       <!-- Desktop Login -->
       <div class="hidden md:flex items-center space-x-4">
         <a href="login.html" class="text-gray-700 hover:text-blue-600 flex items-center space-x-1" aria-label="Login/Register">
@@ -236,7 +225,6 @@
           <span class="text-sm">Login/Register</span>
         </a>
       </div>
-
       <!-- Mobile Login -->
       <div class="md:hidden flex items-center space-x-1 ml-4" aria-label="Login/Register link">
         <a href="login.html" class="flex items-center space-x-1">
@@ -244,7 +232,6 @@
         </a>
       </div>
     </div>
-
     <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-[88px] shadow-lg py-4 px-6 mobile-menu z-40">
       <div class="flex justify-end mb-2">
@@ -263,22 +250,27 @@
     </div>
   </nav>
 
-  <!-- Login Card -->
+  <!-- Login Card with Password Requirements & View Toggle -->
   <div class="relative z-10 flex items-center justify-center min-h-[calc(100vh-120px)] px-4">
     <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md border border-gray-100">
       <div class="text-center mb-8">
         <h1 class="text-3xl font-extrabold text-gray-900">Welcome Back</h1>
         <p class="text-gray-600 mt-2">Log in to your Klints Solutions account</p>
       </div>
-
-      <form class="space-y-6">
+      <form class="space-y-6" id="loginForm">
         <div>
           <label class="block text-sm font-medium text-gray-700">Email</label>
           <input type="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="you@example.com"/>
         </div>
-        <div>
+        <div class="relative">
           <label class="block text-sm font-medium text-gray-700">Password</label>
-          <input type="password" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••"/>
+          <input type="password" id="passwordInput" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="••••••••"/>
+          <button type="button" id="togglePassword" class="absolute right-3 top-10 text-gray-500 hover:text-gray-700">
+            <i class="fas fa-eye"></i>
+          </button>
+          <p class="mt-2 text-xs text-gray-500">
+            Must contain at least 8 characters, 1 number, 1 uppercase letter, and 1 symbol
+          </p>
         </div>
         <div class="flex items-center justify-between">
           <label class="flex items-center">
@@ -287,23 +279,44 @@
           </label>
           <a href="#" class="text-sm text-blue-600 hover:underline">Forgot password?</a>
         </div>
-        <button type="button" onclick="window.location.href='dashboard.html'" class="w-full py-3.5 gradient-btn text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
+        <button type="submit" class="w-full py-3.5 gradient-btn text-white font-bold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition duration-300 cursor-pointer">
           Log In <i class="fas fa-arrow-right ml-2"></i>
         </button>
       </form>
-
       <div class="mt-6 text-center">
         <p class="text-gray-600">
           Don't have an account?
           <a href="register.html" class="font-semibold text-blue-600 hover:underline">Sign up free</a>
         </p>
       </div>
-
       <div class="mt-8 flex justify-center space-x-4">
         <button class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50"><i class="fab fa-google text-red-500"></i></button>
         <button class="p-3 border border-gray-300 rounded-lg hover:bg-gray-50"><i class="fab fa-facebook text-blue-600"></i></button>
       </div>
     </div>
   </div>
+
+  <!-- JavaScript for Password Visibility Toggle -->
+  <script>
+    const passwordInput = document.getElementById('passwordInput');
+    const togglePassword = document.getElementById('togglePassword');
+
+    togglePassword.addEventListener('click', () => {
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      togglePassword.querySelector('i').classList.toggle('fa-eye');
+      togglePassword.querySelector('i').classList.toggle('fa-eye-slash');
+    });
+
+    // Optional: Client-side password validation before submit
+    document.getElementById('loginForm').addEventListener('submit', (e) => {
+      const password = passwordInput.value;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*])[A-Za-z\d!@#$%^&*]{8,}$/;
+      if (!passwordRegex.test(password)) {
+        e.preventDefault();
+        alert('Password must contain at least 8 characters, 1 uppercase letter, 1 number, and 1 symbol.');
+      }
+    });
+  </script>
 </body>
 </html>
