@@ -20,32 +20,32 @@
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    <nav class="py-6 px-6 lg:px-12 bg-white shadow-lg sticky top-0 z-50 rounded-3xl border-2 border-gray-200 border-t-4 border-t-blue-600">
-    <!-- Thick Top Bar with Contact Details & Desktop-Only Search -->
-    <div class="bg-blue-600 text-white text-sm py-2 px-6 lg:px-12 -mx-6 -mt-6 mb-4 flex items-center justify-between md:justify-end space-x-6 lg:space-x-8">
-        <!-- Contact Info (centered on mobile, right-aligned on desktop) -->
-        <div class="flex items-center space-x-6 justify-center md:justify-start">
-            <div class="flex items-center space-x-2">
+   <nav class="py-4 px-6 lg:px-12 bg-white shadow-lg sticky top-0 z-50 border-b-2 border-gray-200">
+    <!-- Top Bar with Contact Details & Desktop-Only Search -->
+    <div class="bg-blue-600 text-white text-xs py-1.5 px-6 lg:px-12 -mx-6 -mt-4 mb-3 flex items-center justify-between md:justify-end space-x-4 lg:space-x-6">
+        <!-- Contact Info -->
+        <div class="flex items-center space-x-4 justify-center md:justify-start text-sm">
+            <div class="flex items-center space-x-1">
                 <i class="fas fa-phone-alt"></i>
                 <span>+254 727 624 353</span>
             </div>
-            <a href="https://wa.me/254727624353" class="flex items-center space-x-2 hover:underline">
+            <a href="https://wa.me/254727624353" class="flex items-center space-x-1 hover:underline">
                 <i class="fab fa-whatsapp"></i>
                 <span>WhatsApp</span>
             </a>
         </div>
 
-        <!-- Search Bar – Visible only on desktop (md and up) -->
-        <div class="hidden md:flex items-center w-80 max-w-full">
+        <!-- Search Bar – Visible only on desktop -->
+        <div class="hidden md:flex items-center w-72 max-w-full">
             <form action="/search" method="GET" class="flex items-center w-full bg-white/20 rounded-full overflow-hidden border border-white/30 focus-within:border-white focus-within:ring-2 ring-white">
                 <input 
                     type="text" 
                     name="q" 
                     placeholder="Search services, packages..." 
-                    class="w-full bg-transparent px-5 py-2 text-white placeholder-white/70 focus:outline-none"
+                    class="w-full bg-transparent px-4 py-1.5 text-white placeholder-white/70 focus:outline-none text-sm"
                 />
-                <button type="submit" class="px-4 py-2 text-white hover:bg-white/10 transition">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <button type="submit" class="px-3 py-1.5 text-white hover:bg-white/10 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                     </svg>
                 </button>
@@ -55,15 +55,15 @@
 
     <!-- Main Navigation Content -->
     <div class="flex justify-between items-center max-w-7xl mx-auto">
-        <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-3">
             <button class="md:hidden text-gray-700" id="mobileMenuButton" aria-label="Toggle mobile menu">
-                <i class="fas fa-bars text-2xl"></i>
+                <i class="fas fa-bars text-xl"></i>
             </button>
             <a href="https://klints-solutions-portfolios.vercel.app/" class="flex items-center space-x-2">
-                <div class="w-40 h-10 flex items-center justify-center rounded-lg border border-gray-300 bg-white">
+                <div class="w-32 h-8 md:w-40 md:h-10 flex items-center justify-center rounded border border-gray-300 bg-white">
                     <img src="https://outlineventures.ke/wp-content/uploads/2025/12/Wamuchiri-Cyber-Services-2.png"
                          alt="Klints Solutions Logo"
-                         class="w-full h-full object-contain rounded-lg">
+                         class="w-full h-full object-contain rounded">
                 </div>
                 <span class="text-xl font-semibold"><span class="gradient-text"></span></span>
             </a>
@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <!-- Services Dropdown (All Items) -->
+            <!-- Services Dropdown -->
             <div class="relative group">
                 <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
                     Services
@@ -193,7 +193,9 @@
                     <a href="#location" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">Nairobi Office</a>
                 </div>
             </div>
-			 <div class="relative group">
+
+            <!-- FAQS Dropdown -->
+            <div class="relative group">
                 <a href="FAQS.html" class="text-gray-700 hover:text-blue-600 font-medium nav-link transition flex items-center">
                     FAQS
                     <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -203,8 +205,7 @@
                 <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 py-2 border border-gray-200">
                     <a href="FAQS.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">What services does Klints Solutions offer?</a>
                     <a href="FAQS.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">What are your pricing packages?</a>
-                    <a href="FAQS.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View More Questions & Answers </a>
-                    
+                    <a href="FAQS.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition">View More Questions & Answers</a>
                 </div>
             </div>
 
@@ -250,26 +251,27 @@
         </div>
 
         <!-- Mobile Login -->
-        <div class="md:hidden flex items-center space-x-1 ml-4" aria-label="Login/Register link">
-            <a href="login.html" class="flex items-center space-x-1">
+        <div class="md:hidden flex items-center ml-3">
+            <a href="login.html" class="flex items-center">
                 <i class="fas fa-user-circle text-2xl"></i>
             </a>
         </div>
     </div>
 
     <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-[88px] shadow-lg py-4 px-6 mobile-menu z-40">
+    <div id="mobileMenu" class="hidden md:hidden bg-white absolute left-0 right-0 top-14 shadow-lg py-3 px-6 mobile-menu z-40 border-t border-gray-200">
         <div class="flex justify-end mb-2">
-            <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-xl"></i></button>
+            <button id="closeMenuButton" class="text-gray-700"><i class="fas fa-times text-lg"></i></button>
         </div>
-        <div class="flex flex-col space-y-4">
+        <div class="flex flex-col space-y-3 text-base">
             <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
             <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
             <a href="Packagesandconsultation.html" class="text-gray-700 hover:text-blue-600 font-medium">Packages</a>
             <a href="1.html" class="text-gray-700 hover:text-blue-600 font-medium">Portfolio</a>
             <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
             <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
-            <a href="https://klintsshop.ct.ws/" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
+            <a href="FAQS.html" class="text-gray-700 hover:text-blue-600 font-medium">FAQS</a>
+            <a href="https://klints.42web.io/" class="rainbow-shop font-medium"><i class="fas fa-shopping-cart mr-2"></i>Shop</a>
             <a href="login.html" class="text-gray-700 hover:text-blue-600 font-medium"><i class="fas fa-user-circle mr-2"></i>Login/Register</a>
         </div>
     </div>
