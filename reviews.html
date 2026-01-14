@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Reviews & Testimonials</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .testimonial-track {
+            display: flex;
+            transition: transform 0.7s ease-in-out;
+        }
+        .slide-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #e5e7eb;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .slide-dot.active {
+            background-color: #3b82f6;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 bg-gradient-to-r from-blue-500 to-red-500 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-xl">K</span>
+                    </div>
+                    <h1 class="text-xl font-bold text-gray-800">Klints Solutions</h1>
+                </div>
+                <nav>
+                    <a href="#" class="text-blue-600 font-medium hover:text-blue-800 transition">Back to Home</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-50 to-red-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                What Our Clients Say
+            </h1>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
+                Don't just take our word for it. Here's what real businesses have achieved with our solutions.
+            </p>
+            
+            <!-- Trust Badges -->
+            <div class="flex items-center justify-center space-x-8 mt-8">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-blue-600">50+</div>
+                    <div class="text-sm text-gray-600">Happy Clients</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-red-600">5.0</div>
+                    <div class="text-sm text-gray-600">Average Rating</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-green-600">128</div>
+                    <div class="text-sm text-gray-600">Reviews</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials-slider" class="py-16 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Client Success Stories</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Real results from real clients — see what they say about working with us.
+                </p>
+            </div>
+
+            <div class="relative overflow-hidden">
+                <div id="testimonial-track" class="testimonial-track">
+                    <!-- Testimonial 1 -->
+                    <div class="w-full flex-shrink-0 px-3">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-blue-500 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
+                                <blockquote class="text-xl italic font-medium text-gray-800 leading-relaxed">
+                                    "Klints Solutions transformed our online store. Their WooCommerce setup with Google Shopping integration increased our revenue by <span class="text-green-600 font-bold">150% in just 3 months.</span>"
+                                </blockquote>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                                <img src="https://placehold.co/60x60/3B82F6/white?text=SK" alt="Sarah Karanja" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                                <div>
+                                    <p class="font-bold text-lg text-gray-800">Sarah Karanja</p>
+                                    <p class="text-sm text-gray-600">CEO, Fashion Boutique Nairobi CBD</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="w-full flex-shrink-0 px-3">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-red-500 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
+                                <blockquote class="text-xl italic font-medium text-gray-800 leading-relaxed">
+                                    "They restructured our Google Ads campaigns and tracking was flawless. Our cost per lead dropped by <span class="text-red-600 font-bold">60%</span> with better lead quality."
+                                </blockquote>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                                <img src="https://placehold.co/60x60/EF4444/white?text=MK" alt="Michael Kibet" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                                <div>
+                                    <p class="font-bold text-lg text-gray-800">Michael Kibet</p>
+                                    <p class="text-sm text-gray-600">Marketing Director, TechStart Kilimani</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="w-full flex-shrink-0 px-3">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-yellow-500 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
+                                <blockquote class="text-xl italic font-medium text-gray-800 leading-relaxed">
+                                    "The custom Python automation script saved my team over 20 hours per week. The efficiency gains have been <span class="text-yellow-600 font-bold">game-changing</span>."
+                                </blockquote>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                                <img src="https://placehold.co/60x60/F59E0B/white?text=AM" alt="Alex Mutua" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                                <div>
+                                    <p class="font-bold text-lg text-gray-800">Alex Mutua</p>
+                                    <p class="text-sm text-gray-600">CTO, Data Systems East Africa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="w-full flex-shrink-0 px-3">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-green-500 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
+                                <blockquote class="text-xl italic font-medium text-gray-800 leading-relaxed">
+                                    "Their Meta Ads strategy turned our stagnant campaigns into a <span class="text-green-600 font-bold">3x ROAS machine</span> in under 60 days."
+                                </blockquote>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                                <img src="https://placehold.co/60x60/10B981/white?text=GW" alt="Grace Wanjiku" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                                <div>
+                                    <p class="font-bold text-lg text-gray-800">Grace Wanjiku</p>
+                                    <p class="text-sm text-gray-600">Founder, Beauty Brand Kenya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 5 -->
+                    <div class="w-full flex-shrink-0 px-3">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-purple-500 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
+                                <blockquote class="text-xl italic font-medium text-gray-800 leading-relaxed">
+                                    "The custom WordPress site they built loads in under 2 seconds and converted 42% more visitors. Best investment we've made."
+                                </blockquote>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                                <img src="https://placehold.co/60x60/8B5CF6/white?text=JO" alt="James Otieno" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                                <div>
+                                    <p class="font-bold text-lg text-gray-800">James Otieno</p>
+                                    <p class="text-sm text-gray-600">Owner, Safari Adventures Ltd</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 6 -->
+                    <div class="w-full flex-shrink-0 px-3">
+                        <div class="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-orange-500 h-full flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center mb-4 text-yellow-400">
+                                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <i class="fas fa-quote-left text-3xl text-gray-200 mb-4"></i>
+                                <blockquote class="text-xl italic font-medium text-gray-800 leading-relaxed">
+                                    "Their team handled everything — from site migration to SEO and ads. We saw a <span class="text-orange-600 font-bold">220% traffic increase</span> in 4 months."
+                                </blockquote>
+                            </div>
+                            <div class="flex items-center space-x-4 pt-6 border-t border-gray-100">
+                                <img src="https://placehold.co/60x60/F97316/white?text=LM" alt="Linda Mwangi" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                                <div>
+                                    <p class="font-bold text-lg text-gray-800">Linda Mwangi</p>
+                                    <p class="text-sm text-gray-600">Director, Education Tech Startup</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <button id="prev-slide" class="absolute top-1/2 left-2 transform -translate-y-1/2 p-3 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-100 transition duration-300 z-20">
+                    <i class="fas fa-chevron-left text-xl"></i>
+                </button>
+                <button id="next-slide" class="absolute top-1/2 right-2 transform -translate-y-1/2 p-3 bg-white text-gray-800 rounded-full shadow-md hover:bg-gray-100 transition duration-300 z-20">
+                    <i class="fas fa-chevron-right text-xl"></i>
+                </button>
+
+                <!-- Dots -->
+                <div id="slider-dots" class="flex justify-center space-x-2 mt-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-blue-600 to-red-600">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="text-white">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">50+</div>
+                    <div class="text-blue-100">Clients Served</div>
+                </div>
+                <div class="text-white">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">5.0</div>
+                    <div class="text-blue-100">Average Rating</div>
+                </div>
+                <div class="text-white">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">128</div>
+                    <div class="text-blue-100">Positive Reviews</div>
+                </div>
+                <div class="text-white">
+                    <div class="text-4xl md:text-5xl font-bold mb-2">98%</div>
+                    <div class="text-blue-100">Client Retention</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gray-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <h3 class="text-3xl font-bold text-gray-800 mb-6">Ready to Transform Your Business?</h3>
+            <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
+                Join our growing family of successful clients. Let's discuss how we can help you achieve your business goals.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Schedule a Free Consultation
+                </button>
+                <button class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-8 rounded-lg border-2 border-red-500 transition duration-300">
+                    View Our Services
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.getElementById('testimonial-track');
+            const prevBtn = document.getElementById('prev-slide');
+            const nextBtn = document.getElementById('next-slide');
+            const dotsContainer = document.getElementById('slider-dots');
+            const slides = track.children;
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+
+            // Create dots
+            for (let i = 0; i < totalSlides; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'slide-dot';
+                if (i === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(i));
+                dotsContainer.appendChild(dot);
+            }
+
+            const dots = dotsContainer.children;
+
+            function updateSlider() {
+                const translateX = -currentIndex * 100;
+                track.style.transform = `translateX(${translateX}%)`;
+                
+                // Update active dot
+                for (let i = 0; i < dots.length; i++) {
+                    dots[i].classList.toggle('active', i === currentIndex);
+                }
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+
+            // Auto slide every 5 seconds
+            setInterval(nextSlide, 5000);
+        });
+    </script>
+</body>
+</html>
+
