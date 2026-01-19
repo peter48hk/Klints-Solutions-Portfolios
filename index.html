@@ -18,9 +18,25 @@
         70% { transform: scale(1); box-shadow: 0 0 0 12px rgba(37, 99, 235, 0); }
         100% { transform: scale(0.98); box-shadow: 0 0 0 0 rgba(37, 99, 235, 0); }
     }
-    .briefing-pulse {
-        animation: pulse-ring 2s infinite;
+    .btn-style {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 2rem;
+        min-width: 280px;
+        font-family: sans-serif;
+        font-weight: bold;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        transition: 0.3s;
+        border: none;
+        cursor: pointer;
+        color: white;
+        background: linear-gradient(to right, #2563eb, #10b981);
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
+    .btn-style:hover { box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+    .pulse { animation: pulse-ring 2s infinite; }
 
         @keyframes liquidFloat {
             0% { transform: translate(0, 0) rotate(0deg); }
@@ -839,27 +855,20 @@
                 Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads,
                 and specialized Python Automation.
             </p>
-    <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 my-8">
+   <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin: 2rem 0; justify-content: flex-start;">
     
-    <a href="digital strategy.html" 
-       class="inline-flex items-center justify-center px-8 py-4 min-w-[280px] text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold no-underline text-center">
+    <a href="digital strategy.html" class="btn-style">
         Get A Free Strategy
     </a>
 
-    <div class="relative briefing-pulse inline-flex items-center justify-center min-w-[280px] rounded-lg shadow-md hover:shadow-lg transition duration-300 overflow-hidden cursor-pointer" style="height: 56px;">
-        
-        <div class="flex items-center justify-center gap-3 w-full h-full px-8 py-4 bg-gradient-to-r from-blue-600 to-green-500 text-white font-bold pointer-events-none">
-            <span style="font-size: 1.1rem;">▶</span>
-            <span>Listen to Strategic Briefing</span>
-        </div>
+    <button onclick="playBriefing()" class="btn-style pulse" id="audioBtn">
+        <span id="btnIcon" style="margin-right: 10px;">▶</span>
+        <span id="btnText">Listen to Strategic Briefing</span>
+    </button>
 
-        <iframe 
-            src="https://drive.google.com/file/d/1ZbwLkyN0VDxpdBq7oI-VdEW3kVRv5kqU/preview" 
-            style="position: absolute; top: 0; left: 0; width: 600px; height: 400px; opacity: 0; margin-top: -170px; margin-left: -150px; cursor: pointer;"
-            allow="autoplay">
-        </iframe>
-    </div>
 </div>
+
+<audio id="audioSource" src="https://files.catbox.moe/fhhj42.m4a"></audio>
           <!-- Trust Badges (Kept visible & clean on white) -->
 <a href="reviews.html" class="block">
     <div class="flex items-center justify-center md:justify-start space-x-6 p-3 bg-sky-100 rounded-lg shadow-sm border-t-2 border-blue-500 max-w-md mx-auto md:mx-0 hover:bg-sky-200 transition duration-300 cursor-pointer">
@@ -2671,34 +2680,21 @@ document.getElementById('ceoVideoModal').addEventListener('click', function(e) {
         });
     });
 });
-		const audio = document.getElementById('myAudio');
-    const btn = document.getElementById('briefingBtn');
-    const icon = document.getElementById('audioIcon');
-    const text = document.getElementById('audioText');
-
-    function handleAudio() {
+		function playBriefing() {
+        var audio = document.getElementById('audioSource');
+        var icon = document.getElementById('btnIcon');
+        var text = document.getElementById('btnText');
+        
         if (audio.paused) {
-            audio.play().then(() => {
-                icon.innerText = "⏸"; 
-                text.innerText = "Playing Briefing...";
-                btn.classList.remove('briefing-pulse');
-            }).catch(e => {
-                console.error("Playback failed:", e);
-                alert("Ensure your Drive file is shared as 'Anyone with the link'.");
-            });
+            audio.play();
+            icon.innerHTML = "⏸";
+            text.innerHTML = "Playing Briefing...";
         } else {
             audio.pause();
-            resetButton();
+            icon.innerHTML = "▶";
+            text.innerHTML = "Listen to Strategic Briefing";
         }
     }
-
-    function resetButton() {
-        icon.innerText = "▶";
-        text.innerText = "Listen to Strategic Briefing";
-        btn.classList.add('briefing-pulse');
-    }
-
-    audio.onended = resetButton;
 </script>
 </body>
 	</html>
