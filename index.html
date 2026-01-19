@@ -831,15 +831,26 @@
                 Klints Solutions drives growth with Custom WordPress, high-ROI Google & Meta Ads,
                 and specialized Python Automation.
             </p>
-            <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 my-8">
-                <a href="digital strategy.html" class="px-6 py-4 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
-                    Get A Free Strategy
-                </a>
-                <div style="font-family: sans-serif; display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-    <a href="https://vocaroo.com/13sio9sGgQXm" target="_blank" style="text-decoration: none; display: inline-flex; align-items: center; background-color: #007bff; color: white; padding: 12px 24px; border-radius: 50px; font-family: Arial, sans-serif; font-weight: bold; transition: background 0.3s ease;">
-    <span style="margin-right: 10px; font-size: 20px;">▶</span> 
-    Listen to our Strategic Briefing
-</a>
+          <div class="flex flex-wrap items-center justify-center md:justify-start gap-4 my-8">
+    
+    <a href="digital strategy.html" class="px-6 py-4 text-base bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold">
+        Get A Free Strategy
+    </a>
+
+    <button onclick="document.getElementById('vocaroo-frame').contentWindow.postMessage('play', '*')" 
+            class="flex items-center gap-3 px-6 py-4 bg-gradient-to-r from-blue-600 to-green-500 text-white rounded-lg shadow-md hover:shadow-lg transition duration-300 font-bold cursor-pointer border-none">
+        <span style="font-size: 1.2rem;">▶</span>
+        <span>Listen to Strategic Briefing</span>
+    </button>
+
+    <div style="width: 0; height: 0; overflow: hidden; position: absolute;">
+        <iframe id="vocaroo-frame"
+                src="https://vocaroo.com/embed/13sio9sGgQXm?autoplay=0"
+                allow="autoplay">
+        </iframe>
+    </div>
+
+</div>
 
           <!-- Trust Badges (Kept visible & clean on white) -->
 <a href="reviews.html" class="block">
